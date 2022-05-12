@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.List">
+   <children>
+      <Label layoutX="13.0" layoutY="18.0" text="Inköpslistor" />
+      <Label layoutX="149.0" layoutY="122.0" text="Skapa egna Inköplistor för att snabbt lägga in alla varor som står på listan in i varukorgen">
+         <padding>
+            <Insets right="250.0" />
+         </padding>
+      </Label>
+      <ScrollPane layoutY="150.0" prefHeight="400.0" prefWidth="1080.0">
+         <content>
+            <FlowPane prefHeight="183.0" prefWidth="146.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
