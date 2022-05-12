@@ -101,7 +101,7 @@ public class Model {
     }
 
     public void addSingleItem(Product product) {
-
+        //ny
         System.out.println("Add " + product.getName());
 
         int index = 0;
