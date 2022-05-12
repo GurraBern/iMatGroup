@@ -37,7 +37,10 @@ public class IMatMini extends Application {
      * @param args the command line arguments dsds
      */
     public static void main(String[] args) {
+        System.out.println(System.getProperty("user.home"));
+
         launch(args);
+
         
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
@@ -48,7 +51,7 @@ public class IMatMini extends Application {
     }
 
 
-
+Test
 
 
 
