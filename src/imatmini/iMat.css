@@ -21,4 +21,22 @@
     @import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
 }
 
+.shadow{
+    fx
+    box-shadow: 5px 10px red:
+}
 
+.my-button {
+    width: 200px;
+    height: 200px;
+    border: none;
+    border-radius: 100px;
+    outline: none;
+    background: #b71540;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.my-button:hover {
+    background: #eb2f06;
+}

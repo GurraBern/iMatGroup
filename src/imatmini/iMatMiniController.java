@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -35,7 +36,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML
     private Label erbjudanden;
 
-
+    @FXML AnchorPane cartView;
 
     // Shopping Pane
     @FXML
@@ -246,6 +247,22 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         
     }
 
+
+
+    @FXML public void closeCart(){
+        shopPane.toFront();
+    }
+
+
+    @FXML public void openCart() {
+        cartView.toFront();
+    }
+
+
+    @FXML
+    public void mouseTrap(Event event){
+        event.consume();
+    }
 
     public void home_view() throws IOException {
         Stage primaryStage = (Stage) erbjudanden.getScene().getWindow();
