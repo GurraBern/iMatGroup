@@ -72,7 +72,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="102.0" prefWidth="1189.0" style="-fx-background-color: #332F68;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <TextField fx:id="searchField" layoutX="357.0" layoutY="31.0" prefHeight="35.0" prefWidth="476.0" promptText="Sök vara" AnchorPane.leftAnchor="357.0" AnchorPane.rightAnchor="356.0">
+                        <TextField fx:id="searchField" layoutX="357.0" layoutY="31.0" prefHeight="35.0" prefWidth="476.0" promptText="Sök på dina listor" AnchorPane.leftAnchor="357.0" AnchorPane.rightAnchor="356.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -101,7 +101,7 @@
                   </AnchorPane>
                   <ScrollPane hbarPolicy="NEVER" layoutY="154.0" prefHeight="346.0" prefWidth="1189.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="154.0">
                      <content>
-                        <FlowPane fx:id="productsFlowPane" prefHeight="395.0" prefWidth="1212.0" style="-fx-background-color: #FFFFFF;" vgap="4.0" />
+                        <FlowPane fx:id="mylistsFlowPane" prefHeight="395.0" prefWidth="1212.0" style="-fx-background-color: #FFFFFF;" vgap="4.0" />
                      </content>
                   </ScrollPane>
                </children>

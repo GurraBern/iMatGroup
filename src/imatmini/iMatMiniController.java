@@ -23,11 +23,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import se.chalmers.cse.dat216.project.CartEvent;
-import se.chalmers.cse.dat216.project.CreditCard;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingCartListener;
+import se.chalmers.cse.dat216.project.*;
 
 
 /**
@@ -70,6 +66,13 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private TextField cvcField;
     @FXML
     private Label purchasesLabel;
+
+
+    //TODO
+    @FXML FlowPane mylistsFlowPane;
+
+    @FXML FlowPane myCartFlowPane;
+
     
     // Other variables
     private final Model model = Model.getInstance();
@@ -115,7 +118,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateBottomPanel();
         
         setupAccountPane();
-        
+        updateCartItems();
+        //TODO fixa en myList som har en shopping cart i sig!!!
+        //updateMyLists(model.saveShoppingCart());
+
     }    
     
     // Navigation
@@ -128,14 +134,36 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateCreditCard();
         shopPane.toFront();
     }
+
+
+    private void updateCartItems() {
+        ShoppingCart cart = model.getShoppingCart();
+        myCartFlowPane.getChildren().clear();
+
+        for (ShoppingItem cartItem : cart.getItems()) {
+            myCartFlowPane.getChildren().add(new CartProductPanel(cartItem));
+        }
+
+/*
+        private void updateBottomPanel() {
+
+            ShoppingCart shoppingCart = model.getShoppingCart();
+
+            itemsLabel.setText(String.valueOf(shoppingCart.getItems().size()));
+            costLabel.setText("Kostnad: " + String.format("%.2f",shoppingCart.getTotal()));
+        }*/
+
+    }
+
     
     // Shope pane methods
     @Override
      public void shoppingCartChanged(CartEvent evt) {
         updateBottomPanel();
+        updateCartItems();
     }
-   
-    
+
+
     private void updateProductList(List<Product> products) {
 
         productsFlowPane.getChildren().clear();
@@ -143,9 +171,25 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         for (Product product : products) {
 
             productsFlowPane.getChildren().add(new ProductPanel(product));
+
+        }
+    }
+
+
+    /*
+    private void updateMyLists(List<MyList> myLists) {
+
+        saveShoppingCart
+        mylistsFlowPane.getChildren().clear();
+
+        for (MyList list : myLists) {
+
+            productsFlowPane.getChildren().add(new ListPanel(list));
         }
 
     }
+
+     */
     
     private void updateBottomPanel() {
         
@@ -153,7 +197,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         
         itemsLabel.setText(String.valueOf(shoppingCart.getItems().size()));
         costLabel.setText("Kostnad: " + String.format("%.2f",shoppingCart.getTotal()));
-        
     }
     
     private void updateAccountPanel() {

@@ -45,6 +45,15 @@
             </AnchorPane>
             <AnchorPane fx:id="shopPane" prefHeight="240.0" prefWidth="720.0" style="-fx-background-color: #FFF000;">
                <children>
+                  <AnchorPane layoutX="907.0" layoutY="167.0" prefHeight="376.0" prefWidth="254.0">
+                     <children>
+                        <ScrollPane prefHeight="376.0" prefWidth="254.0">
+                           <content>
+                              <FlowPane fx:id="myCartFlowPaneddd" prefHeight="287.0" prefWidth="254.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
                   <AnchorPane layoutY="102.0" prefHeight="39.0" prefWidth="1189.0" style="-fx-background-color: green;" AnchorPane.rightAnchor="0.0">
                      <children>
                         <Label layoutX="345.0" layoutY="4.0" text="Hem" textFill="WHITE" AnchorPane.rightAnchor="800.0">
@@ -99,7 +108,7 @@
                         <Button layoutX="663.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
                      </children>
                   </AnchorPane>
-                  <ScrollPane hbarPolicy="NEVER" layoutY="154.0" prefHeight="346.0" prefWidth="1189.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="154.0">
+                  <ScrollPane hbarPolicy="NEVER" layoutY="154.0" prefHeight="347.0" prefWidth="890.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="154.0">
                      <content>
                         <FlowPane fx:id="productsFlowPane" prefHeight="395.0" prefWidth="1212.0" style="-fx-background-color: #FFFFFF;" vgap="4.0" />
                      </content>

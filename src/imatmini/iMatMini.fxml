@@ -97,7 +97,12 @@
                         <Button layoutX="663.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
                      </children>
                   </AnchorPane>
-                  <ScrollPane hbarPolicy="NEVER" layoutY="154.0" prefHeight="346.0" prefWidth="1189.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="154.0">
+                  <ScrollPane focusTraversable="false" layoutX="909.0" layoutY="158.0" prefHeight="347.0" prefWidth="268.0">
+                     <content>
+                        <FlowPane fx:id="myCartFlowPane" prefHeight="347.0" prefWidth="268.0" />
+                     </content>
+                  </ScrollPane>
+                  <ScrollPane hbarPolicy="NEVER" layoutY="154.0" prefHeight="347.0" prefWidth="881.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="309.0" AnchorPane.topAnchor="154.0">
                      <content>
                         <FlowPane fx:id="productsFlowPane" prefHeight="395.0" prefWidth="1212.0" style="-fx-background-color: #FFFFFF;" vgap="4.0" />
                      </content>
