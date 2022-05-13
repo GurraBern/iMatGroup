@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
@@ -105,7 +106,7 @@
                            </font>
                         </Label>
                         <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="960.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
-                        <Label layoutX="980.0" layoutY="31.0" text="Varukorg" textFill="WHITE" AnchorPane.rightAnchor="91.0">
+                        <Label layoutX="980.0" layoutY="31.0" onMouseClicked="#openCart" text="Varukorg" textFill="WHITE" AnchorPane.rightAnchor="91.0">
                            <font>
                               <Font name="Segoe UI Historic" size="29.0" />
                            </font>
@@ -116,15 +117,42 @@
                         <Button layoutX="906.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
                      </children>
                   </AnchorPane>
+                  <AnchorPane layoutY="501.0" prefHeight="59.0" prefWidth="1189.0" style="-fx-background-color: #ff6600;">
+                     <children>
+                        <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" />
+                        <Button layoutX="663.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
+                     </children>
+                  </AnchorPane>
+                  <ScrollPane hbarPolicy="NEVER" layoutY="154.0" prefHeight="347.0" prefWidth="1190.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="154.0">
                   <AnchorPane layoutY="501.0" prefHeight="59.0" prefWidth="1189.0" style="-fx-background-color: f4f4f4;" />
                   <ScrollPane focusTraversable="false" layoutX="1074.0" layoutY="158.0" prefHeight="128.0" prefWidth="103.0">
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="cartView" onMouseClicked="#closeCart" prefHeight="562.0" prefWidth="829.0" style="-fx-background-color: rgba(0, 0, 0, 0.2);">
+               <children>
+                  <AnchorPane layoutX="844.0" layoutY="449.0" onMouseClicked="#mouseTrap" prefHeight="114.0" prefWidth="354.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="-6.0">
+                     <children>
+                        <Line endX="332.0" endY="16.0" layoutY="-4.0" startX="17.0" startY="16.0" />
+                        <Label layoutX="12.0" layoutY="24.0" prefHeight="10.0" prefWidth="52.0" text="Summa" AnchorPane.rightAnchor="282.4" />
+                        <Label layoutX="12.0" layoutY="35.0" prefHeight="18.0" prefWidth="52.0" text="Varor" AnchorPane.rightAnchor="282.4" />
+                        <Label layoutX="12.0" layoutY="60.0" prefHeight="18.0" prefWidth="52.0" text="Rabatter" textFill="#ff2828" AnchorPane.rightAnchor="282.4" />
+                        <Label layoutX="100.0" layoutY="35.0" prefHeight="18.0" prefWidth="82.0" text="200 kr" AnchorPane.rightAnchor="184.0" />
+                        <Label layoutX="100.0" layoutY="60.0" prefHeight="18.0" prefWidth="128.0" text="50kr" textAlignment="RIGHT" textFill="#ff2828" AnchorPane.rightAnchor="136.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="845.0" layoutY="1.0" prefHeight="424.0" prefWidth="354.0" style="-fx-background-color: #F9FFB5;" AnchorPane.bottomAnchor="136.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="1.0">
+                     <children>
+                        <Label layoutX="7.0" layoutY="-4.0" prefHeight="59.0" prefWidth="98.0" text="Varukorg">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="234.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#closeCart" text="Fortsätt Handla" />
+                     </children>
+                  </AnchorPane>
+                  <ScrollPane focusTraversable="false" layoutX="844.0" layoutY="55.0" prefHeight="398.0" prefWidth="354.0" AnchorPane.bottomAnchor="108.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="55.0">
                      <content>
-                        <FlowPane fx:id="myCartFlowPane" prefHeight="347.0" prefWidth="268.0" />
-                     </content>
-                  </ScrollPane>
-                  <ScrollPane hbarPolicy="NEVER" layoutX="226.0" layoutY="154.0" prefHeight="814.0" prefWidth="743.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="-408.0" AnchorPane.leftAnchor="226.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="154.0">
-                     <content>
-                        <FlowPane fx:id="productsFlowPane" prefHeight="395.0" prefWidth="1225.0" style="-fx-background-color: #F4F4F4F4;" vgap="4.0" />
+                        <FlowPane fx:id="myCartFlowPane" prefHeight="510.0" prefWidth="330.0" style="-fx-background-color: #F2F2F2;" />
                      </content>
                   </ScrollPane>
                </children>
