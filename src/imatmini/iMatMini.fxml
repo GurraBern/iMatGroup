@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
+<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
    <children>
       <StackPane prefHeight="560.0" prefWidth="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -75,40 +75,35 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="shopPane" prefHeight="240.0" prefWidth="720.0" style="-fx-background-color: #F4F4F4F4;">
+            <AnchorPane fx:id="shopPane" prefHeight="560.0" prefWidth="1208.0" style="-fx-background-color: #F4F4F4;">
                <children>
-                  <AnchorPane layoutY="102.0" prefHeight="39.0" prefWidth="1189.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <AnchorPane layoutY="102.0" prefHeight="39.0" prefWidth="1197.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0">
                      <children>
-                        <Label layoutX="320.0" layoutY="6.0" onMouseClicked="#home_view" text="Hem" AnchorPane.rightAnchor="825.0">
+                        <Label layoutX="134.0" layoutY="11.0" onMouseClicked="#home_view" text="Hem" AnchorPane.leftAnchor="134.0" AnchorPane.rightAnchor="992.0">
                            <font>
-                              <Font size="21.0" />
+                              <Font size="35.0" />
                            </font>
                         </Label>
-                        <Label fx:id="erbjudanden" layoutX="400.0" layoutY="6.0" onMouseClicked="#erbjud_view" text="Erbjudanden" AnchorPane.rightAnchor="650.0">
+                        <Label fx:id="erbjudanden" layoutX="250.0" layoutY="10.0" onMouseClicked="#erbjud_view" prefHeight="43.0" prefWidth="202.0" text="Erbjudanden">
                            <font>
-                              <Font size="21.0" />
+                              <Font size="35.0" />
                            </font>
                         </Label>
-                        <Label layoutX="480.0" layoutY="6.0" onMouseClicked="#favorites_view" prefWidth="82.0" text="Favoriter" AnchorPane.rightAnchor="475.0">
+                        <Label layoutX="494.0" layoutY="11.0" onMouseClicked="#favorites_view" prefHeight="43.0" prefWidth="159.0" text="Favoriter">
                            <font>
-                              <Font size="21.0" />
+                              <Font size="35.0" />
                            </font>
                         </Label>
-                        <Label layoutX="1051.0" layoutY="6.0" prefHeight="30.0" prefWidth="120.0" text="Mina Sidor">
+                        <Label layoutX="1064.0" layoutY="10.0" prefHeight="43.0" prefWidth="189.0" text="Mina Sidor" AnchorPane.rightAnchor="0.0">
                            <font>
-                              <Font size="21.0" />
+                              <Font size="35.0" />
                            </font>
                         </Label>
-                        <Label layoutX="560.0" layoutY="6.0" onContextMenuRequested="#myLists_view" text="Inköpslistor" AnchorPane.rightAnchor="300.0">
+                        <Label layoutX="683.0" layoutY="11.0" onContextMenuRequested="#myLists_view" prefHeight="43.0" prefWidth="182.0" text="Inköpslistor">
                            <font>
-                              <Font size="21.0" />
+                              <Font size="35.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="279.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="745.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="1003.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="590.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="384.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -117,7 +112,7 @@
                         <InnerShadow blurType="ONE_PASS_BOX" height="10.0" radius="7.25" />
                      </effect>
                   </AnchorPane>
-                  <AnchorPane prefHeight="102.0" prefWidth="1189.0" style="-fx-background-color: #332F68;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <AnchorPane prefHeight="102.0" prefWidth="1195.0" style="-fx-background-color: #332F68;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0">
                      <children>
                         <TextField fx:id="searchField" cache="true" layoutX="330.0" layoutY="19.0" prefHeight="58.0" prefWidth="540.0" promptText="Sök vara" style="-fx-background-radius: 30;" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="319.0">
                            <font>
@@ -142,22 +137,77 @@
                         </Label>
                         <Label fx:id="itemsLabel" layoutX="1118.0" layoutY="68.0" prefHeight="17.0" prefWidth="36.0" text="7" textFill="WHITE" AnchorPane.rightAnchor="35.0" />
                         <Label fx:id="costLabel" layoutX="997.0" layoutY="76.0" text="Kostnad: 3456.60" textFill="WHITE" AnchorPane.rightAnchor="101.0" />
-                        <Button layoutX="904.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" />
-                        <Button layoutX="906.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
+                        <Button layoutX="904.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" AnchorPane.rightAnchor="243.0" />
+                        <Button layoutX="906.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" AnchorPane.rightAnchor="243.0" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutY="501.0" prefHeight="59.0" prefWidth="1189.0" style="-fx-background-color: #ff6600;">
-                     <children>
-                        <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" />
-                        <Button layoutX="663.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
-                     </children>
-                  </AnchorPane>
-                  <ScrollPane hbarPolicy="NEVER" layoutY="154.0" prefHeight="347.0" prefWidth="1190.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="154.0">
+                  <ScrollPane hbarPolicy="NEVER" layoutX="311.0" layoutY="268.0" prefHeight="673.0" prefWidth="818.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="-175.0" AnchorPane.leftAnchor="311.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="268.0">
                   <AnchorPane layoutY="501.0" prefHeight="59.0" prefWidth="1189.0" style="-fx-background-color: f4f4f4;">
                         <children>
                            <FlowPane fx:id="productsFlowPane" prefHeight="337.0" prefWidth="1170.0" />
-                        </children></AnchorPane>
+                        </children>
+                     </AnchorPane>
                   </ScrollPane>
+                  <Label fx:id="kött" layoutX="50.0" layoutY="270.0" prefHeight="38.0" prefWidth="185.0" style="-fx-background-color: #332f68; -fx-background-radius: 10;" text="   Kött" textFill="WHITE" AnchorPane.leftAnchor="52.0">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="skafferi" layoutX="50.0" layoutY="520.0" prefHeight="38.0" prefWidth="155.0" text="   Sakfferi" AnchorPane.leftAnchor="50.0">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="mejeri" layoutX="50.0" layoutY="470.0" prefHeight="38.0" prefWidth="155.0" text="   Mejeri" AnchorPane.leftAnchor="50.0">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="grönsaker" layoutX="50.0" layoutY="420.0" prefHeight="38.0" prefWidth="185.0" text="   Grönsaker" AnchorPane.leftAnchor="50.0">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="frukt" layoutX="50.0" layoutY="370.0" prefHeight="38.0" prefWidth="155.0" text="   Frukt" AnchorPane.leftAnchor="50.0">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fisk" layoutX="50.0" layoutY="320.0" onMouseClicked="#fiskAction" prefHeight="38.0" prefWidth="185.0" style="-fx-background-radius-fx-background-radius: 10;" text="   Fisk" AnchorPane.leftAnchor="50.0">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="godis" layoutX="50.0" layoutY="720.0" prefHeight="38.0" prefWidth="155.0" text="   Godis" AnchorPane.leftAnchor="50.0">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dryck" layoutX="50.0" layoutY="670.0" prefHeight="38.0" prefWidth="155.0" text="   Dryck" AnchorPane.leftAnchor="50.0">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="kryddor" layoutX="50.0" layoutY="620.0" prefHeight="38.0" prefWidth="155.0" text="   Kryddor" AnchorPane.leftAnchor="50.0">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="bröd" layoutX="50.0" layoutY="570.0" prefHeight="38.0" prefWidth="155.0" text="   Bröd" AnchorPane.leftAnchor="50.0">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <Line endX="100.0" layoutX="134.0" layoutY="315.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
+                  <Line endX="100.0" layoutX="134.0" layoutY="765.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
+                  <Line endX="100.0" layoutX="134.0" layoutY="715.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
+                  <Line endX="100.0" layoutX="134.0" layoutY="665.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
+                  <Line endX="100.0" layoutX="134.0" layoutY="615.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
+                  <Line endX="100.0" layoutX="134.0" layoutY="565.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
+                  <Line endX="100.0" layoutX="134.0" layoutY="515.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
+                  <Line endX="100.0" layoutX="134.0" layoutY="465.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
+                  <Line endX="100.0" layoutX="134.0" layoutY="414.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
+                  <Line endX="100.0" layoutX="134.0" layoutY="365.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
                </children>
             </AnchorPane>
          </children>

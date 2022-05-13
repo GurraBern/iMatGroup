@@ -14,14 +14,15 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.*;
@@ -67,6 +68,26 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private TextField cvcField;
     @FXML
     private Label purchasesLabel;
+    @FXML
+    private Label kött;
+    @FXML
+    private Label fisk;
+    @FXML
+    private Label frukt;
+    @FXML
+    private Label grönsaker;
+    @FXML
+    private Label mejeri;
+    @FXML
+    private Label skafferi;
+    @FXML
+    private Label bröd;
+    @FXML
+    private Label kryddor;
+    @FXML
+    private Label dryck;
+    @FXML
+    private Label godis;
 
 
     //TODO
@@ -109,7 +130,14 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private void handleDoneAction(ActionEvent event) {
         closeAccountView();
     }
-      
+
+    @FXML
+    private void fiskAction (ActionEvent event) {
+        fisk.setTextFill(Color.WHITE);
+        fisk.setBackground(new Background(new BackgroundFill(Color.RED,   new CornerRadii(5), null)));
+    }
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -175,7 +203,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         }
     }
-
 
     /*
     private void updateMyLists(List<MyList> myLists) {
