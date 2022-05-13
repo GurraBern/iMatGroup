@@ -17,7 +17,7 @@ import java.io.IOException;
 
 /**
  *
- * @author olofthgytfr
+ * @author olof
  */
 public class IMatMini extends Application {
 
@@ -26,7 +26,7 @@ public class IMatMini extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("iMatMini.fxml"));
-        
+
         Scene scene = new Scene(root);
         
         stage.setScene(scene);

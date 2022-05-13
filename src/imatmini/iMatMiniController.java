@@ -286,4 +286,5 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
+
 }
