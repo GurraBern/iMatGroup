@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
@@ -12,11 +15,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
-    <children>
+<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
+   <children>
       <StackPane prefHeight="560.0" prefWidth="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane fx:id="accountPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+            <AnchorPane fx:id="accountPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4F4F4;">
                <children>
                   <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="289.0" prefWidth="444.0" style="-fx-background-color: #e0e0e0;">
                      <children>
@@ -43,43 +46,63 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="shopPane" prefHeight="240.0" prefWidth="720.0" style="-fx-background-color: #FFF000;">
+            <AnchorPane fx:id="shopPane" prefHeight="240.0" prefWidth="720.0" style="-fx-background-color: #F4F4F4F4;">
                <children>
-                  <AnchorPane layoutY="102.0" prefHeight="39.0" prefWidth="1189.0" style="-fx-background-color: green;" AnchorPane.rightAnchor="0.0">
+                  <AnchorPane layoutY="102.0" prefHeight="39.0" prefWidth="1189.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <Label layoutX="345.0" layoutY="4.0" onMouseClicked="#home_view" text="Hem" textFill="WHITE" AnchorPane.rightAnchor="800.0">
+                        <Label layoutX="320.0" layoutY="6.0" onMouseClicked="#home_view" text="Hem" AnchorPane.rightAnchor="825.0">
                            <font>
                               <Font size="21.0" />
                            </font>
                         </Label>
-                        <Label fx:id="erbjudanden" layoutX="417.0" layoutY="5.0" onMouseClicked="#erbjud_view" text="Erbjudanden" textFill="WHITE" AnchorPane.rightAnchor="654.0">
+                        <Label fx:id="erbjudanden" layoutX="400.0" layoutY="6.0" onMouseClicked="#erbjud_view" text="Erbjudanden" AnchorPane.rightAnchor="650.0">
                            <font>
                               <Font size="21.0" />
                            </font>
                         </Label>
-                        <Label layoutX="612.0" layoutY="4.0" onMouseClicked="#favorites_view" prefWidth="82.0" text="Favoriter" textFill="WHITE" AnchorPane.rightAnchor="495.0">
+                        <Label layoutX="480.0" layoutY="6.0" onMouseClicked="#favorites_view" prefWidth="82.0" text="Favoriter" AnchorPane.rightAnchor="475.0">
                            <font>
                               <Font size="21.0" />
                            </font>
                         </Label>
-                        <Label layoutX="787.0" layoutY="5.0" onContextMenuRequested="#myLists_view" text="Inköpslistor" textFill="WHITE" AnchorPane.rightAnchor="294.0">
+                        <Label layoutX="1051.0" layoutY="6.0" prefHeight="30.0" prefWidth="120.0" text="Mina Sidor">
                            <font>
                               <Font size="21.0" />
                            </font>
                         </Label>
+                        <Label layoutX="560.0" layoutY="6.0" onContextMenuRequested="#myLists_view" text="Inköpslistor" AnchorPane.rightAnchor="300.0">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="279.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="745.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="1003.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="590.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="384.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <effect>
+                        <InnerShadow blurType="ONE_PASS_BOX" height="10.0" radius="7.25" />
+                     </effect>
                   </AnchorPane>
                   <AnchorPane prefHeight="102.0" prefWidth="1189.0" style="-fx-background-color: #332F68;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <TextField fx:id="searchField" layoutX="357.0" layoutY="31.0" prefHeight="35.0" prefWidth="476.0" promptText="Sök vara" AnchorPane.leftAnchor="357.0" AnchorPane.rightAnchor="356.0">
+                        <TextField fx:id="searchField" cache="true" layoutX="330.0" layoutY="19.0" prefHeight="58.0" prefWidth="540.0" promptText="Sök vara" style="-fx-background-radius: 30;" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="319.0">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <Button layoutX="787.0" layoutY="38.0" mnemonicParsing="false" onAction="#handleSearchAction" text="Sök" AnchorPane.rightAnchor="366.0" />
+                        <Button layoutX="789.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleSearchAction" prefHeight="46.0" prefWidth="75.0" style="-fx-background-radius: 30;" text="Sök" AnchorPane.rightAnchor="325.0">
+                           <effect>
+                              <DropShadow blurType="ONE_PASS_BOX" height="0.0" radius="0.0" width="0.0" />
+                           </effect>
+                        </Button>
                         <Label layoutX="28.0" layoutY="-1.0" text="iMat" textFill="WHITE">
                            <font>
-                              <Font name="Segoe UI Semibold" size="70.0" />
+                              <Font name="Plantagenet Cherokee" size="70.0" />
                            </font>
                         </Label>
                         <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="960.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
@@ -90,6 +113,8 @@
                         </Label>
                         <Label fx:id="itemsLabel" layoutX="1118.0" layoutY="68.0" prefHeight="17.0" prefWidth="36.0" text="7" textFill="WHITE" AnchorPane.rightAnchor="35.0" />
                         <Label fx:id="costLabel" layoutX="997.0" layoutY="76.0" text="Kostnad: 3456.60" textFill="WHITE" AnchorPane.rightAnchor="101.0" />
+                        <Button layoutX="904.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" />
+                        <Button layoutX="906.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutY="501.0" prefHeight="59.0" prefWidth="1189.0" style="-fx-background-color: #ff6600;">
@@ -99,10 +124,8 @@
                      </children>
                   </AnchorPane>
                   <ScrollPane hbarPolicy="NEVER" layoutY="154.0" prefHeight="347.0" prefWidth="1190.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="154.0">
-                     <content>
-                        <FlowPane fx:id="productsFlowPane" prefHeight="395.0" prefWidth="1212.0" style="-fx-background-color: #FFFFFF;" vgap="4.0" />
-                     </content>
-                  </ScrollPane>
+                  <AnchorPane layoutY="501.0" prefHeight="59.0" prefWidth="1189.0" style="-fx-background-color: f4f4f4;" />
+                  <ScrollPane focusTraversable="false" layoutX="1074.0" layoutY="158.0" prefHeight="128.0" prefWidth="103.0">
                </children>
             </AnchorPane>
             <AnchorPane fx:id="cartView" onMouseClicked="#closeCart" prefHeight="562.0" prefWidth="829.0" style="-fx-background-color: rgba(0, 0, 0, 0.2);">
@@ -136,5 +159,5 @@
             </AnchorPane>
          </children>
       </StackPane>
-    </children>
+   </children>
 </AnchorPane>
