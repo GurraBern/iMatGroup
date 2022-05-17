@@ -61,161 +61,7 @@
       </AnchorPane>
       <StackPane layoutX="53.0" layoutY="169.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
          <children>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
-               <children>
-                  <Label layoutX="45.0" layoutY="22.0" text="Din varukorg" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
-                     <font>
-                        <Font size="45.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="61.0" layoutY="320.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="797.0" layoutY="322.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="884.0" layoutY="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </Button>
-                  <AnchorPane layoutX="349.0" layoutY="70.0" prefHeight="324.0" prefWidth="450.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="70.0" />
-               </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="1336.0" style="-fx-background-color: white;">
-               <children>
-                  <Label layoutX="45.0" layoutY="22.0" text="Dina uppgifter" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
-                     <font>
-                        <Font size="45.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="61.0" layoutY="320.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="797.0" layoutY="322.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="884.0" layoutY="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </Button>
-                  <AnchorPane layoutX="71.0" layoutY="70.0" prefHeight="278.0" prefWidth="550.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0">
-                     <children>
-                        <Label alignment="CENTER" layoutX="42.0" layoutY="27.0" prefHeight="63.0" prefWidth="462.0" text="Välj betalningsmetod" AnchorPane.topAnchor="15.0">
-                           <font>
-                              <Font size="50.0" />
-                           </font>
-                        </Label>
-                        <AnchorPane layoutX="19.0" layoutY="90.0" prefHeight="40.0" prefWidth="90.0" style="-fx-border-radius: 5; -fx-border-color: black;" AnchorPane.leftAnchor="100.0">
-                           <children>
-                              <RadioButton layoutX="8.0" layoutY="10.0" mnemonicParsing="false" text="KORT" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </RadioButton>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="119.0" layoutY="90.0" prefHeight="40.0" prefWidth="120.0" style="-fx-border-radius: 5; -fx-border-color: black;" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="220.0">
-                           <children>
-                              <RadioButton layoutX="8.0" layoutY="10.0" mnemonicParsing="false" text="FAKTURA" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </RadioButton>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="246.0" layoutY="90.0" prefHeight="40.0" prefWidth="100.0" style="-fx-border-radius: 5; -fx-border-color: black;" AnchorPane.rightAnchor="100.0">
-                           <children>
-                              <RadioButton layoutX="8.0" layoutY="10.0" mnemonicParsing="false" text="SWISH" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </RadioButton>
-                           </children>
-                        </AnchorPane>
-                        <TextField layoutX="165.0" layoutY="169.0" prefHeight="43.0" prefWidth="220.0" promptText="1234 5678 9012 3456" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" text="4555 4555 4555 4555" AnchorPane.topAnchor="200.0">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </TextField>
-                        <TextField layoutX="165.0" layoutY="223.0" prefHeight="43.0" prefWidth="79.0" promptText="01/01" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" text="01/01" AnchorPane.topAnchor="300.0">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </TextField>
-                        <TextField layoutX="312.0" prefHeight="43.0" prefWidth="72.0" promptText="123" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" text="123" AnchorPane.topAnchor="300.0">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </TextField>
-                        <Label layoutX="165.0" layoutY="141.0" text="Kortnummer" AnchorPane.topAnchor="172.0">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="165.0" layoutY="212.0" text="Giltigt till" AnchorPane.topAnchor="272.0">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="312.0" layoutY="251.0" text="CVC" AnchorPane.topAnchor="272.0">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="576.0" layoutY="77.0" prefHeight="266.0" prefWidth="550.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0">
-                     <children>
-                        <Label alignment="CENTER" layoutX="42.0" layoutY="27.0" text="Din adress" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="15.0">
-                           <font>
-                              <Font size="50.0" />
-                           </font>
-                        </Label>
-                        <TextField layoutX="169.0" layoutY="97.0" prefHeight="43.0" prefWidth="213.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" text="Stenvägen 7" AnchorPane.topAnchor="200.0">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </TextField>
-                        <TextField layoutX="90.0" layoutY="199.0" prefHeight="43.0" prefWidth="155.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" text="444 44" AnchorPane.topAnchor="300.0">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </TextField>
-                        <TextField layoutX="300.0" layoutY="199.0" prefHeight="43.0" prefWidth="155.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" text="Göteborg" AnchorPane.topAnchor="300.0">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </TextField>
-                        <Label layoutX="169.0" layoutY="70.0" text="Adress" AnchorPane.topAnchor="170.0">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="90.0" layoutY="172.0" text="Postnummer" AnchorPane.topAnchor="270.0">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="300.0" layoutY="172.0" text="Stad" AnchorPane.topAnchor="270.0">
-                           <font>
-                              <Font size="21.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <AnchorPane fx:id="DeliveryPage" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
                <children>
                   <AnchorPane layoutX="117.0" layoutY="138.0" prefHeight="377.0" prefWidth="533.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 25;" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="754.0" AnchorPane.topAnchor="138.0">
                      <children>
@@ -347,40 +193,40 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Button layoutX="198.0" layoutY="578.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+                  <Button fx:id="ThirdBack" layoutX="198.0" layoutY="578.0" mnemonicParsing="false" onAction="#bringInformationFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button layoutX="1150.0" layoutY="46.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                  <Button fx:id="continueShopping3" layoutX="1150.0" layoutY="46.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button layoutX="1160.0" layoutY="576.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                  <Button fx:id="ThirdNext" layoutX="1160.0" layoutY="576.0" mnemonicParsing="false" onAction="#bringControlFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
                </children></AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="1336.0" style="-fx-background-color: white;">
+            <AnchorPane fx:id="ControlPage" prefHeight="200.0" prefWidth="1336.0" style="-fx-background-color: white;">
                <children>
                   <Label layoutX="45.0" layoutY="22.0" text="Kontrollera" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
                      <font>
                         <Font size="45.0" />
                      </font>
                   </Label>
-                  <Button layoutX="61.0" layoutY="320.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+                  <Button fx:id="FourthBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" onAction="#bringDeliveryFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button layoutX="797.0" layoutY="322.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Slutför köp" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                  <Button fx:id="CompleteOrder" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#completeOrder" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Slutför köp" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button layoutX="884.0" layoutY="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                  <Button fx:id="continueShopping4" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -431,6 +277,160 @@
                         <Button layoutX="353.0" layoutY="159.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: white; -fx-border-color: #ff0000; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-radius: 5;" text="Ändra" textFill="RED" />
                      </children>
                   </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="CustomerInfo" prefHeight="200.0" prefWidth="1336.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="45.0" layoutY="22.0" text="Dina uppgifter" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="SecondBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" onAction="#bringCheckoutFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="SecondNext" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#bringDeliveryFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="continueShopping2" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane layoutX="71.0" layoutY="70.0" prefHeight="278.0" prefWidth="550.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="42.0" layoutY="27.0" prefHeight="63.0" prefWidth="462.0" text="Välj betalningsmetod" AnchorPane.topAnchor="15.0">
+                           <font>
+                              <Font size="50.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane layoutX="19.0" layoutY="90.0" prefHeight="40.0" prefWidth="90.0" style="-fx-border-radius: 5; -fx-border-color: black;" AnchorPane.leftAnchor="100.0">
+                           <children>
+                              <RadioButton layoutX="8.0" layoutY="10.0" mnemonicParsing="false" text="KORT" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="119.0" layoutY="90.0" prefHeight="40.0" prefWidth="120.0" style="-fx-border-radius: 5; -fx-border-color: black;" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="220.0">
+                           <children>
+                              <RadioButton layoutX="8.0" layoutY="10.0" mnemonicParsing="false" text="FAKTURA" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="246.0" layoutY="90.0" prefHeight="40.0" prefWidth="100.0" style="-fx-border-radius: 5; -fx-border-color: black;" AnchorPane.rightAnchor="100.0">
+                           <children>
+                              <RadioButton layoutX="8.0" layoutY="10.0" mnemonicParsing="false" text="SWISH" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </AnchorPane>
+                        <TextField layoutX="165.0" layoutY="169.0" prefHeight="43.0" prefWidth="220.0" promptText="1234 5678 9012 3456" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" text="4555 4555 4555 4555" AnchorPane.topAnchor="200.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField layoutX="165.0" layoutY="223.0" prefHeight="43.0" prefWidth="79.0" promptText="01/01" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" text="01/01" AnchorPane.topAnchor="300.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField layoutX="312.0" prefHeight="43.0" prefWidth="72.0" promptText="123" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" text="123" AnchorPane.topAnchor="300.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="165.0" layoutY="141.0" text="Kortnummer" AnchorPane.topAnchor="172.0">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="165.0" layoutY="212.0" text="Giltigt till" AnchorPane.topAnchor="272.0">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="312.0" layoutY="251.0" text="CVC" AnchorPane.topAnchor="272.0">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="576.0" layoutY="77.0" prefHeight="266.0" prefWidth="550.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="100.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="42.0" layoutY="27.0" text="Din adress" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="15.0">
+                           <font>
+                              <Font size="50.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="169.0" layoutY="97.0" prefHeight="43.0" prefWidth="213.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" text="Stenvägen 7" AnchorPane.topAnchor="200.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField layoutX="90.0" layoutY="199.0" prefHeight="43.0" prefWidth="155.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" text="444 44" AnchorPane.topAnchor="300.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField layoutX="300.0" layoutY="199.0" prefHeight="43.0" prefWidth="155.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" text="Göteborg" AnchorPane.topAnchor="300.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="169.0" layoutY="70.0" text="Adress" AnchorPane.topAnchor="170.0">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="90.0" layoutY="172.0" text="Postnummer" AnchorPane.topAnchor="270.0">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="300.0" layoutY="172.0" text="Stad" AnchorPane.topAnchor="270.0">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="CheckoutPage" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+               <children>
+                  <Label layoutX="45.0" layoutY="22.0" text="Din varukorg" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="FirstBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="FirstNext" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#bringInformationFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="continueShopping1" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane layoutX="349.0" layoutY="70.0" prefHeight="324.0" prefWidth="450.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="70.0" />
                </children>
             </AnchorPane>
          </children>
