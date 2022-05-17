@@ -14,7 +14,7 @@
    <children>
       <AnchorPane layoutY="102.0" prefHeight="39.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Label layoutX="320.0" layoutY="6.0" text="Hem" AnchorPane.rightAnchor="825.0">
+            <Label fx:id="homeNav" layoutX="320.0" layoutY="6.0" text="Hem" AnchorPane.rightAnchor="825.0">
                <font>
                   <Font size="21.0" />
                </font>
@@ -24,7 +24,7 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <Label layoutX="480.0" layoutY="6.0" prefWidth="82.0" text="Favoriter" AnchorPane.rightAnchor="475.0">
+            <Label fx:id="favoritesNav" layoutX="480.0" layoutY="6.0" prefWidth="82.0" text="Favoriter" AnchorPane.rightAnchor="475.0">
                <font>
                   <Font size="21.0" />
                </font>

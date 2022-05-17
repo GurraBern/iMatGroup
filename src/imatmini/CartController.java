@@ -8,11 +8,14 @@ package imatmini;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.Product;
 
 import java.io.IOException;
@@ -30,6 +33,7 @@ public class CartController extends AnchorPane {
     private Model model;
 
     @FXML public Label totalCost;
+    @FXML private Button toCheckout;
 
     public CartController(iMatMiniController mainController, Model model) {
 
@@ -50,4 +54,13 @@ public class CartController extends AnchorPane {
         mainController.cartPane.toBack();
     }
 
+    @FXML public void toCheckout() throws IOException {
+        Stage primaryStage = (Stage) this.getScene().getWindow();
+        primaryStage.close();
+        primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("Checkout.fxml"));
+        primaryStage.setTitle("Checkout");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+    }
 }
