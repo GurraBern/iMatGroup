@@ -9,39 +9,33 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.*;
 
 
-/**
- *
- * @author oloft
- */
 public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     @FXML
     private Label erbjudanden;
 
-    @FXML AnchorPane cartView;
+    //@FXML AnchorPane cartView;
 
     // Shopping Pane
     @FXML
-    private AnchorPane shopPane;
+    public AnchorPane shopPane;
     @FXML
     private TextField searchField;
     @FXML
@@ -93,8 +87,12 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     //TODO
     @FXML FlowPane mylistsFlowPane;
 
-    @FXML FlowPane myCartFlowPane;
+    //@FXML FlowPane myCartFlowPane;
 
+
+    @FXML private AnchorPane dynamicPane;
+    @FXML private AnchorPane navbar;
+    private Navbar navbarController;
     
     // Other variables
     private final Model model = Model.getInstance();
@@ -104,7 +102,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private void handleShowAccountAction(ActionEvent event) {
         openAccountView();
     }
-    
+
+    /*
     @FXML
     private void handleSearchAction(ActionEvent event) {
         
@@ -113,17 +112,25 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         System.out.println("# matching products: " + matches.size());
 
     }
-    
+
+     */
+
+    /*
     @FXML
     private void handleClearCartAction(ActionEvent event) {
         model.clearShoppingCart();
     }
-    
+
+     */
+
+    /*
     @FXML
     private void handleBuyItemsAction(ActionEvent event) {
         model.placeOrder();
         costLabel.setText("Köpet klart!");
     }
+
+     */
     
     // Account pane actions
      @FXML
@@ -143,15 +150,23 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         // TODO
         model.getShoppingCart().addShoppingCartListener(this);
 
+        navbarController = new Navbar(this, model);
+        dynamicPane.getChildren().add(navbarController);
+
         updateProductList(model.getProducts());
         updateBottomPanel();
-        
+
+
+
+
+
+
         setupAccountPane();
         updateCartItems();
         //TODO fixa en myList som har en shopping cart i sig!!!
         //updateMyLists(model.saveShoppingCart());
 
-    }    
+    }
     
     // Navigation
     public void openAccountView() {
@@ -166,13 +181,15 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
 
     private void updateCartItems() {
-        ShoppingCart cart = model.getShoppingCart();
+   /*     ShoppingCart cart = model.getShoppingCart();
         myCartFlowPane.getChildren().clear();
 
         for (ShoppingItem cartItem : cart.getItems()) {
             myCartFlowPane.getChildren().add(new CartProductPanel(cartItem));
         }
 
+
+    */
 /*
         private void updateBottomPanel() {
 
@@ -193,7 +210,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
 
-    private void updateProductList(List<Product> products) {
+    public void updateProductList(List<Product> products) {
 
         productsFlowPane.getChildren().clear();
 
@@ -220,11 +237,14 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
      */
     
     private void updateBottomPanel() {
-        
+
         ShoppingCart shoppingCart = model.getShoppingCart();
-        
-        itemsLabel.setText(String.valueOf(shoppingCart.getItems().size()));
-        costLabel.setText("Kostnad: " + String.format("%.2f",shoppingCart.getTotal()));
+
+        String size = String.valueOf(shoppingCart.getItems().size());
+        String totalCost = "Kostnad: " + String.format("%.2f",shoppingCart.getTotal());
+
+        navbarController.updateNavbarInformation(size, totalCost);
+
     }
     
     private void updateAccountPanel() {
@@ -275,15 +295,17 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
 
-
+/*
     @FXML public void closeCart(){
         shopPane.toFront();
-    }
+    }*/
 
 
-    @FXML public void openCart() {
+    /*@FXML public void openCart() {
         cartView.toFront();
     }
+
+     */
 
 
     @FXML
