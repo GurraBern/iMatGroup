@@ -19,7 +19,6 @@ public class CartProductPanel extends AnchorPane {
         @FXML Label productName;
         @FXML Label productAmount;
 
-
         private Model model = Model.getInstance();
         private Product product;
 
@@ -49,10 +48,7 @@ public class CartProductPanel extends AnchorPane {
             }
 
 
-
-
             productAmount.setText(String.valueOf(newAmount));
-
             productImage.setImage(model.getImage(product, kImageWidth, kImageWidth*kImageRatio));
             /*if (!product.isEcological()) {
                 ecoLabel.setText("");
@@ -63,9 +59,14 @@ public class CartProductPanel extends AnchorPane {
 
         @FXML
         private void handleAddAction(ActionEvent event) {
-            System.out.println("Add " + product.getName());
             model.addToShoppingCart(product);
+            
+
+            //
+            //Trigger change
         }
+
+
 
 
 }

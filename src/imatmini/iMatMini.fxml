@@ -15,6 +15,11 @@
    <children>
       <StackPane prefHeight="560.0" prefWidth="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
+            <AnchorPane fx:id="cartPane" prefHeight="560.0" prefWidth="334.0" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets left="1000.0" />
+               </StackPane.margin>
+            </AnchorPane>
             <AnchorPane fx:id="accountPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4F4F4;">
                <children>
                   <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="289.0" prefWidth="444.0" style="-fx-background-color: #e0e0e0;">

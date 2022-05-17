@@ -29,16 +29,16 @@ public class Navbar extends AnchorPane {
 
     @FXML public Label costLabel;
     @FXML public Label itemsLabel;
-
+    @FXML private AnchorPane cartPane;
 
     //private Model model = Model.getInstance();
 
     private iMatMiniController mainController;
     private Model model;
+    private CartController cartController;
 
 
-
-    public Navbar(iMatMiniController mainController, Model model) {
+    public Navbar(iMatMiniController mainController, CartController cartController, Model model) {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("navbar.fxml"));
         fxmlLoader.setRoot(this);
@@ -53,7 +53,9 @@ public class Navbar extends AnchorPane {
             throw new RuntimeException(exception);
         }
         this.mainController = mainController;
+        this.cartController = cartController;
         searchButton.setOnMouseClicked(mouseEvent -> handleSearchAction());
+
 
     }
 
@@ -63,21 +65,22 @@ public class Navbar extends AnchorPane {
         costLabel.setText("Köpet klart!");
     }
 
-    public void updateNavbarInformation(String size, String totalCost){
-        costLabel.setText(totalCost);
+    public void updateNavbarInformation(String size, double totalCost){
+        costLabel.setText("Kostnad: " + String.format("%.2f",totalCost));
         itemsLabel.setText(size);
+        cartController.totalCost.setText(totalCost + "kr");
+
+
     }
 
-    /*@FXML public void closeCart(){
-        cartView.toBack();
+    @FXML public void closeCart(){
+        mainController.cartPane.toBack();
     }
 
 
     @FXML public void openCart() {
-        cartView.toFront();
+        mainController.open();
     }
-
-     */
 
     @FXML
     //private void handleSearchAction(ActionEvent event) {
@@ -85,7 +88,6 @@ public class Navbar extends AnchorPane {
         List<Product> matches = model.findProducts(searchField.getText());
         mainController.updateProductList(matches);
         System.out.println("# matching products: " + matches.size());
-
     }
 
     @FXML

@@ -90,50 +90,16 @@ public class Model {
         ShoppingCart shoppingCart = iMatDataHandler.getShoppingCart();
 
         ShoppingItem item = new ShoppingItem(p);
-
-        //for (Product item : shoppingCart.getItems()) {
-
-        //}
-
-
-        Model.getInstance().getShoppingCart().addItem(item);
-        //shoppingCart.addProduct(p);
-    }
-
-    public void addSingleItem(Product product) {
-        //ny
-        System.out.println("Add " + product.getName());
-
-        int index = 0;
-        double test = 0;
-        boolean inCart = false;
-        for (ShoppingItem item: this.getShoppingCart().getItems()) {
-            if(item.getProduct().getProductId() == product.getProductId()){
-                //Already exists
-                test = (item.getAmount() + 1);
-                System.out.println("Current count===== " + test);
-                item.setAmount(test);
-                inCart = true;
+        for (ShoppingItem items : shoppingCart.getItems()) {
+            if (items.getProduct() == p) {
+                items.setAmount(items.getAmount() + 1);
+                shoppingCart.fireShoppingCartChanged(items, true);
+                return;
             }
-            else {
-                if(index >= this.getShoppingCart().getItems().size()){
-                    inCart = false;
-                }
-            }
-            index++;
         }
-        this.addToShoppingCart(product);
+        Model.getInstance().getShoppingCart().addItem(item);
 
-        //if(!inCart){
-        //}
-
-        //TODO lägg tillbaka knapp om varor är = 0 sätt opacity = 1 visa plus och minus knappar
-        //om det redan finns en produkt!
-
-        //addItemButton.setOpacity(0);
-        //addItemButton.setDisable(true);
-
-
+        //shoppingCart.addProduct(p);
     }
 
     //TODO cant remove if still zero, more work needed, basic funciton works
@@ -180,18 +146,13 @@ public class Model {
     }
 
     public void placeOrder() {
-
         iMatDataHandler.placeOrder();
-
     }
 
-    
     public int getNumberOfOrders() {
 
         return iMatDataHandler.getOrders().size();
     }
-
-
 
     public void shutDown() {
         iMatDataHandler.shutDown();
