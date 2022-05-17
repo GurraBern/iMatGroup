@@ -41,7 +41,6 @@ public class IMatMini extends Application {
 
         launch(args);
 
-        
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
             public void run() {
@@ -49,11 +48,4 @@ public class IMatMini extends Application {
         }
         }));
     }
-
-
-Test
-
-
-
-    
 }

@@ -9,51 +9,36 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.text.Text;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.*;
 
 
-/**
- *
- * @author oloft
- */
 public class iMatMiniController implements Initializable, ShoppingCartListener {
-
-    @FXML
-    private Label erbjudanden;
-
-
 
     // Shopping Pane
     @FXML
-    private AnchorPane shopPane;
-    @FXML
-    private TextField searchField;
-    @FXML
-    private Label itemsLabel;
-    @FXML
-    private Label costLabel;
+    public AnchorPane shopPane;
     @FXML
     private FlowPane productsFlowPane;
     
     // Account Pane
+    /*
     @FXML
     private AnchorPane accountPane;
-    @FXML 
-    ComboBox cardTypeCombo;
+    @FXML ComboBox cardTypeCombo;
     @FXML
     private TextField numberTextField;
     @FXML
@@ -64,66 +49,92 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private ComboBox yearCombo;
     @FXML
     private TextField cvcField;
+
+     */
     @FXML
     private Label purchasesLabel;
-
+    @FXML
+    private Label kött;
+    @FXML
+    private Label fisk;
+    @FXML
+    private Label frukt;
+    @FXML
+    private Label grönsaker;
+    @FXML
+    private Label mejeri;
+    @FXML
+    private Label skafferi;
+    @FXML
+    private Label bröd;
+    @FXML
+    private Label kryddor;
+    @FXML
+    private Label dryck;
+    @FXML
+    private Label godis;
 
     //TODO
     @FXML FlowPane mylistsFlowPane;
-
-    @FXML FlowPane myCartFlowPane;
-
+    @FXML private AnchorPane dynamicPane;
+    @FXML public AnchorPane cartPane;
+    @FXML private AnchorPane navbar;
+    private Navbar navbarController;
+    private CartController cartController;
     
     // Other variables
     private final Model model = Model.getInstance();
 
     // Shop pane actions
+    /*
     @FXML
     private void handleShowAccountAction(ActionEvent event) {
         openAccountView();
     }
-    
-    @FXML
-    private void handleSearchAction(ActionEvent event) {
-        
-        List<Product> matches = model.findProducts(searchField.getText());
-        updateProductList(matches);
-        System.out.println("# matching products: " + matches.size());
 
-    }
-    
-    @FXML
-    private void handleClearCartAction(ActionEvent event) {
-        model.clearShoppingCart();
-    }
-    
-    @FXML
-    private void handleBuyItemsAction(ActionEvent event) {
-        model.placeOrder();
-        costLabel.setText("Köpet klart!");
-    }
-    
+     */
+
     // Account pane actions
+    /*
      @FXML
     private void handleDoneAction(ActionEvent event) {
         closeAccountView();
     }
-      
+
+     */
+
+    @FXML
+    private void fiskAction (ActionEvent event) {
+        fisk.setTextFill(Color.WHITE);
+        fisk.setBackground(new Background(new BackgroundFill(Color.RED,   new CornerRadii(5), null)));
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         model.getShoppingCart().addShoppingCartListener(this);
 
+        //Setup Cart
+        cartController = new CartController(this, model);
+        cartPane.getChildren().add(cartController);
+
+        navbarController = new Navbar(this, cartController, model);
+        dynamicPane.getChildren().add(navbarController);
+
         updateProductList(model.getProducts());
         updateBottomPanel();
-        
-        setupAccountPane();
+
+        //setupAccountPane();
         updateCartItems();
         //TODO fixa en myList som har en shopping cart i sig!!!
         //updateMyLists(model.saveShoppingCart());
 
-    }    
-    
+    }
+
+    public void open(){
+         cartPane.toFront();
+    }
+/*
     // Navigation
     public void openAccountView() {
         updateAccountPanel();
@@ -133,28 +144,16 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void closeAccountView() {
         updateCreditCard();
         shopPane.toFront();
-    }
-
+    }*/
 
     private void updateCartItems() {
         ShoppingCart cart = model.getShoppingCart();
-        myCartFlowPane.getChildren().clear();
+        cartController.myCartFlowPane.getChildren().clear();
 
         for (ShoppingItem cartItem : cart.getItems()) {
-            myCartFlowPane.getChildren().add(new CartProductPanel(cartItem));
+            cartController.myCartFlowPane.getChildren().add(new CartProductPanel(cartItem));
         }
-
-/*
-        private void updateBottomPanel() {
-
-            ShoppingCart shoppingCart = model.getShoppingCart();
-
-            itemsLabel.setText(String.valueOf(shoppingCart.getItems().size()));
-            costLabel.setText("Kostnad: " + String.format("%.2f",shoppingCart.getTotal()));
-        }*/
-
     }
-
     
     // Shope pane methods
     @Override
@@ -164,7 +163,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
 
-    private void updateProductList(List<Product> products) {
+    public void updateProductList(List<Product> products) {
 
         productsFlowPane.getChildren().clear();
 
@@ -174,7 +173,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         }
     }
-
 
     /*
     private void updateMyLists(List<MyList> myLists) {
@@ -192,13 +190,17 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
      */
     
     private void updateBottomPanel() {
-        
+
         ShoppingCart shoppingCart = model.getShoppingCart();
-        
-        itemsLabel.setText(String.valueOf(shoppingCart.getItems().size()));
-        costLabel.setText("Kostnad: " + String.format("%.2f",shoppingCart.getTotal()));
+
+        String size = String.valueOf(shoppingCart.getItems().size());
+        double totalCost = shoppingCart.getTotal();
+
+        navbarController.updateNavbarInformation(size, totalCost);
+
     }
-    
+
+    /*
     private void updateAccountPanel() {
         
         CreditCard card = model.getCreditCard();
@@ -233,7 +235,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         card.setValidYear(Integer.parseInt(selectedValue));
         
         card.setVerificationCode(Integer.parseInt(cvcField.getText()));
-
     }
     
     private void setupAccountPane() {
@@ -243,47 +244,12 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         monthCombo.getItems().addAll(model.getMonths());
         
         yearCombo.getItems().addAll(model.getYears());
-        
     }
 
-
-    public void home_view() throws IOException {
-        Stage primaryStage = (Stage) erbjudanden.getScene().getWindow();
-        primaryStage.close();
-        primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("iMatMini.fxml"));
-        primaryStage.setTitle("Home");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
+    @FXML
+    public void mouseTrap(Event event){
+        event.consume();
     }
 
-    public void erbjud_view() throws IOException {
-        Stage primaryStage = (Stage) erbjudanden.getScene().getWindow();
-        primaryStage.close();
-        primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("erbjudanden.fxml"));
-        primaryStage.setTitle("Erbjudanden");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
-    }
-
-    public void favorites_view() throws IOException {
-        Stage primaryStage = (Stage) erbjudanden.getScene().getWindow();
-        primaryStage.close();
-        primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("favoriter.fxml"));
-        primaryStage.setTitle("Favoriter");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
-    }
-
-    public void myLists_view() throws IOException {
-        Stage primaryStage = (Stage) erbjudanden.getScene().getWindow();
-        primaryStage.close();
-        primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("inkoplistor.fxml"));
-        primaryStage.setTitle("Inköpslistor");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
-    }
+     */
 }

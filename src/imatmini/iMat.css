@@ -16,9 +16,33 @@
     -fx-font-size: 0.8em;
 }
 
+.dropShadow{
+    -box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 @font-face {
-    -fx-font-family: Inder;
+    -fx-font-family: "Inder";
     @import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
 }
 
 
+    @import url ("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+Label{
+    -fx-font-family: 'Pacifico', cursive;
+}
+
+.my-button {
+    width: 200px;
+    height: 200px;
+    border: none;
+    border-radius: 100px;
+    outline: none;
+    background: #b71540;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.my-button:hover {
+    background: #eb2f06;
+}

@@ -19,3 +19,4 @@
       <Label fx:id="ecoLabel" layoutX="528.0" layoutY="57.0" text="Ekologisk" />
    </children>
 </fx:root>
+
