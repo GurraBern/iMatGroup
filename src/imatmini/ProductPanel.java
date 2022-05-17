@@ -6,6 +6,8 @@
 package imatmini;
 
 import java.io.IOException;
+
+import imatmini.Model;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingCart;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 /**
@@ -26,6 +29,7 @@ public class ProductPanel extends AnchorPane {
     @FXML Label nameLabel;
     @FXML Label prizeLabel;
     @FXML Label ecoLabel;
+    @FXML Label amount;
 
 
     //TODO should change
@@ -61,46 +65,30 @@ public class ProductPanel extends AnchorPane {
         if (!product.isEcological()) {
             ecoLabel.setText("");
         }
+        setAmountOfProduct();
     }
     
     @FXML
     private void handleAddAction(ActionEvent event) {
+        model.addToShoppingCart(product);
 
-        model.addSingleItem(product);
-        /*System.out.println("Add " + product.getName());
-
-        int index = 0;
-        double test = 0;
-        boolean inCart = false;
-        for (ShoppingItem item: model.getShoppingCart().getItems()) {
-            if(item.getProduct().getProductId() == product.getProductId()){
-                //Already exists
-                test = (item.getAmount() + 1);
-                System.out.println("Current count===== " + test);
-                item.setAmount(test);
-                inCart = true;
-            }
-            else {
-                if(index >= model.getShoppingCart().getItems().size()){
-                    inCart = false;
-                }
-            }
-            index++;
-        }
-
-        if(!inCart){
-            model.addToShoppingCart(product);
-        }
+        setAmountOfProduct();
 
         //TODO lägg tillbaka knapp om varor är = 0 sätt opacity = 1 visa plus och minus knappar
         //om det redan finns en produkt!
 
         //addItemButton.setOpacity(0);
         //addItemButton.setDisable(true);
-
-         */
     }
 
+    private void setAmountOfProduct(){
+        ShoppingCart shoppingCart = model.getShoppingCart();
+        for (ShoppingItem item : shoppingCart.getItems()) {
+            if (item.getProduct() == product) {
+                amount.setText(String.valueOf( (int) item.getAmount()));
+            }
+        }
+    }
 
     @FXML
     private void handleRemoveAction(ActionEvent event) {
@@ -110,9 +98,4 @@ public class ProductPanel extends AnchorPane {
         Product pr = model.getProduct(product.getProductId());
         model.removeFromShoppingCart(pr);
     }
-
-
-
-
-
 }

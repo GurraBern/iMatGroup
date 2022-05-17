@@ -8,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -39,30 +40,36 @@
          </effect></Rectangle>
       <Circle fill="#332f68" layoutX="226.0" layoutY="340.0" radius="35.0" stroke="#5a578a" strokeType="INSIDE" />
       <Circle fill="#332f68" layoutX="61.0" layoutY="341.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Button layoutX="191.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 100; -fx-background-color: #332f68;" text="+" textFill="WHITE" AnchorPane.rightAnchor="25.5">
-         <font>
-            <Font size="37.0" />
-         </font>
-         <effect>
-            <DropShadow />
-         </effect></Button>
-      <ImageView fitHeight="54.0" fitWidth="57.0" layoutX="26.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Downloads/minus.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="26.0" layoutY="305.0" mnemonicParsing="false" onAction="#handleRemoveAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 100; -fx-background-color: #332f68;" text="-" textFill="WHITE">
-         <font>
-            <Font size="36.0" />
-         </font>
-         <effect>
-            <DropShadow />
-         </effect></Button>
-      <Label alignment="CENTER" layoutX="124.0" layoutY="327.0" prefHeight="27.0" prefWidth="41.0" styleClass="mediumText" text="2" textFill="WHITE">
-         <font>
-            <Font size="53.0" />
-         </font>
-      </Label>
+      <Pane layoutY="292.0" prefHeight="103.0" prefWidth="288.0">
+         <children>
+            <Button layoutX="189.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="78.0" prefWidth="76.0" style="-fx-background-radius: 100; -fx-background-color: #332f68;" text="+" textFill="WHITE">
+               <font>
+                  <Font size="37.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <ImageView fitHeight="54.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/minus.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="22.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleRemoveAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 100; -fx-background-color: #332f68;" text="-" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Label fx:id="amount" alignment="CENTER" layoutX="124.0" layoutY="38.0" prefHeight="27.0" prefWidth="41.0" styleClass="mediumText" text="0" textFill="WHITE">
+               <font>
+                  <Font size="53.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
    <styleClass>
       <String fx:value="productPanel" />
