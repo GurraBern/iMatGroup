@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
+<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
    <children>
       <StackPane prefHeight="560.0" prefWidth="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -23,52 +23,52 @@
                         </children>
                      </AnchorPane>
                   </ScrollPane>
-                  <Label fx:id="kött" layoutX="50.0" layoutY="270.0" prefHeight="38.0" prefWidth="185.0" style="-fx-background-color: #332f68; -fx-background-radius: 10;" text="   Kött" textFill="WHITE" AnchorPane.leftAnchor="52.0">
+                  <Label fx:id="kött" layoutX="50.0" layoutY="270.0" prefHeight="38.0" prefWidth="185.0" style="-fx-background-radius: 10;" styleClass="minknapp" stylesheets="@iMat.css" text="   Kött" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Label>
-                  <Label fx:id="skafferi" layoutX="50.0" layoutY="520.0" prefHeight="38.0" prefWidth="155.0" text="   Sakfferi" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="skafferi" layoutX="50.0" layoutY="520.0" prefHeight="38.0" prefWidth="185.0" styleClass="minknapp" stylesheets="@iMat.css" text="   Sakfferi" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Label>
-                  <Label fx:id="mejeri" layoutX="50.0" layoutY="470.0" prefHeight="38.0" prefWidth="155.0" text="   Mejeri" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="mejeri" layoutX="50.0" layoutY="470.0" prefHeight="38.0" prefWidth="185.0" styleClass="minknapp" stylesheets="@iMat.css" text="   Mejeri" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Label>
-                  <Label fx:id="grönsaker" layoutX="50.0" layoutY="420.0" prefHeight="38.0" prefWidth="185.0" text="   Grönsaker" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="grönsaker" layoutX="50.0" layoutY="420.0" prefHeight="38.0" prefWidth="185.0" styleClass="minknapp" stylesheets="@iMat.css" text="   Grönsaker" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Label>
-                  <Label fx:id="frukt" layoutX="50.0" layoutY="370.0" prefHeight="38.0" prefWidth="155.0" text="   Frukt" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="frukt" layoutX="50.0" layoutY="370.0" prefHeight="38.0" prefWidth="185.0" styleClass="minknapp" stylesheets="@iMat.css" text="   Frukt" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Label>
-                  <Label fx:id="fisk" layoutX="50.0" layoutY="320.0" onMouseClicked="#fiskAction" prefHeight="38.0" prefWidth="185.0" style="-fx-background-radius-fx-background-radius: 10;" text="   Fisk" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="fisk" layoutX="50.0" layoutY="320.0" prefHeight="38.0" prefWidth="185.0" style="-fx-background-radius-fx-background-radius: 10;" styleClass="minknapp" stylesheets="@iMat.css" text="   Fisk" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Label>
-                  <Label fx:id="godis" layoutX="50.0" layoutY="720.0" prefHeight="38.0" prefWidth="155.0" text="   Godis" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="godis" layoutX="50.0" layoutY="720.0" prefHeight="38.0" prefWidth="185.0" styleClass="minknapp" stylesheets="@iMat.css" text="   Godis" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Label>
-                  <Label fx:id="dryck" layoutX="50.0" layoutY="670.0" prefHeight="38.0" prefWidth="155.0" text="   Dryck" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="dryck" layoutX="50.0" layoutY="670.0" prefHeight="38.0" prefWidth="185.0" styleClass="minknapp" stylesheets="@iMat.css" text="   Dryck" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Label>
-                  <Label fx:id="kryddor" layoutX="50.0" layoutY="620.0" prefHeight="38.0" prefWidth="155.0" text="   Kryddor" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="kryddor" layoutX="50.0" layoutY="620.0" prefHeight="38.0" prefWidth="185.0" styleClass="minknapp" stylesheets="@iMat.css" text="   Kryddor" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Label>
-                  <Label fx:id="bröd" layoutX="50.0" layoutY="570.0" prefHeight="38.0" prefWidth="155.0" text="   Bröd" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="bröd" layoutX="50.0" layoutY="570.0" prefHeight="38.0" prefWidth="185.0" styleClass="minknapp" stylesheets="@iMat.css" text="   Bröd" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font size="35.0" />
                      </font>
