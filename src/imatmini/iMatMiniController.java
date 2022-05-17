@@ -35,10 +35,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private FlowPane productsFlowPane;
     
     // Account Pane
+    /*
     @FXML
     private AnchorPane accountPane;
-    @FXML 
-    ComboBox cardTypeCombo;
+    @FXML ComboBox cardTypeCombo;
     @FXML
     private TextField numberTextField;
     @FXML
@@ -49,6 +49,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private ComboBox yearCombo;
     @FXML
     private TextField cvcField;
+
+     */
     @FXML
     private Label purchasesLabel;
     @FXML
@@ -84,16 +86,22 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private final Model model = Model.getInstance();
 
     // Shop pane actions
+    /*
     @FXML
     private void handleShowAccountAction(ActionEvent event) {
         openAccountView();
     }
 
+     */
+
     // Account pane actions
+    /*
      @FXML
     private void handleDoneAction(ActionEvent event) {
         closeAccountView();
     }
+
+     */
 
     @FXML
     private void fiskAction (ActionEvent event) {
@@ -116,7 +124,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateProductList(model.getProducts());
         updateBottomPanel();
 
-        setupAccountPane();
+        //setupAccountPane();
         updateCartItems();
         //TODO fixa en myList som har en shopping cart i sig!!!
         //updateMyLists(model.saveShoppingCart());
@@ -126,7 +134,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void open(){
          cartPane.toFront();
     }
-
+/*
     // Navigation
     public void openAccountView() {
         updateAccountPanel();
@@ -136,7 +144,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void closeAccountView() {
         updateCreditCard();
         shopPane.toFront();
-    }
+    }*/
 
     private void updateCartItems() {
         ShoppingCart cart = model.getShoppingCart();
@@ -191,7 +199,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         navbarController.updateNavbarInformation(size, totalCost);
 
     }
-    
+
+    /*
     private void updateAccountPanel() {
         
         CreditCard card = model.getCreditCard();
@@ -241,4 +250,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void mouseTrap(Event event){
         event.consume();
     }
+
+     */
 }
