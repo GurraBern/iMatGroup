@@ -83,6 +83,11 @@
                   <Line endX="100.0" layoutX="134.0" layoutY="465.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
                   <Line endX="100.0" layoutX="134.0" layoutY="414.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
                   <Line endX="100.0" layoutX="134.0" layoutY="365.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
+                  <Label fx:id="currentTab" layoutX="52.0" layoutY="182.0" text="Home">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="dynamicPane" prefHeight="200.0" prefWidth="1189.0">
