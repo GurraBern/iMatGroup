@@ -26,6 +26,8 @@ public class Navbar extends AnchorPane {
     @FXML private TextField searchField;
     @FXML private AnchorPane cartView;
     @FXML public Button searchButton;
+    @FXML public Label homeNav;
+    @FXML public Label favoritesNav;
 
     @FXML public Label costLabel;
     @FXML public Label itemsLabel;
@@ -55,8 +57,8 @@ public class Navbar extends AnchorPane {
         this.mainController = mainController;
         this.cartController = cartController;
         searchButton.setOnMouseClicked(mouseEvent -> handleSearchAction());
-
-
+        favoritesNav.setOnMouseClicked(mouseEvent -> switchToFavorites());
+        homeNav.setOnMouseClicked(mouseEvent -> switchToHome());
     }
 
     @FXML
@@ -95,4 +97,14 @@ public class Navbar extends AnchorPane {
         model.clearShoppingCart();
     }
 
+
+    void switchToHome(){
+        mainController.currentTab.setText("Home");
+        mainController.updateProductList(model.getProducts());
+    }
+
+    void switchToFavorites(){
+        mainController.currentTab.setText("Favorites");
+        mainController.updateProductList(model.getFavorites());
+    }
 }

@@ -33,6 +33,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public AnchorPane shopPane;
     @FXML
     private FlowPane productsFlowPane;
+
+    @FXML public Label currentTab;
     
     // Account Pane
     /*
@@ -79,6 +81,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML private AnchorPane dynamicPane;
     @FXML public AnchorPane cartPane;
     @FXML private AnchorPane navbar;
+
     private Navbar navbarController;
     private CartController cartController;
     
@@ -122,6 +125,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         dynamicPane.getChildren().add(navbarController);
 
         updateProductList(model.getProducts());
+
         updateBottomPanel();
 
         //setupAccountPane();
@@ -172,6 +176,11 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
             productsFlowPane.getChildren().add(new ProductPanel(product));
 
         }
+    }
+
+
+    @FXML public void addFavorites(Product product){
+        model.addToFavorites(product);
     }
 
     /*
@@ -252,4 +261,5 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
      */
+
 }

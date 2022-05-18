@@ -48,7 +48,7 @@ public class CartProductPanel extends AnchorPane {
             }
 
 
-            productAmount.setText(String.valueOf(newAmount));
+            productAmount.setText(String.valueOf((int) newAmount));
             productImage.setImage(model.getImage(product, kImageWidth, kImageWidth*kImageRatio));
             /*if (!product.isEcological()) {
                 ecoLabel.setText("");

@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -41,6 +42,7 @@ public class CartController extends AnchorPane {
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
         this.model = model;
+
 
         try {
             fxmlLoader.load();

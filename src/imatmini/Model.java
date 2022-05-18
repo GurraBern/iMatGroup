@@ -86,6 +86,14 @@ public class Model {
         return iMatDataHandler.getFXImage(p, width, height);
     }
 
+    public void addToFavorites(Product product){
+        iMatDataHandler.addFavorite(product);
+    }
+
+    public List<Product> getFavorites(){
+        return iMatDataHandler.favorites();
+    }
+
     public void addToShoppingCart(Product p) {
         ShoppingCart shoppingCart = iMatDataHandler.getShoppingCart();
 

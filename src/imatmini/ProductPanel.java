@@ -39,6 +39,8 @@ public class ProductPanel extends AnchorPane {
     @FXML
     Button addSingleItemButton;
 
+    @FXML Button favoriteButton;
+
     private Model model = Model.getInstance();
 
     private Product product;
@@ -66,6 +68,8 @@ public class ProductPanel extends AnchorPane {
             ecoLabel.setText("");
         }
         setAmountOfProduct();
+        favoriteButton.setOnMouseClicked(mouseEvent -> addFavorites(product));
+
     }
     
     @FXML
@@ -79,6 +83,10 @@ public class ProductPanel extends AnchorPane {
 
         //addItemButton.setOpacity(0);
         //addItemButton.setDisable(true);
+    }
+
+    @FXML public void addFavorites(Product product){
+        model.addToFavorites(product);
     }
 
     private void setAmountOfProduct(){

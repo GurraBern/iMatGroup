@@ -12,7 +12,6 @@
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="316.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImage" fitHeight="40.0" fitWidth="37.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="productAmount" layoutX="129.0" layoutY="16.0" text="Amount" />
       <Label fx:id="productName" layoutX="66.0" layoutY="16.0" text="name" />
       <Pane layoutX="172.0" prefHeight="50.0" prefWidth="145.0">
          <children>
@@ -37,7 +36,7 @@
                   <DropShadow />
                </effect>
             </Button>
-            <Label fx:id="amount" alignment="CENTER" layoutX="57.0" layoutY="14.0" prefHeight="27.0" prefWidth="30.0" styleClass="mediumText" text="0">
+            <Label fx:id="productAmount" alignment="CENTER" layoutX="50.0" layoutY="14.0" prefHeight="27.0" prefWidth="43.0" styleClass="mediumText" text="0" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
