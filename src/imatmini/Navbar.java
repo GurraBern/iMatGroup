@@ -100,6 +100,7 @@ public class Navbar extends AnchorPane {
 
     void switchToHome(){
         mainController.currentTab.setText("Home");
+        mainController.currentImage.getImage();
         mainController.updateProductList(model.getProducts());
     }
 

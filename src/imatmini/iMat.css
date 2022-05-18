@@ -1,3 +1,7 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
+
 .productPanel{
     -fx-border-style: solid;
     -fx-border-color: black;
@@ -17,9 +21,16 @@
 }
 
 .dropShadow{
-    -box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    -box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
 }
 
+.searchButton {
+    -fx-focus-color: transparent;
+    -fx-background-color: #a69e9e;
+}
+.hovereffect:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 .minknapp{
     -fx-text-fill: black;
 }
@@ -27,6 +38,7 @@
     -fx-background-color: #5c588c;
     -fx-background-radius: 10;
     -fx-text-fill: white;
+    -fx-font-size: 35;
 }
 
 .minknapp:pressed{
@@ -35,14 +47,11 @@
     -fx-text-fill: white;
 }
 
-@font-face {
+.inderPog {
     -fx-font-family: "Inder";
-    @import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
 }
 
-    @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-
-Label{
+.pacifico{
     -fx-font-family: 'Pacifico', cursive;
 }
 
