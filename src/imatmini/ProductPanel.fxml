@@ -55,9 +55,9 @@
                   <Image url="@../../../../../Downloads/minus.png" />
                </image>
             </ImageView>
-            <Button layoutX="22.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleRemoveAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 100; -fx-background-color: #332f68;" text="-" textFill="WHITE">
+            <Button layoutX="22.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleRemoveAction" prefHeight="78.0" prefWidth="76.0" style="-fx-background-radius: 100; -fx-background-color: #332f68;" text="-" textFill="WHITE">
                <font>
-                  <Font size="36.0" />
+                  <Font size="37.0" />
                </font>
                <effect>
                   <DropShadow />
