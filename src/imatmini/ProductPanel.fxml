@@ -69,6 +69,11 @@
             </Label>
          </children>
       </Pane>
+      <Button fx:id="favoriteButton" layoutX="20.0" layoutY="15.0" mnemonicParsing="false" text="Favorite">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
    </children>
    <styleClass>
       <String fx:value="productPanel" />
