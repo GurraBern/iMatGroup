@@ -103,12 +103,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
      */
 
-    @FXML
-    private void fiskAction (ActionEvent event) {
-        fisk.setTextFill(Color.WHITE);
-        fisk.setBackground(new Background(new BackgroundFill(Color.RED,   new CornerRadii(5), null)));
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

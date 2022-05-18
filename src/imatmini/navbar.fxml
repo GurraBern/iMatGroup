@@ -6,11 +6,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="shopPane" prefHeight="127.0" style="-fx-background-color: blue;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="shopPane" prefHeight="127.0" style="-fx-background-color: blue;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutY="102.0" prefHeight="39.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
@@ -40,10 +41,27 @@
                </font>
             </Label>
             <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="279.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="745.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="1003.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="590.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="384.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="759.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../bilder/shopping%20list.png" />
+               </image></ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="1021.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../bilder/pofil%202.png" />
+               </image></ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="602.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../bilder/favoriter.jpeg" />
+               </image></ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="397.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../bilder/erbjudande.png" />
+               </image></ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="291.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../bilder/home.png" />
+               </image>
+            </ImageView>
          </children>
          <opaqueInsets>
             <Insets />
