@@ -154,7 +154,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
             cartController.myCartFlowPane.getChildren().add(new CartProductPanel(cartItem));
         }
     }
-    
+
     // Shope pane methods
     @Override
      public void shoppingCartChanged(CartEvent evt) {

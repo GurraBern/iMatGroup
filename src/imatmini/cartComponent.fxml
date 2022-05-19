@@ -18,6 +18,7 @@
             <Label layoutX="12.0" layoutY="60.0" prefHeight="18.0" prefWidth="52.0" text="Rabatter" textFill="#ff2828" AnchorPane.rightAnchor="282.4" />
             <Label fx:id="totalCost" layoutX="100.0" layoutY="35.0" prefHeight="18.0" prefWidth="128.0" text="200 kr" AnchorPane.rightAnchor="138.0" />
             <Label layoutX="100.0" layoutY="60.0" prefHeight="18.0" prefWidth="128.0" text="50kr" textAlignment="RIGHT" textFill="#ff2828" AnchorPane.rightAnchor="136.0" />
+            <Button layoutX="250.0" layoutY="78.0" mnemonicParsing="false" onAction="#toCheckout" text="Button" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="845.0" layoutY="1.0" prefHeight="424.0" prefWidth="354.0" style="-fx-background-color: #F9FFB5;" AnchorPane.bottomAnchor="136.0" AnchorPane.rightAnchor="-7.0" AnchorPane.topAnchor="1.0">
