@@ -28,17 +28,18 @@ public class Navbar extends AnchorPane {
     @FXML public Button searchButton;
     @FXML public Label homeNav;
     @FXML public Label favoritesNav;
+    @FXML public Label myPages;
 
     @FXML public Label costLabel;
     @FXML public Label itemsLabel;
     @FXML private AnchorPane cartPane;
+
 
     //private Model model = Model.getInstance();
 
     private iMatMiniController mainController;
     private Model model;
     private CartController cartController;
-
 
     public Navbar(iMatMiniController mainController, CartController cartController, Model model) {
 
@@ -59,6 +60,7 @@ public class Navbar extends AnchorPane {
         searchButton.setOnMouseClicked(mouseEvent -> handleSearchAction());
         favoritesNav.setOnMouseClicked(mouseEvent -> switchToFavorites());
         homeNav.setOnMouseClicked(mouseEvent -> switchToHome());
+        myPages.setOnMouseClicked(mouseEvent -> swapMyPages());
     }
 
     @FXML
@@ -107,4 +109,8 @@ public class Navbar extends AnchorPane {
         mainController.currentTab.setText("Favorites");
         mainController.updateProductList(model.getFavorites());
     }
+    @FXML void swapMyPages(){
+        mainController.myPages.toFront();
+    }
+
 }

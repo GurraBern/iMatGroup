@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="shopPane" prefHeight="127.0" style="-fx-background-color: blue;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="shopPane" prefHeight="127.0" style="-fx-background-color: blue;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutY="102.0" prefHeight="39.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
@@ -30,7 +30,7 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <Label layoutX="1051.0" layoutY="6.0" prefHeight="30.0" prefWidth="120.0" text="Mina Sidor">
+            <Label fx:id="myPages" layoutX="1051.0" layoutY="6.0" prefHeight="30.0" prefWidth="120.0" text="Mina Sidor">
                <font>
                   <Font size="21.0" />
                </font>

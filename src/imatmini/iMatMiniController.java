@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -35,7 +36,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private FlowPane productsFlowPane;
 
     @FXML public Label currentTab;
-    
+    @FXML public AnchorPane myPages;
+    @FXML private Button closeMyPages;
+
     // Account Pane
     /*
     @FXML
@@ -126,7 +129,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateCartItems();
         //TODO fixa en myList som har en shopping cart i sig!!!
         //updateMyLists(model.saveShoppingCart());
-
     }
 
     public void open(){
@@ -255,5 +257,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
      */
+
+    @FXML void closeMyPages(){
+        myPages.toBack();
+    }
+
 
 }
