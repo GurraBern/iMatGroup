@@ -2,9 +2,11 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
@@ -12,21 +14,26 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="1189.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
+<?import javafx.scene.image.Image?>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
    <children>
       <StackPane prefHeight="560.0" prefWidth="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane fx:id="cartPane" prefHeight="596.0" prefWidth="1189.0" />
             <AnchorPane fx:id="shopPane" prefHeight="638.0" prefWidth="1189.0" style="-fx-background-color: #F4F4F4;">
                <children>
-                  <ScrollPane hbarPolicy="NEVER" layoutX="311.0" layoutY="268.0" prefHeight="673.0" prefWidth="818.0" styleClass="dropShadow" stylesheets="@iMat.css" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="-175.0" AnchorPane.leftAnchor="311.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="268.0">
+                  <ScrollPane hbarPolicy="NEVER" layoutX="311.0" layoutY="268.0" prefHeight="673.0" prefWidth="878.0" style="-fx-border-color: #f4f4f4;" stylesheets="@iMat.css" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="-175.0" AnchorPane.leftAnchor="311.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="268.0">
                   <AnchorPane layoutY="501.0" prefHeight="337.0" prefWidth="801.0" style="-fx-background-color: f4f4f4;">
                         <children>
-                           <FlowPane fx:id="productsFlowPane" hgap="50.0" prefHeight="337.0" prefWidth="869.0" styleClass="dropShadow" stylesheets="@iMat.css" vgap="50.0" />
+                           <FlowPane fx:id="productsFlowPane" hgap="50.0" prefHeight="337.0" prefWidth="1381.0" styleClass="dropShadow" stylesheets="@iMat.css" vgap="50.0" />
                         </children>
                      </AnchorPane>
+                     <styleClass>
+                        <String fx:value="dropShadow" />
+                        <String fx:value="scroll-bar" />
+                     </styleClass>
                   </ScrollPane>
-                  <Label fx:id="kött" layoutX="50.0" layoutY="270.0" prefHeight="38.0" prefWidth="185.0" style="-fx-background-radius: 10;" stylesheets="@iMat.css" text="Kött" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="kött" layoutX="34.0" layoutY="270.0" prefHeight="43.0" prefWidth="201.0" style="-fx-background-radius: 10;" stylesheets="@iMat.css" text=" Kött" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -35,7 +42,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="skafferi" layoutX="50.0" layoutY="520.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Sakfferi" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="skafferi" layoutX="34.0" layoutY="520.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Skafferi" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -44,7 +51,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="mejeri" layoutX="50.0" layoutY="470.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Mejeri" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="mejeri" layoutX="34.0" layoutY="470.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Mejeri" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -53,7 +60,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="grönsaker" layoutX="50.0" layoutY="420.0" prefHeight="43.0" prefWidth="185.0" stylesheets="@iMat.css" text="Grönsaker" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="grönsaker" layoutX="34.0" layoutY="420.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Grönsaker" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -62,7 +69,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="frukt" layoutX="50.0" layoutY="370.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Frukt" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="frukt" layoutX="34.0" layoutY="370.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Frukt" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -71,7 +78,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="fisk" layoutX="50.0" layoutY="320.0" prefHeight="38.0" prefWidth="185.0" style="-fx-background-radius-fx-background-radius: 10;" stylesheets="@iMat.css" text="Fisk" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="fisk" layoutX="34.0" layoutY="320.0" prefHeight="43.0" prefWidth="201.0" style="-fx-background-radius-fx-background-radius: 10;" stylesheets="@iMat.css" text=" Fisk" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -80,7 +87,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="godis" layoutX="50.0" layoutY="720.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Godis" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="godis" layoutX="34.0" layoutY="720.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Godis" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -89,7 +96,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="dryck" layoutX="50.0" layoutY="670.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Dryck" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="dryck" layoutX="34.0" layoutY="670.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Dryck" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -98,7 +105,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="kryddor" layoutX="50.0" layoutY="620.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Kryddor" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="kryddor" layoutX="34.0" layoutY="620.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Kryddor" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -107,7 +114,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="bröd" layoutX="50.0" layoutY="570.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Bröd" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="bröd" layoutX="34.0" layoutY="570.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Bröd" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -128,7 +135,7 @@
                   <Line endX="100.0" layoutX="134.0" layoutY="365.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
                   <AnchorPane layoutX="18.0" layoutY="154.0" prefHeight="98.0" prefWidth="285.0">
                      <children>
-                        <Label fx:id="currentTab" layoutX="81.0" layoutY="17.0" prefHeight="64.0" prefWidth="136.0" styleClass="inderPog" stylesheets="@iMat.css" text="Hem">
+                        <Label fx:id="currentTab" layoutX="81.0" layoutY="17.0" prefHeight="64.0" prefWidth="203.0" styleClass="inderPog" stylesheets="@iMat.css" text="Hem">
                            <font>
                               <Font size="50.0" />
                            </font>
@@ -142,12 +149,151 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="dynamicPane" prefHeight="200.0" prefWidth="1189.0">
+            <AnchorPane fx:id="dynamicPane" prefHeight="455.0" prefWidth="1878.0">
                <StackPane.margin>
                   <Insets bottom="625.0" />
                </StackPane.margin>
             </AnchorPane>
          </children>
       </StackPane>
+      <AnchorPane id="AnchorPane" fx:id="myPages" prefHeight="1083.0" prefWidth="1921.0" style="-fx-background-color: black;">
+         <children>
+            <SplitPane dividerPositions="0.3322601416613007" layoutX="114.0" layoutY="86.0" prefHeight="884.0" prefWidth="1555.0" translateX="60.0" translateY="-10.0" AnchorPane.bottomAnchor="113.0" AnchorPane.leftAnchor="114.0" AnchorPane.rightAnchor="252.0" AnchorPane.topAnchor="86.0">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="882.0" prefWidth="556.0">
+                     <children>
+                        <ImageView fx:id="profilepic" fitHeight="150.0" fitWidth="150.0" layoutX="194.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                           </image>
+                        </ImageView>
+                        <Label fx:id="myName" alignment="CENTER" layoutX="118.0" layoutY="292.0" prefHeight="100.0" prefWidth="300.0" text="Name" textAlignment="CENTER">
+                           <font>
+                              <Font name="American Typewriter" size="40.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="mypages" layoutX="59.0" layoutY="409.0" mnemonicParsing="false" onAction="#swapToMyInfo" prefHeight="80.0" prefWidth="414.0" text="Mina uppgifter">
+                           <font>
+                              <Font size="46.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="orderhistory" layoutX="59.0" layoutY="518.0" mnemonicParsing="false" onAction="#swapToHistory" prefHeight="80.0" prefWidth="414.0" text="Min köphistorik">
+                           <font>
+                              <Font size="46.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="closeMyPages" layoutX="138.0" layoutY="658.0" mnemonicParsing="false" onAction="#closeMyPages" prefHeight="68.0" prefWidth="233.0" style="-fx-background-color: red;" text="Stäng">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="882.0" prefWidth="847.0">
+                     <children>
+                        <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="971.0" prefWidth="1337.0" AnchorPane.bottomAnchor="-94.0" AnchorPane.rightAnchor="-299.0">
+                           <children>
+                              <AnchorPane fx:id="myinfo" prefHeight="1002.0" prefWidth="1232.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <Label layoutX="40.0" layoutY="16.0" prefHeight="100.0" prefWidth="396.0" text="Mina uppgifter">
+                                       <font>
+                                          <Font size="50.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="38.0" layoutY="93.0" prefHeight="136.0" prefWidth="468.0" text="Kontaktuppgifter" AnchorPane.leftAnchor="38.0">
+                                       <font>
+                                          <Font size="55.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="67.0" layoutY="408.0" prefHeight="136.0" prefWidth="468.0" text="Adress">
+                                       <font>
+                                          <Font size="55.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="52.0" layoutY="568.0" prefHeight="136.0" prefWidth="468.0" text="Betalningsuppgifter">
+                                       <font>
+                                          <Font size="55.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="firstname" layoutX="58.0" layoutY="234.0" prefHeight="78.0" prefWidth="330.0" promptText="Förnamn" style="-fx-border-color: black; -fx-border-width: 2;">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="surname" layoutX="421.0" layoutY="233.0" prefHeight="78.0" prefWidth="330.0" promptText="Efternamn" style="-fx-border-color: black; -fx-border-width: 2;">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="mail" layoutX="61.0" layoutY="346.0" prefHeight="78.0" prefWidth="553.0" promptText="Epostadress" style="-fx-border-color: black; -fx-border-width: 2;">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="phoneNumber" layoutX="643.0" layoutY="349.0" prefHeight="78.0" prefWidth="393.0" promptText="Telefon" style="-fx-border-color: black; -fx-border-width: 2;">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="address" layoutX="97.0" layoutY="527.0" prefHeight="78.0" prefWidth="476.0" promptText="Adress" style="-fx-border-color: black; -fx-border-width: 2;">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="postcode" layoutX="596.0" layoutY="526.0" prefHeight="78.0" prefWidth="265.0" promptText="Postnummer" style="-fx-border-color: black; -fx-border-width: 2;">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="cardnumber" layoutX="81.0" layoutY="693.0" prefHeight="78.0" prefWidth="604.0" promptText="Kortnummer" style="-fx-border-color: black; -fx-border-width: 2;">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="validthru" layoutX="81.0" layoutY="792.0" prefHeight="78.0" prefWidth="290.0" promptText="Giltigt till" style="-fx-border-color: black; -fx-border-width: 2;">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="cvc" layoutX="400.0" layoutY="788.0" prefHeight="78.0" prefWidth="282.0" promptText="Säkerhetskod" style="-fx-border-color: black; -fx-border-width: 2;">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fx:id="myinfoimage" fitHeight="48.0" fitWidth="45.0" layoutX="73.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                                    </ImageView>
+                                    <Button layoutX="747.0" layoutY="779.0" mnemonicParsing="false" onAction="#saveCustomerDetails" prefHeight="84.0" prefWidth="256.0" style="-fx-background-color: green;" text="Spara ändringar">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="myorderhistory" prefHeight="1023.0" prefWidth="1296.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <Label layoutX="12.0" layoutY="9.0" prefHeight="85.0" prefWidth="392.0" text="Köphistorik">
+                                       <font>
+                                          <Font size="50.0" />
+                                       </font>
+                                    </Label>
+                                    <ScrollPane layoutX="22.0" layoutY="102.0" prefHeight="752.0" prefWidth="488.0">
+                                       <content>
+                                          <FlowPane fx:id="previousOrdersFlowpane" prefHeight="752.0" prefWidth="486.0" />
+                                       </content>
+                                    </ScrollPane>
+                                    <ScrollPane layoutX="532.0" layoutY="102.0" prefHeight="752.0" prefWidth="468.0">
+                                       <content>
+                                          <FlowPane fx:id="receiptFlowPane" prefHeight="746.0" prefWidth="462.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
