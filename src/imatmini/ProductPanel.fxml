@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -35,7 +36,10 @@
       <Text layoutX="131.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="mediumText" text="kr" wrappingWidth="25.472412109375" />
       <Rectangle arcHeight="1000.0" arcWidth="72.0" fill="#6e6a9e" height="70.0" layoutX="26.0" layoutY="305.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="dropShadow" width="237.0">
          <effect>
-            <DropShadow height="12.16" offsetY="2.0" radius="7.789999999999999" />
+            <DropShadow blurType="ONE_PASS_BOX" height="16.16" offsetX="2.0" offsetY="5.0" radius="11.6175" width="32.31">
+               <color>
+                  <Color red="0.5131579041481018" green="0.5131579041481018" blue="0.5131579041481018" />
+               </color></DropShadow>
          </effect></Rectangle>
       <Circle fill="#332f68" layoutX="226.0" layoutY="340.0" radius="35.0" stroke="#5a578a" strokeType="INSIDE" />
       <Circle fill="#332f68" layoutX="61.0" layoutY="341.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
@@ -45,9 +49,6 @@
                <font>
                   <Font size="37.0" />
                </font>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" height="12.0" offsetY="2.0" radius="7.75" />
-               </effect>
             </Button>
             <ImageView fitHeight="54.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -58,9 +59,6 @@
                <font>
                   <Font size="37.0" />
                </font>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" height="12.0" offsetY="2.0" radius="7.75" />
-               </effect>
             </Button>
             <Label fx:id="amount" alignment="CENTER" layoutX="124.0" layoutY="38.0" prefHeight="27.0" prefWidth="41.0" styleClass="mediumText" text="0" textFill="WHITE">
                <font>
@@ -77,6 +75,6 @@
    </children>
    <styleClass>
       <String fx:value="productPanel" />
-      <String fx:value="shadow" />
+      <String fx:value="dropShadow" />
    </styleClass>
 </fx:root>

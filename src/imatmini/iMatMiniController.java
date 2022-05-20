@@ -26,6 +26,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.*;
 
+import javax.swing.text.html.ImageView;
+
 
 public class iMatMiniController implements Initializable, ShoppingCartListener {
 
