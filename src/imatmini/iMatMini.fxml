@@ -19,14 +19,18 @@
             <AnchorPane fx:id="cartPane" prefHeight="596.0" prefWidth="1189.0" />
             <AnchorPane fx:id="shopPane" prefHeight="638.0" prefWidth="1189.0" style="-fx-background-color: #F4F4F4;">
                <children>
-                  <ScrollPane hbarPolicy="NEVER" layoutX="311.0" layoutY="268.0" prefHeight="673.0" prefWidth="818.0" styleClass="dropShadow" stylesheets="@iMat.css" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="-175.0" AnchorPane.leftAnchor="311.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="268.0">
+                  <ScrollPane hbarPolicy="NEVER" layoutX="311.0" layoutY="268.0" prefHeight="673.0" prefWidth="878.0" style="-fx-border-color: #f4f4f4;" stylesheets="@iMat.css" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="-175.0" AnchorPane.leftAnchor="311.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="268.0">
                   <AnchorPane layoutY="501.0" prefHeight="337.0" prefWidth="801.0" style="-fx-background-color: f4f4f4;">
                         <children>
-                           <FlowPane fx:id="productsFlowPane" hgap="50.0" prefHeight="337.0" prefWidth="869.0" styleClass="dropShadow" stylesheets="@iMat.css" vgap="50.0" />
+                           <FlowPane fx:id="productsFlowPane" hgap="50.0" prefHeight="337.0" prefWidth="1381.0" styleClass="dropShadow" stylesheets="@iMat.css" vgap="50.0" />
                         </children>
                      </AnchorPane>
+                     <styleClass>
+                        <String fx:value="dropShadow" />
+                        <String fx:value="scroll-bar" />
+                     </styleClass>
                   </ScrollPane>
-                  <Label fx:id="kött" layoutX="50.0" layoutY="270.0" prefHeight="38.0" prefWidth="185.0" style="-fx-background-radius: 10;" stylesheets="@iMat.css" text="Kött" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="kött" layoutX="34.0" layoutY="270.0" prefHeight="43.0" prefWidth="201.0" style="-fx-background-radius: 10;" stylesheets="@iMat.css" text=" Kött" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -35,7 +39,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="skafferi" layoutX="50.0" layoutY="520.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Sakfferi" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="skafferi" layoutX="34.0" layoutY="520.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Skafferi" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -44,7 +48,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="mejeri" layoutX="50.0" layoutY="470.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Mejeri" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="mejeri" layoutX="34.0" layoutY="470.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Mejeri" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -53,7 +57,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="grönsaker" layoutX="50.0" layoutY="420.0" prefHeight="43.0" prefWidth="185.0" stylesheets="@iMat.css" text="Grönsaker" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="grönsaker" layoutX="34.0" layoutY="420.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Grönsaker" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -62,7 +66,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="frukt" layoutX="50.0" layoutY="370.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Frukt" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="frukt" layoutX="34.0" layoutY="370.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Frukt" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -71,7 +75,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="fisk" layoutX="50.0" layoutY="320.0" prefHeight="38.0" prefWidth="185.0" style="-fx-background-radius-fx-background-radius: 10;" stylesheets="@iMat.css" text="Fisk" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="fisk" layoutX="34.0" layoutY="320.0" prefHeight="43.0" prefWidth="201.0" style="-fx-background-radius-fx-background-radius: 10;" stylesheets="@iMat.css" text=" Fisk" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -80,7 +84,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="godis" layoutX="50.0" layoutY="720.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Godis" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="godis" layoutX="34.0" layoutY="720.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Godis" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -89,7 +93,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="dryck" layoutX="50.0" layoutY="670.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Dryck" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="dryck" layoutX="34.0" layoutY="670.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Dryck" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -98,7 +102,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="kryddor" layoutX="50.0" layoutY="620.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Kryddor" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="kryddor" layoutX="34.0" layoutY="620.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Kryddor" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -107,7 +111,7 @@
                         <String fx:value="inderPog" />
                      </styleClass>
                   </Label>
-                  <Label fx:id="bröd" layoutX="50.0" layoutY="570.0" prefHeight="38.0" prefWidth="185.0" stylesheets="@iMat.css" text="Bröd" AnchorPane.leftAnchor="50.0">
+                  <Label fx:id="bröd" layoutX="34.0" layoutY="570.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Bröd" AnchorPane.leftAnchor="34.0">
                      <font>
                         <Font size="35.0" />
                      </font>
@@ -128,7 +132,7 @@
                   <Line endX="100.0" layoutX="134.0" layoutY="365.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
                   <AnchorPane layoutX="18.0" layoutY="154.0" prefHeight="98.0" prefWidth="285.0">
                      <children>
-                        <Label fx:id="currentTab" layoutX="81.0" layoutY="17.0" prefHeight="64.0" prefWidth="136.0" styleClass="inderPog" stylesheets="@iMat.css" text="Hem">
+                        <Label fx:id="currentTab" layoutX="81.0" layoutY="17.0" prefHeight="64.0" prefWidth="203.0" styleClass="inderPog" stylesheets="@iMat.css" text="Hem">
                            <font>
                               <Font size="50.0" />
                            </font>

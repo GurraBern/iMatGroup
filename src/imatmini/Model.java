@@ -90,6 +90,10 @@ public class Model {
         iMatDataHandler.addFavorite(product);
     }
 
+    public void removeFromFavorites(Product product){
+        iMatDataHandler.removeFavorite(product);
+    }
+
     public List<Product> getFavorites(){
         return iMatDataHandler.favorites();
     }
@@ -160,6 +164,10 @@ public class Model {
     public int getNumberOfOrders() {
 
         return iMatDataHandler.getOrders().size();
+    }
+
+    public boolean isFavorite (Product f) {
+        return iMatDataHandler.isFavorite(f);
     }
 
     public void shutDown() {
