@@ -35,6 +35,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML public AnchorPane shopPane;
     @FXML private FlowPane productsFlowPane;
     @FXML public Label currentTab;
+    @FXML public ImageView currentImage;
     @FXML public AnchorPane myPages;
 
     @FXML public AnchorPane myorderhistory;
