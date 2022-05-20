@@ -13,11 +13,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingCart;
 import se.chalmers.cse.dat216.project.ShoppingItem;
+
+import javax.swing.*;
 
 /**
  *
@@ -25,11 +30,16 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
  */
 public class ProductPanel extends AnchorPane {
 
-    @FXML ImageView imageView;
-    @FXML Label nameLabel;
-    @FXML Label prizeLabel;
-    @FXML Label ecoLabel;
-    @FXML Label amount;
+    @FXML
+    ImageView imageView;
+    @FXML
+    Label nameLabel;
+    @FXML
+    Label prizeLabel;
+    @FXML
+    Label ecoLabel;
+    @FXML
+    Label amount;
 
 
     //TODO should change
@@ -39,17 +49,19 @@ public class ProductPanel extends AnchorPane {
     @FXML
     Button addSingleItemButton;
 
-    @FXML Button favoriteButton;
+    @FXML
+    ToggleButton favoriteButton;
 
     private Model model = Model.getInstance();
 
     private Product product;
-    
+
+
     private final static double kImageWidth = 100.0;
     private final static double kImageRatio = 0.75;
 
     public ProductPanel(Product product) {
-        
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ProductPanel.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -63,15 +75,16 @@ public class ProductPanel extends AnchorPane {
         this.product = product;
         nameLabel.setText(product.getName());
         prizeLabel.setText(String.format("%.2f", product.getPrice()) + " " + product.getUnit());
-        imageView.setImage(model.getImage(product, kImageWidth, kImageWidth*kImageRatio));
+        imageView.setImage(model.getImage(product, kImageWidth, kImageWidth * kImageRatio));
         if (!product.isEcological()) {
             ecoLabel.setText("");
         }
         setAmountOfProduct();
-        favoriteButton.setOnMouseClicked(mouseEvent -> addFavorites(product));
-
+            favoriteButton.setOnMouseClicked(mouseEvent -> addFavorites(product));
+          //  favoriteButton.setOnMouseClicked(mouseEvent -> removeFavorite(product));
+        checkFavorite(product);
     }
-    
+
     @FXML
     private void handleAddAction(ActionEvent event) {
         model.addToShoppingCart(product);
@@ -85,15 +98,43 @@ public class ProductPanel extends AnchorPane {
         //addItemButton.setDisable(true);
     }
 
-    @FXML public void addFavorites(Product product){
-        model.addToFavorites(product);
+    @FXML
+    public void addFavorites(Product product) {
+        if (model.isFavorite(product)) {
+            model.removeFromFavorites(product);
+            favoriteButton.getStyleClass().remove("like");
+            favoriteButton.getStyleClass().add("hearth");
+        }
+        else {
+
+            model.addToFavorites(product);
+            favoriteButton.getStyleClass().remove("hearth");
+            favoriteButton.getStyleClass().add("like");
+        }
     }
 
-    private void setAmountOfProduct(){
+    public void checkFavorite(Product product) {
+        if (!model.isFavorite(product)) {
+            favoriteButton.getStyleClass().remove("like");
+            favoriteButton.getStyleClass().add("hearth");
+        }
+        else {
+            favoriteButton.getStyleClass().remove("hearth");
+            favoriteButton.getStyleClass().add("like");
+        }
+    }
+
+    @FXML
+    public void removeFavorite(Product product) {
+        model.removeFromFavorites(product);
+        favoriteButton.getStyleClass().add("hearth");
+    }
+
+    private void setAmountOfProduct() {
         ShoppingCart shoppingCart = model.getShoppingCart();
         for (ShoppingItem item : shoppingCart.getItems()) {
             if (item.getProduct() == product) {
-                amount.setText(String.valueOf( (int) item.getAmount()));
+                amount.setText(String.valueOf((int) item.getAmount()));
             }
         }
     }
@@ -106,4 +147,9 @@ public class ProductPanel extends AnchorPane {
         Product pr = model.getProduct(product.getProductId());
         model.removeFromShoppingCart(pr);
     }
+
 }
+
+
+
+
