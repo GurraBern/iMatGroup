@@ -35,7 +35,7 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="1042.0" layoutY="6.0" prefHeight="42.0" prefWidth="129.0" styleClass="inderPog" stylesheets="@iMat.css" text="Mina Sidor">
+            <Label fx:id="myPages" layoutX="1051.0" layoutY="6.0" prefHeight="30.0" prefWidth="120.0" text="Mina Sidor">
                <font>
                   <Font size="21.0" />
                </font>
