@@ -124,6 +124,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         }
     }
 
+    // Shope pane methods
+
     public void drawReceipt(Order order){
 
         List<ShoppingItem> items = order.getItems();

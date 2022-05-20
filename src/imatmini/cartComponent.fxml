@@ -16,10 +16,10 @@
             <Line endX="332.0" endY="16.0" layoutY="-4.0" startX="17.0" startY="16.0" />
             <Label layoutX="12.0" layoutY="24.0" prefHeight="10.0" prefWidth="52.0" text="Summa" AnchorPane.rightAnchor="282.4" />
             <Label layoutX="12.0" layoutY="35.0" prefHeight="18.0" prefWidth="52.0" text="Varor" AnchorPane.rightAnchor="282.4" />
-            <Label layoutX="151.0" layoutY="27.0" prefHeight="34.0" prefWidth="52.0" text="Rabatter" textFill="#ff2828" AnchorPane.rightAnchor="151.0" />
-            <Label fx:id="totalCost" layoutX="87.0" layoutY="35.0" prefHeight="18.0" prefWidth="128.0" text="200 kr" AnchorPane.rightAnchor="139.0" />
-            <Label layoutX="215.0" layoutY="35.0" prefHeight="18.0" prefWidth="128.0" text="50kr" textAlignment="RIGHT" textFill="#ff2828" AnchorPane.rightAnchor="11.0" />
-            <Button layoutX="236.0" layoutY="61.0" mnemonicParsing="false" onAction="#toCheckout" prefHeight="34.0" prefWidth="101.0" stylesheets="@iMat.css" text="Betala" />
+            <Label layoutX="12.0" layoutY="60.0" prefHeight="18.0" prefWidth="52.0" text="Rabatter" textFill="#ff2828" AnchorPane.rightAnchor="282.4" />
+            <Label fx:id="totalCost" layoutX="100.0" layoutY="35.0" prefHeight="18.0" prefWidth="128.0" text="200 kr" AnchorPane.rightAnchor="138.0" />
+            <Label layoutX="100.0" layoutY="60.0" prefHeight="18.0" prefWidth="128.0" text="50kr" textAlignment="RIGHT" textFill="#ff2828" AnchorPane.rightAnchor="136.0" />
+            <Button layoutX="250.0" layoutY="78.0" mnemonicParsing="false" onAction="#toCheckout" text="Button" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="424.0" prefWidth="354.0" style="-fx-background-color: #332f68;" AnchorPane.bottomAnchor="137.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">

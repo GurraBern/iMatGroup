@@ -18,22 +18,22 @@
                   <Font size="70.0" />
                </font>
             </Label>
-            <Label layoutX="885.0" layoutY="29.0" text="Kontrollera" textFill="WHITE" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+            <Label fx:id="navControl" layoutX="885.0" layoutY="29.0" text="Kontrollera" textFill="WHITE" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="694.0" layoutY="27.0" text="Leverans" textFill="WHITE" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="30.0">
+            <Label fx:id="navDelivery" layoutX="694.0" layoutY="27.0" text="Leverans" textFill="WHITE" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="30.0">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="566.0" layoutY="27.0" text="Dina uppgifter" textFill="WHITE" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="30.0">
+            <Label fx:id="navInfo" layoutX="566.0" layoutY="27.0" text="Dina uppgifter" textFill="WHITE" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="30.0">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="328.0" layoutY="30.0" text="Varukorg" textFill="#ff7700" AnchorPane.rightAnchor="510.0" AnchorPane.topAnchor="30.0">
+            <Label fx:id="navCheckout" layoutX="328.0" layoutY="30.0" text="Varukorg" textFill="WHITE" underline="true" AnchorPane.rightAnchor="510.0" AnchorPane.topAnchor="30.0">
                <font>
                   <Font size="25.0" />
                </font>
@@ -53,10 +53,6 @@
                   <Font size="32.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="352.0" layoutY="60.0" prefHeight="4.0" prefWidth="96.0" style="-fx-background-color: #ff7700;" AnchorPane.rightAnchor="510.0" AnchorPane.topAnchor="60.0" />
-            <AnchorPane layoutX="600.0" layoutY="70.0" prefHeight="4.0" prefWidth="147.0" style="-fx-background-color: #ff7700;" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="60.0" />
-            <AnchorPane layoutX="610.0" layoutY="80.0" prefHeight="4.0" prefWidth="95.0" style="-fx-background-color: #ff7700;" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="60.0" />
-            <AnchorPane layoutX="610.0" layoutY="80.0" prefHeight="4.0" prefWidth="112.0" style="-fx-background-color: #ff7700;" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="60.0" />
          </children>
       </AnchorPane>
       <StackPane layoutX="53.0" layoutY="169.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
@@ -415,7 +411,7 @@
                         <Font size="45.0" />
                      </font>
                   </Label>
-                  <Button fx:id="FirstBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+                  <Button fx:id="FirstBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -425,7 +421,7 @@
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="continueShopping1" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                  <Button fx:id="continueShopping1" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
