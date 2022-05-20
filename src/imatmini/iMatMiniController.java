@@ -30,60 +30,53 @@ import se.chalmers.cse.dat216.project.*;
 public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     // Shopping Pane
-    @FXML
-    public AnchorPane shopPane;
-    @FXML
-    private FlowPane productsFlowPane;
-
+    @FXML public AnchorPane shopPane;
+    @FXML private FlowPane productsFlowPane;
     @FXML public Label currentTab;
     @FXML public AnchorPane myPages;
-    @FXML private Button closeMyPages;
 
-    // Account Pane
-    /*
-    @FXML
-    private AnchorPane accountPane;
-    @FXML ComboBox cardTypeCombo;
-    @FXML
-    private TextField numberTextField;
-    @FXML
-    private TextField nameTextField;
-    @FXML 
-    private ComboBox monthCombo;
-    @FXML
-    private ComboBox yearCombo;
-    @FXML
-    private TextField cvcField;
+    @FXML public AnchorPane myorderhistory;
+    @FXML public AnchorPane myinfo;
 
-     */
-    @FXML
-    private Label purchasesLabel;
-    @FXML
-    private Label kött;
-    @FXML
-    private Label fisk;
-    @FXML
-    private Label frukt;
-    @FXML
-    private Label grönsaker;
-    @FXML
-    private Label mejeri;
-    @FXML
-    private Label skafferi;
-    @FXML
-    private Label bröd;
-    @FXML
-    private Label kryddor;
-    @FXML
-    private Label dryck;
-    @FXML
-    private Label godis;
+
+    @FXML public FlowPane previousOrdersFlowpane;
+    @FXML public FlowPane receiptFlowPane;
+
+    @FXML public Button closeMyPages;
+    @FXML private Label purchasesLabel;
+
+
+    //Categories
+    @FXML private Label kött;
+    @FXML private Label fisk;
+    @FXML private Label frukt;
+    @FXML private Label grönsaker;
+    @FXML private Label mejeri;
+    @FXML private Label skafferi;
+    @FXML private Label bröd;
+    @FXML private Label kryddor;
+    @FXML private Label dryck;
+    @FXML private Label godis;
+
+
+    //My Pages
+    @FXML TextField firstname;
+    @FXML TextField surname;
+    @FXML TextField mail;
+    @FXML TextField phoneNumber;
+    @FXML TextField address;
+    @FXML TextField postcode;
+    @FXML TextField cardnumber;
+    @FXML TextField validthru;
+    @FXML TextField cvc;
+
+    @FXML Label myName;
 
     //TODO
     @FXML FlowPane mylistsFlowPane;
     @FXML private AnchorPane dynamicPane;
     @FXML public AnchorPane cartPane;
-    @FXML private AnchorPane navbar;
+    //@FXML private AnchorPane navbar;
 
     private Navbar navbarController;
     private CartController cartController;
@@ -91,27 +84,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     // Other variables
     private final Model model = Model.getInstance();
 
-    // Shop pane actions
-    /*
-    @FXML
-    private void handleShowAccountAction(ActionEvent event) {
-        openAccountView();
-    }
-
-     */
-
-    // Account pane actions
-    /*
-     @FXML
-    private void handleDoneAction(ActionEvent event) {
-        closeAccountView();
-    }
-
-     */
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        //presetsAccount();
+        setAccountLabels();
         model.getShoppingCart().addShoppingCartListener(this);
 
         //Setup Cart
@@ -129,22 +105,12 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateCartItems();
         //TODO fixa en myList som har en shopping cart i sig!!!
         //updateMyLists(model.saveShoppingCart());
+
     }
 
     public void open(){
          cartPane.toFront();
     }
-/*
-    // Navigation
-    public void openAccountView() {
-        updateAccountPanel();
-        accountPane.toFront();
-    }
-
-    public void closeAccountView() {
-        updateCreditCard();
-        shopPane.toFront();
-    }*/
 
     private void updateCartItems() {
         ShoppingCart cart = model.getShoppingCart();
@@ -154,14 +120,46 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
             cartController.myCartFlowPane.getChildren().add(new CartProductPanel(cartItem));
         }
     }
+
+    public void drawReceipt(Order order){
+
+        List<ShoppingItem> items = order.getItems();
+
+
+        receiptFlowPane.getChildren().clear();
+
+        for (ShoppingItem item : items) {
+            receiptFlowPane.getChildren().add(new ReceiptOverview(item));
+        }
+/*
+        List<ShoppingItem> newList = new ;
+
+
+
+        for (ShoppingItem shoppingItem : order.getItems()) {
+            if (shoppingItem.getProduct() == p) {
+                shoppingItem.setAmount(items.getAmount() + 1);
+
+            }
+        }*/
+    }
+
+
+    private void updateHistoryItems() {
+        List<Order> orders = model.getOrders();
+        previousOrdersFlowpane.getChildren().clear();
+
+        for (int i = orders.size(); i-- > 0; ) {
+            previousOrdersFlowpane.getChildren().add(new OrderItemPanel(this, orders.get(i)));
+        }
+    }
     
-    // Shope pane methods
+    // Shop pane methods
     @Override
      public void shoppingCartChanged(CartEvent evt) {
         updateBottomPanel();
         updateCartItems();
     }
-
 
     public void updateProductList(List<Product> products) {
 
@@ -178,21 +176,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML public void addFavorites(Product product){
         model.addToFavorites(product);
     }
-
-    /*
-    private void updateMyLists(List<MyList> myLists) {
-
-        saveShoppingCart
-        mylistsFlowPane.getChildren().clear();
-
-        for (MyList list : myLists) {
-
-            productsFlowPane.getChildren().add(new ListPanel(list));
-        }
-
-    }
-
-     */
     
     private void updateBottomPanel() {
 
@@ -205,62 +188,62 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     }
 
-    /*
-    private void updateAccountPanel() {
-        
-        CreditCard card = model.getCreditCard();
-        
-        numberTextField.setText(card.getCardNumber());
-        nameTextField.setText(card.getHoldersName());
-        
-        cardTypeCombo.getSelectionModel().select(card.getCardType());
-        monthCombo.getSelectionModel().select(""+card.getValidMonth());
-        yearCombo.getSelectionModel().select(""+card.getValidYear());
-
-        cvcField.setText(""+card.getVerificationCode());
-        
-        purchasesLabel.setText(model.getNumberOfOrders()+ " tidigare inköp hos iMat");
-        
-    }
-    
-    private void updateCreditCard() {
-        
-        CreditCard card = model.getCreditCard();
-        
-        card.setCardNumber(numberTextField.getText());
-        card.setHoldersName(nameTextField.getText());
-        
-        String selectedValue = (String) cardTypeCombo.getSelectionModel().getSelectedItem();
-        card.setCardType(selectedValue);
-        
-        selectedValue = (String) monthCombo.getSelectionModel().getSelectedItem();
-        card.setValidMonth(Integer.parseInt(selectedValue));
-        
-        selectedValue = (String) yearCombo.getSelectionModel().getSelectedItem();
-        card.setValidYear(Integer.parseInt(selectedValue));
-        
-        card.setVerificationCode(Integer.parseInt(cvcField.getText()));
-    }
-    
-    private void setupAccountPane() {
-                
-        cardTypeCombo.getItems().addAll(model.getCardTypes());
-        
-        monthCombo.getItems().addAll(model.getMonths());
-        
-        yearCombo.getItems().addAll(model.getYears());
-    }
-
-    @FXML
-    public void mouseTrap(Event event){
-        event.consume();
-    }
-
-     */
-
     @FXML void closeMyPages(){
+        myorderhistory.toBack();
+        myinfo.toFront();
         myPages.toBack();
     }
 
+    //TODO kanske inte behövs
+    private void presetsAccount(){
+        model.getCustomer().setFirstName("Göran");
+        model.getCustomer().setLastName("Svensson");
+        model.getCustomer().setEmail("göran.svensson@gmail.com");
+        model.getCustomer().setAddress("Bråkmakargatan 47");
+        model.getCustomer().setPhoneNumber("073411337");
+        model.getCustomer().setMobilePhoneNumber("0760300300303");
+        model.getCustomer().setPostAddress("Bråkmakargatan 47");
+        model.getCustomer().setPostCode("44333");
+        model.getCreditCard().setCardNumber("4444 1111 3333 4444");
+        model.getCreditCard().setVerificationCode(123);
+    }
 
+    public void setAccountLabels(){
+        myName.setText(model.getCustomer().getFirstName() + " " + model.getCustomer().getLastName());
+        firstname.setText(model.getCustomer().getFirstName());
+        surname.setText(model.getCustomer().getLastName());
+        mail.setText(model.getCustomer().getEmail());
+        phoneNumber.setText(model.getCustomer().getPhoneNumber());
+        address.setText(model.getCustomer().getAddress());
+        postcode.setText(model.getCustomer().getPostCode());
+        cardnumber.setText(model.getCreditCard().getCardNumber());
+        validthru.setText(model.getCreditCard().getValidYear() + "/" + model.getCreditCard().getValidMonth());
+        cvc.setText(String.valueOf(model.getCreditCard().getVerificationCode()));
+    }
+
+    @FXML private void saveCustomerDetails(){
+        model.getCustomer().setFirstName(firstname.getText());
+        model.getCustomer().setLastName(surname.getText());
+        model.getCustomer().setEmail(mail.getText());
+        model.getCustomer().setPhoneNumber(phoneNumber.getText());
+        model.getCustomer().setAddress(address.getText());
+        model.getCustomer().setPostCode(postcode.getText());
+        model.getCreditCard().setCardNumber(cardnumber.getText());
+
+        //TODO split
+        //card.setValidYear(card.getText());
+        model.getCreditCard().setValidMonth(Integer.parseInt(validthru.getText()));
+        model.getCreditCard().setVerificationCode(Integer.parseInt(cvc.getText()));
+
+        setAccountLabels();
+    }
+
+    @FXML void swapToMyInfo(){
+        myinfo.toFront();
+    }
+
+    @FXML void swapToHistory(){
+        updateHistoryItems();
+        myorderhistory.toFront();
+    }
 }

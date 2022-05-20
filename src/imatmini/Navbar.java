@@ -61,6 +61,7 @@ public class Navbar extends AnchorPane {
         favoritesNav.setOnMouseClicked(mouseEvent -> switchToFavorites());
         homeNav.setOnMouseClicked(mouseEvent -> switchToHome());
         myPages.setOnMouseClicked(mouseEvent -> swapMyPages());
+        mainController.closeMyPages.setOnMouseClicked(mouseEvent -> swapBack());
     }
 
     @FXML
@@ -110,7 +111,10 @@ public class Navbar extends AnchorPane {
         mainController.updateProductList(model.getFavorites());
     }
     @FXML void swapMyPages(){
+        mainController.setAccountLabels();
         mainController.myPages.toFront();
     }
-
+    @FXML void swapBack() {
+        mainController.myPages.toBack();
+    }
 }

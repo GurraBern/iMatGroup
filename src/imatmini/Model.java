@@ -16,12 +16,7 @@ import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
-import se.chalmers.cse.dat216.project.CreditCard;
-import se.chalmers.cse.dat216.project.Customer;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 
 /**
@@ -59,7 +54,6 @@ public class Model {
     private void init() {
 
         iMatDataHandler = IMatDataHandler.getInstance();
-
     }
 
     public void saveShoppingCart(ShoppingCart shoppingCart){
@@ -160,6 +154,11 @@ public class Model {
     public int getNumberOfOrders() {
 
         return iMatDataHandler.getOrders().size();
+    }
+
+    public List<Order> getOrders() {
+
+        return iMatDataHandler.getOrders();
     }
 
     public void shutDown() {
