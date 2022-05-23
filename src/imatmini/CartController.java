@@ -8,6 +8,7 @@ package imatmini;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,6 +19,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.User;
 
 import java.io.IOException;
 import java.util.List;
@@ -43,7 +45,6 @@ public class CartController extends AnchorPane {
         fxmlLoader.setController(this);
         this.model = model;
 
-
         try {
             fxmlLoader.load();
         } catch (IOException exception) {
@@ -57,12 +58,23 @@ public class CartController extends AnchorPane {
     }
 
     @FXML public void toCheckout() throws IOException {
-        Stage primaryStage = (Stage) this.getScene().getWindow();
+       mainController.checkoutPane.toFront();
+       mainController.updateCartItems();
+       /* Stage primaryStage = (Stage) this.getScene().getWindow();
         primaryStage.close();
         primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("Checkout.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("Checkout.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Checkout.fxml"));
+
+        Parent root = loader.load();
+        loader.getController();
+
         primaryStage.setTitle("Checkout");
         primaryStage.setScene(new Scene(root));
-        primaryStage.show();
+        primaryStage.show();*/
+
     }
+
+
+
 }

@@ -3,13 +3,15 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="797.0" prefWidth="1404.0" xmlns="http://javafx.com/javafx/17">
+<fx:root fx:id="checkoutPane" prefHeight="797.0" prefWidth="1404.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="170.0" layoutY="59.0" prefHeight="102.0" prefWidth="100.0" style="-fx-background-color: #332f68;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -189,17 +191,17 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Button fx:id="ThirdBack" layoutX="198.0" layoutY="578.0" mnemonicParsing="false" onAction="#bringInformationFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+                  <Button fx:id="ThirdBack" layoutX="198.0" layoutY="578.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="continueShopping3" layoutX="1150.0" layoutY="46.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                  <Button fx:id="continueShopping3" layoutX="1150.0" layoutY="46.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="ThirdNext" layoutX="1160.0" layoutY="576.0" mnemonicParsing="false" onAction="#bringControlFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                  <Button fx:id="ThirdNext" layoutX="1160.0" layoutY="576.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -212,17 +214,17 @@
                         <Font size="45.0" />
                      </font>
                   </Label>
-                  <Button fx:id="FourthBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" onAction="#bringDeliveryFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+                  <Button fx:id="FourthBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="CompleteOrder" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#completeOrder" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Slutför köp" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                  <Button fx:id="CompleteOrder" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Slutför köp" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="continueShopping4" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                  <Button fx:id="continueShopping4" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -282,24 +284,24 @@
                         <Font size="45.0" />
                      </font>
                   </Label>
-                  <Button fx:id="SecondBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" onAction="#bringCheckoutFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+                  <Button fx:id="SecondBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="SecondNext" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#bringDeliveryFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                  <Button fx:id="SecondNext" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="continueShopping2" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                  <Button fx:id="continueShopping2" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
                   <AnchorPane layoutX="71.0" layoutY="70.0" prefHeight="278.0" prefWidth="550.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="100.0">
                      <children>
-                        <Label alignment="CENTER" layoutX="42.0" layoutY="27.0" prefHeight="63.0" prefWidth="462.0" text="Välj betalningsmetod" AnchorPane.topAnchor="15.0">
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="14.0" prefHeight="73.0" prefWidth="477.0" text="Välj betalningsmetod" AnchorPane.topAnchor="14.0">
                            <font>
                               <Font size="50.0" />
                            </font>
@@ -416,20 +418,27 @@
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="FirstNext" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#bringInformationFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                  <Button fx:id="FirstNext" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="continueShopping1" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                  <Button fx:id="continueShopping1" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <AnchorPane layoutX="349.0" layoutY="70.0" prefHeight="324.0" prefWidth="450.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="70.0" />
+                  <AnchorPane layoutX="349.0" layoutY="70.0" prefHeight="324.0" prefWidth="450.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="70.0">
+                     <children>
+                        <ScrollPane prefHeight="561.0" prefWidth="764.0">
+                           <content>
+                              <FlowPane fx:id="checkoutCart" alignment="CENTER" columnHalignment="CENTER" prefHeight="64.0" prefWidth="261.0" prefWrapLength="200.0" translateX="235.0" />
+                           </content>
+                        </ScrollPane>
+                     </children></AnchorPane>
                </children>
             </AnchorPane>
          </children>
       </StackPane>
    </children>
-</AnchorPane>
+</fx:root>

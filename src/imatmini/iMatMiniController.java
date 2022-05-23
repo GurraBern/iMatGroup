@@ -37,6 +37,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML public Label currentTab;
     @FXML public ImageView currentImage;
     @FXML public AnchorPane myPages;
+    //@FXML public StackPane mainHome;
 
     @FXML public AnchorPane myorderhistory;
     @FXML public AnchorPane myinfo;
@@ -79,11 +80,14 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML FlowPane mylistsFlowPane;
     @FXML private AnchorPane dynamicPane;
     @FXML public AnchorPane cartPane;
+    @FXML public AnchorPane checkoutPane;
     //@FXML private AnchorPane navbar;
 
     private Navbar navbarController;
-    private CartController cartController;
-    
+    public CartController cartController;
+    public Checkout checkoutController;
+
+
     // Other variables
     private final Model model = Model.getInstance();
 
@@ -100,6 +104,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         navbarController = new Navbar(this, cartController, model);
         dynamicPane.getChildren().add(navbarController);
 
+        checkoutController = new Checkout(this, model);
+        checkoutPane.getChildren().add(checkoutController);
+
         updateProductList(model.getProducts());
 
         updateBottomPanel();
@@ -115,12 +122,14 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
          cartPane.toFront();
     }
 
-    private void updateCartItems() {
+    public void updateCartItems() {
         ShoppingCart cart = model.getShoppingCart();
         cartController.myCartFlowPane.getChildren().clear();
+        checkoutController.checkoutCart.getChildren().clear();
 
         for (ShoppingItem cartItem : cart.getItems()) {
             cartController.myCartFlowPane.getChildren().add(new CartProductPanel(cartItem));
+            checkoutController.checkoutCart.getChildren().add(new CartProductPanel(cartItem));
         }
     }
 

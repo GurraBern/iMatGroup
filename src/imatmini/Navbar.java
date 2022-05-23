@@ -55,6 +55,7 @@ public class Navbar extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+
         this.mainController = mainController;
         this.cartController = cartController;
         searchButton.setOnMouseClicked(mouseEvent -> handleSearchAction());
