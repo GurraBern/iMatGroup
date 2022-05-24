@@ -55,6 +55,7 @@ public class Navbar extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+
         this.mainController = mainController;
         this.cartController = cartController;
         searchButton.setOnMouseClicked(mouseEvent -> handleSearchAction());
@@ -103,7 +104,7 @@ public class Navbar extends AnchorPane {
 
     void switchToHome(){
         mainController.currentTab.setText("Home");
-        mainController.currentImage.getImage();
+        //mainController.currentImage.getImage();
         mainController.updateProductList(model.getProducts());
     }
 

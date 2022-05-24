@@ -14,8 +14,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingCart;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.awt.*;
 import java.io.IOException;
@@ -23,6 +26,8 @@ import java.util.List;
 
 public class Checkout extends AnchorPane {
 
+
+    @FXML AnchorPane checkoutPane;
     @FXML Button FirstNext;
     @FXML Button SecondNext;
     @FXML Button ThirdNext;
@@ -48,7 +53,38 @@ public class Checkout extends AnchorPane {
     @FXML AnchorPane DeliveryPage;
     @FXML AnchorPane ControlPage;
 
-    public Checkout() {
+    private CheckoutCartController cartController;
+    private iMatMiniController mainController;
+    @FXML public FlowPane checkoutCart;
+
+    @FXML private AnchorPane cartPane;
+
+    private Model model;
+
+    public Checkout(iMatMiniController mainController, Model model) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Checkout.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+        this.mainController = mainController;
+        this.model = model;
+
+
+        try {
+            fxmlLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
+
+        //FirstBack.setOnAction(continueShopping());
+
+/*
+        //Setup Cart
+        cartController = new CheckoutCartController(model);
+        cartPane.getChildren().add(cartController);
+        FirstNext.setOnMouseClicked(mouseEvent -> bringInformationFront());
+
+ */
+
     }
 
     public void stylingReset() {
@@ -82,19 +118,37 @@ public class Checkout extends AnchorPane {
         ControlPage.toFront();
     }
 
-    @FXML public void continueShopping() throws IOException {
+    @FXML void continueShopping() {
         stylingReset();
         navCheckout.setUnderline(true);
-        Stage primaryStage = (Stage) this.getScene().getWindow();
+
+        //mainController.mainHome.toFront();
+        //checkoutPane.toBack();
+        mainController.cartPane.toBack();
+        mainController.checkoutPane.toBack();
+
+        /*Stage primaryStage = (Stage) this.getScene().getWindow();
         primaryStage.close();
         primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("iMatMini.fxml"));
         primaryStage.setTitle("main");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+
+         */
     }
 
     public void completeOrder() {
         stylingReset();
     }
+
+    /*
+    public void drawCart(Model model) {
+        ShoppingCart cart = model.getShoppingCart();
+        checkoutCart.getChildren().clear();
+
+        for (ShoppingItem cartItem : cart.getItems()) {
+            checkoutCart.getChildren().add(new CartProductPanel(cartItem));
+        }
+    }*/
 }

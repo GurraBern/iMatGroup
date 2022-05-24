@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -43,40 +42,63 @@
             <String fx:value="mediumText" />
             <String fx:value="inderPog" />
          </styleClass></Text>
-      <Rectangle arcHeight="1000.0" arcWidth="72.0" fill="#6e6a9e" height="70.0" layoutX="26.0" layoutY="315.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="dropShadow" width="237.0">
-         <effect>
-            <DropShadow blurType="ONE_PASS_BOX" height="16.16" offsetX="2.0" offsetY="5.0" radius="11.6175" width="32.31">
-               <color>
-                  <Color red="0.5131579041481018" green="0.5131579041481018" blue="0.5131579041481018" />
-               </color></DropShadow>
-         </effect></Rectangle>
-      <Circle fill="#332f68" layoutX="226.0" layoutY="350.0" radius="35.0" stroke="#5a578a" strokeType="INSIDE" />
-      <Circle fill="#332f68" layoutX="61.0" layoutY="350.0" radius="35.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Pane layoutY="302.0" prefHeight="103.0" prefWidth="288.0">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+      <ToggleButton fx:id="favoriteButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="41.0" styleClass="hearth" stylesheets="@iMat.css" />
+      <AnchorPane fx:id="addremoveButton" layoutX="28.0" layoutY="310.0" prefHeight="107.0" prefWidth="288.0">
          <children>
-            <Button layoutX="191.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 100; -fx-background-color: #332f68;" text="+" textFill="WHITE">
+            <Rectangle arcHeight="1000.0" arcWidth="72.0" fill="#6e6a9e" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="dropShadow" width="237.0">
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" height="16.16" offsetX="2.0" offsetY="5.0" radius="11.6175" width="32.31">
+                     <color>
+                        <Color red="0.5131579041481018" green="0.5131579041481018" blue="0.5131579041481018" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Rectangle>
+            <Pane prefHeight="103.0" prefWidth="288.0">
+               <children>
+                  <Button layoutX="165.0" layoutY="-1.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-radius: 100; -fx-background-color: #332f68;" text="+" textFill="WHITE">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="54.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Downloads/minus.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="-6.0" layoutY="-1.0" mnemonicParsing="false" onAction="#handleRemoveAction" prefHeight="67.0" prefWidth="70.0" style="-fx-background-radius: 100; -fx-background-color: #332f68;" text="-" textFill="WHITE">
+                     <font>
+                        <Font size="37.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="amount" alignment="CENTER" layoutX="103.0" layoutY="25.0" prefHeight="27.0" prefWidth="41.0" styleClass="mediumText" text="0" textFill="WHITE">
+                     <font>
+                        <Font size="53.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="addButton" layoutX="28.0" layoutY="314.0" prefHeight="96.0" prefWidth="288.0">
+         <children>
+            <Rectangle arcHeight="1000.0" arcWidth="72.0" fill="#332f68" height="70.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="dropShadow" width="237.0">
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" height="16.16" offsetX="2.0" offsetY="5.0" radius="11.6175" width="32.31">
+                     <color>
+                        <Color red="0.5131579041481018" green="0.5131579041481018" blue="0.5131579041481018" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Rectangle>
+            <Label alignment="CENTER" layoutX="19.0" layoutY="18.0" prefHeight="35.0" prefWidth="200.0" text="Lägg till" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font size="37.0" />
-               </font>
-            </Button>
-            <ImageView fitHeight="54.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../Downloads/minus.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="26.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleRemoveAction" prefHeight="67.0" prefWidth="70.0" style="-fx-background-radius: 100; -fx-background-color: #332f68;" text="-" textFill="WHITE">
-               <font>
-                  <Font size="37.0" />
-               </font>
-            </Button>
-            <Label fx:id="amount" alignment="CENTER" layoutX="124.0" layoutY="38.0" prefHeight="27.0" prefWidth="41.0" styleClass="mediumText" text="0" textFill="WHITE">
-               <font>
-                  <Font size="53.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
          </children>
-      </Pane>
-      <ToggleButton fx:id="favoriteButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="41.0" styleClass="hearth" stylesheets="@iMat.css" />
+      </AnchorPane>
    </children>
    <effect>
       <DropShadow offsetX="4.0" offsetY="4.0">
