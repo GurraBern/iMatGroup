@@ -58,8 +58,9 @@ public class CartController extends AnchorPane {
     }
 
     @FXML public void toCheckout() throws IOException {
-       mainController.checkoutPane.toFront();
-       mainController.updateCartItems();
+        mainController.bringCheckoutFront();
+        mainController.checkoutPane.toFront();
+        mainController.updateCartItems();
        /* Stage primaryStage = (Stage) this.getScene().getWindow();
         primaryStage.close();
         primaryStage = new Stage();

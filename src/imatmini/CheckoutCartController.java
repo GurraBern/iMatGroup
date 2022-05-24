@@ -30,7 +30,7 @@ public class CheckoutCartController extends AnchorPane {
     private iMatMiniController mainController;
     private final Model model = Model.getInstance();
 
-    public CheckoutCartController(Model model) {
+    public CheckoutCartController(ShoppingItem cartitem) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cartCheckout.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

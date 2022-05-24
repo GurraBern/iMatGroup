@@ -17,10 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -80,12 +77,67 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML FlowPane mylistsFlowPane;
     @FXML private AnchorPane dynamicPane;
     @FXML public AnchorPane cartPane;
+
     @FXML public AnchorPane checkoutPane;
     //@FXML private AnchorPane navbar;
 
     private Navbar navbarController;
     public CartController cartController;
-    public Checkout checkoutController;
+
+    @FXML Button FirstNext;
+    @FXML Button SecondNext;
+    @FXML Button ThirdNext;
+    @FXML Button CompleteOrder;
+
+    @FXML Button FirstBack;
+    @FXML Button SecondBack;
+    @FXML Button ThirdBack;
+    @FXML Button FourthBack;
+
+    @FXML Button continueShopping1;
+    @FXML Button continueShopping2;
+    @FXML Button continueShopping3;
+    @FXML Button continueShopping4;
+
+    @FXML RadioButton cardRadio;
+
+    @FXML Label navInfo;
+    @FXML Label navCheckout;
+    @FXML Label navDelivery;
+    @FXML Label navControl;
+
+    @FXML AnchorPane CheckoutPage;
+    @FXML AnchorPane CustomerInfo;
+    @FXML AnchorPane DeliveryPage;
+    @FXML AnchorPane ControlPage;
+
+    @FXML TextField cardNumberCheckout;
+    @FXML TextField cardCVCCheckout;
+    @FXML TextField cardValidCheckout;
+
+
+    @FXML TextField addressCheckout;
+    @FXML TextField postcodeCheckout;
+    @FXML TextField cityCheckout;
+
+
+    @FXML Label checkoutTotalPrice;
+    @FXML Label checkoutTotalPrice2;
+
+
+    private String timeofDay;
+    private String timeinterval;
+
+
+
+    //private CheckoutCartController cartController;
+    private iMatMiniController mainController;
+    @FXML public FlowPane checkoutCart;
+    @FXML public FlowPane cartControl;
+
+
+    //@FXML private AnchorPane cartPane;
+
 
 
     // Other variables
@@ -104,18 +156,12 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         navbarController = new Navbar(this, cartController, model);
         dynamicPane.getChildren().add(navbarController);
 
-        checkoutController = new Checkout(this, model);
-        checkoutPane.getChildren().add(checkoutController);
-
         updateProductList(model.getProducts());
 
         updateBottomPanel();
-
-        //setupAccountPane();
         updateCartItems();
-        //TODO fixa en myList som har en shopping cart i sig!!!
-        //updateMyLists(model.saveShoppingCart());
 
+     //   cardRadio.setSelected(true);
     }
 
     public void open(){
@@ -125,11 +171,13 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void updateCartItems() {
         ShoppingCart cart = model.getShoppingCart();
         cartController.myCartFlowPane.getChildren().clear();
-        checkoutController.checkoutCart.getChildren().clear();
+        checkoutCart.getChildren().clear();
+        cartControl.getChildren().clear();
 
         for (ShoppingItem cartItem : cart.getItems()) {
             cartController.myCartFlowPane.getChildren().add(new CartProductPanel(cartItem));
-            checkoutController.checkoutCart.getChildren().add(new CartProductPanel(cartItem));
+            checkoutCart.getChildren().add(new CartProductPanel(cartItem));
+            cartControl.getChildren().add(new ReceiptOverview(cartItem));
         }
     }
 
@@ -180,12 +228,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         productsFlowPane.getChildren().clear();
 
         for (Product product : products) {
-
             productsFlowPane.getChildren().add(new ProductPanel(product));
-
         }
     }
-
 
     @FXML public void addFavorites(Product product){
         model.addToFavorites(product);
@@ -199,7 +244,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         double totalCost = shoppingCart.getTotal();
 
         navbarController.updateNavbarInformation(size, totalCost);
-
     }
 
     @FXML void closeMyPages(){
@@ -233,6 +277,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         cardnumber.setText(model.getCreditCard().getCardNumber());
         validthru.setText(model.getCreditCard().getValidYear() + "/" + model.getCreditCard().getValidMonth());
         cvc.setText(String.valueOf(model.getCreditCard().getVerificationCode()));
+
+        addressCheckout.setText(model.getCustomer().getAddress());
+        postcodeCheckout.setText(model.getCustomer().getPostCode());
     }
 
     @FXML private void saveCustomerDetails(){
@@ -246,9 +293,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         //TODO split
         //card.setValidYear(card.getText());
-        model.getCreditCard().setValidMonth(Integer.parseInt(validthru.getText()));
+        //model.getCreditCard().setValidMonth(Integer.parseInt(validthru.getText()));
         model.getCreditCard().setVerificationCode(Integer.parseInt(cvc.getText()));
-
+        //System.out.println(model.getCreditCard().getVerificationCode());
         setAccountLabels();
     }
 
@@ -260,4 +307,105 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateHistoryItems();
         myorderhistory.toFront();
     }
+
+    //Reroute
+
+
+    public void stylingReset() {
+        navInfo.setUnderline(false);
+        navCheckout.setUnderline(false);
+        navDelivery.setUnderline(false);
+        navControl.setUnderline(false);
+    }
+
+
+    @FXML private Label timeintervalLabel;
+
+    public void bringCheckoutFront() {
+
+        cardNumberCheckout.setText(model.getCreditCard().getCardNumber());
+        cardCVCCheckout.setText(String.valueOf(model.getCreditCard().getVerificationCode()));
+        String test = model.getCreditCard().getValidYear() + "/" + model.getCreditCard().getValidMonth();
+        cardValidCheckout.setText(test);
+        stylingReset();
+        navCheckout.setUnderline(true);
+        CheckoutPage.toFront();
+    }
+
+    public void bringInformationFront() {
+        stylingReset();
+        navInfo.setUnderline(true);
+        CustomerInfo.toFront();
+    }
+
+    public void bringDeliveryFront() {
+        stylingReset();
+        navDelivery.setUnderline(true);
+        DeliveryPage.toFront();
+
+    }
+
+    @FXML
+    private void handleBuyItemsAction(ActionEvent event) {
+        model.placeOrder();
+        //TODO add more text
+    }
+
+    public void bringControlFront() {
+        checkoutTotalPrice.setText("Summa: " + model.getShoppingCart().getTotal() + "kr");
+        checkoutTotalPrice2.setText("Summa: " + model.getShoppingCart().getTotal() + "kr");
+        timeintervalLabel.setText(timeinterval);
+
+
+        stylingReset();
+        navControl.setUnderline(true);
+        ControlPage.toFront();
+    }
+
+    @FXML void continueShopping() {
+        stylingReset();
+        navCheckout.setUnderline(true);
+        cartPane.toBack();
+        checkoutPane.toBack();
+
+    }
+
+    public void completeOrder() {
+        stylingReset();
+    }
+
+    /*
+    public void drawCart(Model model) {
+        ShoppingCart cart = model.getShoppingCart();
+        checkoutCart.getChildren().clear();
+
+        for (ShoppingItem cartItem : cart.getItems()) {
+            checkoutCart.getChildren().add(new CartProductPanel(cartItem));
+        }
+    }*/
+
+
+    @FXML private AnchorPane timeslot1;
+    @FXML void chooseBefore(){
+        timeinterval = "07:00-12:00";
+
+       /* for (Label label: timeslot1.getChildren()) {
+            label.styleProperty().;
+        }
+
+        */
+
+    }
+
+
+    @FXML void chooseAfter(){
+        timeinterval = "13:00-17:00";
+    }
+
+    @FXML void clickDate(){
+
+    }
+
+
+
 }

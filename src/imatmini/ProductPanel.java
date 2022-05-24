@@ -44,10 +44,10 @@ public class ProductPanel extends AnchorPane {
 
     //TODO should change
     @FXML
-    Button addItemButton;
+    AnchorPane addButton;
 
     @FXML
-    Button addSingleItemButton;
+    AnchorPane addremoveButton;
 
     @FXML
     ToggleButton favoriteButton;
@@ -80,16 +80,37 @@ public class ProductPanel extends AnchorPane {
             ecoLabel.setText("");
         }
         setAmountOfProduct();
-            favoriteButton.setOnMouseClicked(mouseEvent -> addFavorites(product));
-          //  favoriteButton.setOnMouseClicked(mouseEvent -> removeFavorite(product));
+        favoriteButton.setOnMouseClicked(mouseEvent -> addFavorites(product));
+        addButton.setOnMouseClicked(mouseEvent -> handleAddAction());
+
+        addremoveButton.visibleProperty().setValue(false);
+        addButton.visibleProperty().setValue(false);
+
         checkFavorite(product);
+        checkButton();
+
+    }
+
+    private void checkButton(){
+        for (ShoppingItem item: model.getShoppingCart().getItems()) {
+            if(item.getProduct().getProductId() == product.getProductId()){
+                addremoveButton.visibleProperty().setValue(true);
+                addButton.visibleProperty().setValue(false);
+                return;
+            }
+        }
+        addremoveButton.visibleProperty().setValue(false);
+        addButton.visibleProperty().setValue(true);
     }
 
     @FXML
-    private void handleAddAction(ActionEvent event) {
+    private void handleAddAction() {
         model.addToShoppingCart(product);
 
         setAmountOfProduct();
+
+        addremoveButton.visibleProperty().setValue(true);
+        addButton.visibleProperty().setValue(false);
 
         //TODO lägg tillbaka knapp om varor är = 0 sätt opacity = 1 visa plus och minus knappar
         //om det redan finns en produkt!
@@ -147,6 +168,9 @@ public class ProductPanel extends AnchorPane {
         Product pr = model.getProduct(product.getProductId());
         model.removeFromShoppingCart(pr);
     }
+
+
+
 
 }
 
