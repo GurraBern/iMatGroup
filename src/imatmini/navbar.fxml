@@ -14,61 +14,53 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.Sphere?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="shopPane" prefHeight="127.0" style="-fx-background-color: blue;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="shopPane" prefHeight="127.0" prefWidth="1190.0" style="-fx-background-color: blue;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutY="88.0" prefHeight="53.0" prefWidth="1189.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane layoutX="-1.0" layoutY="89.0" prefHeight="0.0" prefWidth="1689.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-498.0">
          <children>
-            <Label fx:id="homeNav" layoutX="291.0" layoutY="6.0" prefHeight="42.0" prefWidth="60.0" styleClass="inderPog" stylesheets="@iMat.css" text="Hem">
+            <Label fx:id="homeNav" layoutX="500.0" layoutY="18.0" prefHeight="42.0" prefWidth="60.0" styleClass="inderPog" stylesheets="@iMat.css" text="Hem">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label fx:id="erbjudanden" layoutX="415.0" layoutY="6.0" prefHeight="42.0" prefWidth="149.0" styleClass="inderPog" stylesheets="@iMat.css" text="Erbjudanden" AnchorPane.rightAnchor="626.0">
+            <Label fx:id="favoritesNav" layoutX="700.0" layoutY="18.0" prefHeight="42.0" prefWidth="187.0" styleClass="inderPog" stylesheets="@iMat.css" text="Mina Favoriter">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label fx:id="favoritesNav" layoutX="620.0" layoutY="6.0" prefHeight="42.0" prefWidth="110.0" styleClass="inderPog" stylesheets="@iMat.css" text="Favoriter" AnchorPane.rightAnchor="460.0">
+            <Label fx:id="myPages" layoutX="1500.0" layoutY="18.0" prefHeight="42.0" prefWidth="154.0" styleClass="inderPog" stylesheets="@iMat.css" text="Mina Sidor">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label fx:id="myPages" layoutX="1051.0" layoutY="6.0" prefHeight="30.0" prefWidth="120.0" text="Mina Sidor">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Label>
-            <Label layoutX="792.0" layoutY="6.0" prefHeight="42.0" prefWidth="161.0" styleClass="inderPog" stylesheets="@iMat.css" text="Inköpslistor" AnchorPane.rightAnchor="237.0">
+            <Label layoutX="1000.0" layoutY="18.0" prefHeight="42.0" prefWidth="161.0" styleClass="inderPog" stylesheets="@iMat.css" text="Inköpslistor">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
             <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="279.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="754.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="950.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../bilder/shopping%20list.png" />
                </image></ImageView>
-            <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="1007.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="1450.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../bilder/pofil%202.png" />
                </image></ImageView>
-            <ImageView fitHeight="42.0" fitWidth="33.0" layoutX="584.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="42.0" fitWidth="33.0" layoutX="650.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../bilder/favoriter.jpeg" />
                </image></ImageView>
-            <ImageView fitHeight="42.0" fitWidth="33.0" layoutX="380.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../bilder/erbjudande.png" />
-               </image></ImageView>
-            <ImageView fitHeight="42.0" fitWidth="33.0" layoutX="253.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="42.0" fitWidth="33.0" layoutX="450.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../bilder/home.png" />
                </image>
             </ImageView>
-            <Line endX="3.9459228515625" endY="12.542633056640625" layoutX="356.0" layoutY="29.0" opacity="0.0" startX="3.9459228515625" startY="-18.132781982421875" />
-            <Line endX="3.9459228515625" endY="12.542633056640625" layoutX="570.0" layoutY="28.0" opacity="0.0" startX="3.9459228515625" startY="-18.132781982421875" />
+            <Line endX="3.9459228515625" endY="12.542633056640625" fill="#00000005" layoutX="570.0" layoutY="28.0" opacity="0.0" startX="3.9459228515625" startY="-18.132781982421875" strokeLineCap="ROUND" strokeWidth="100.0" />
             <Line endX="3.9459228515625" endY="12.542633056640625" layoutX="738.0" layoutY="28.0" opacity="0.0" startX="3.9459228515625" startY="-18.132781982421875" />
          </children>
          <opaqueInsets>
@@ -77,15 +69,18 @@
          <effect>
             <InnerShadow blurType="ONE_PASS_BOX" height="10.0" radius="7.25" />
          </effect>
+         <padding>
+            <Insets bottom="-25.0" />
+         </padding>
       </AnchorPane>
-      <AnchorPane layoutX="-4.0" layoutY="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="1194.0" style="-fx-background-color: #332F68;" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="1691.0" style="-fx-background-color: #332F68;" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="-497.0">
          <children>
-            <TextField fx:id="searchField" cache="true" layoutX="330.0" layoutY="19.0" prefHeight="58.0" prefWidth="540.0" promptText="Sök vara" style="-fx-background-radius: 30;" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="319.0">
+            <TextField fx:id="searchField" cache="true" layoutX="329.0" layoutY="26.0" prefHeight="58.0" prefWidth="919.0" promptText="Sök vara" style="-fx-background-radius: 30;" AnchorPane.leftAnchor="329.0" AnchorPane.rightAnchor="443.0">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Button fx:id="searchButton" layoutX="789.0" layoutY="24.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="75.0" style="-fx-background-radius: 30;" stylesheets="@iMat.css" text="Sök" textFill="WHITE" AnchorPane.rightAnchor="325.0">
+            <Button fx:id="searchButton" layoutX="1167.0" layoutY="30.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="75.0" style="-fx-background-radius: 30;" stylesheets="@iMat.css" text="Sök" textFill="WHITE" AnchorPane.rightAnchor="449.0">
                <font>
                   <Font size="23.0" />
                </font>
@@ -102,21 +97,21 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Label layoutX="28.0" layoutY="4.0" prefHeight="102.0" prefWidth="163.0" styleClass="pacifico" stylesheets="@iMat.css" text="iMat" textFill="WHITE">
+            <Label layoutX="28.0" layoutY="2.0" prefHeight="102.0" prefWidth="235.0" styleClass="pacifico" stylesheets="@iMat.css" text="iMat" textFill="WHITE">
                <font>
-                  <Font name="Plantagenet Cherokee" size="60.0" />
+                  <Font name="Plantagenet Cherokee" size="70.0" />
                </font>
             </Label>
             <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="960.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="980.0" layoutY="31.0" onMouseClicked="#openCart" styleClass="inderPog" stylesheets="@iMat.css" text="Varukorg" textFill="WHITE" AnchorPane.rightAnchor="91.0">
+            <Label layoutX="1484.5" layoutY="31.0" onMouseClicked="#openCart" styleClass="inderPog" stylesheets="@iMat.css" text="Varukorg" textFill="WHITE" AnchorPane.rightAnchor="102.0">
                <font>
                   <Font name="Segoe UI Historic" size="29.0" />
                </font>
             </Label>
-            <Label fx:id="costLabel" layoutX="989.0" layoutY="67.0" text="Kostnad: 3456.60" textFill="WHITE" AnchorPane.leftAnchor="989.0" AnchorPane.rightAnchor="91.0" />
-            <Button layoutX="904.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" />
-            <Button layoutX="906.0" layoutY="58.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
-            <ImageView fitHeight="63.0" fitWidth="68.0" layoutX="1090.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+            <Label fx:id="costLabel" layoutX="1481.0" layoutY="72.0" text="Kostnad: 3456.60" textFill="WHITE" AnchorPane.leftAnchor="1481.0" AnchorPane.rightAnchor="-401.0" />
+            <Button layoutX="1407.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" />
+            <Button layoutX="1408.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
+            <ImageView fitHeight="63.0" fitWidth="68.0" layoutX="1593.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../bilder/shopping-cart.png" />
                </image>
@@ -124,9 +119,11 @@
                   <ColorAdjust brightness="1.0" contrast="1.0" hue="1.0" saturation="1.0" />
                </effect>
             </ImageView>
-            <Circle fill="#ffd600" layoutX="1149.0" layoutY="32.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label fx:id="itemsLabel" layoutX="1146.0" layoutY="24.0" prefHeight="17.0" prefWidth="30.0" text="7" AnchorPane.rightAnchor="18.0" />
+            <Circle fill="#ffd600" layoutX="1654.0" layoutY="30.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="itemsLabel" layoutX="1650.0" layoutY="22.0" prefHeight="17.0" prefWidth="30.0" text="7" AnchorPane.rightAnchor="11.0" />
          </children>
       </AnchorPane>
+      <Sphere layoutX="-395.0" layoutY="74.0" radius="50" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" layoutX="-497.0" layoutY="-63.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
    </children>
 </fx:root>
