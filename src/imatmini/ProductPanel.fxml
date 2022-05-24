@@ -12,11 +12,10 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <fx:root minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="288.0" style="-fx-background-color: white; -fx-background-radius: 5;" stylesheets="@iMat.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="imageView" fitHeight="139.0" fitWidth="220.0" layoutX="31.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="37.0" />
+      <ImageView fx:id="imageView" fitHeight="139.0" fitWidth="220.0" layoutX="31.0" layoutY="49.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="37.0" />
       <Label fx:id="nameLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="34.0" layoutY="179.0" prefHeight="54.0" prefWidth="222.0" styleClass="productItem" stylesheets="@iMat.css" text="Chorizo" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="34.0">
          <font>
             <Font size="30.0" />
@@ -26,7 +25,7 @@
          <font>
             <Font name="System Bold" size="13.0" />
          </font></Label>
-      <Label fx:id="prizeLabel" ellipsisString="" layoutX="19.0" layoutY="261.0" prefHeight="54.0" prefWidth="108.0" text="12,52" textOverrun="CLIP">
+      <Label fx:id="prizeLabel" ellipsisString="" layoutX="31.0" layoutY="256.0" prefHeight="54.0" prefWidth="220.0" text="12,52" textOverrun="CLIP">
          <font>
             <Font size="32.0" />
          </font>
@@ -37,12 +36,6 @@
             <String fx:value="largeText" />
             <String fx:value="productItem" />
          </styleClass></Label>
-      <Text layoutX="114.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" wrappingWidth="26.472412109375">
-         <styleClass>
-            <String fx:value="mediumText" />
-            <String fx:value="inderPog" />
-         </styleClass></Text>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
       <ToggleButton fx:id="favoriteButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="41.0" styleClass="hearth" stylesheets="@iMat.css" />
       <AnchorPane fx:id="addremoveButton" layoutX="28.0" layoutY="310.0" prefHeight="107.0" prefWidth="288.0">
          <children>

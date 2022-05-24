@@ -883,7 +883,7 @@
                                  </font>
                               </Label>
                               <ImageView fitHeight="35.0" fitWidth="39.0" layoutX="21.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
-                              <ScrollPane layoutY="90.0" prefHeight="461.0" prefWidth="678.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                              <ScrollPane layoutY="90.0" prefHeight="461.0" prefWidth="678.0" styleClass="scroll-bar" stylesheets="@iMat.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                  <content>
                                     <FlowPane fx:id="cartControl" prefHeight="200.0" prefWidth="540.0" />
                                  </content>
@@ -993,7 +993,7 @@
                         </Button>
                         <AnchorPane layoutX="349.0" layoutY="70.0" prefHeight="324.0" prefWidth="450.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="70.0">
                            <children>
-                              <ScrollPane layoutX="162.0" layoutY="72.0" prefHeight="649.0" prefWidth="751.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                              <ScrollPane layoutX="162.0" layoutY="72.0" prefHeight="649.0" prefWidth="751.0" styleClass="scroll-bar" stylesheets="@iMat.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                                  <content>
                                     <FlowPane fx:id="checkoutCart" alignment="CENTER" columnHalignment="CENTER" prefHeight="64.0" prefWidth="261.0" prefWrapLength="200.0" translateX="235.0" />
                                  </content>

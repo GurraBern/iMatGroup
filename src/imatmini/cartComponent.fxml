@@ -54,7 +54,7 @@
             <Label fx:id="itemsLabelCart" layoutX="70.0" layoutY="19.0" prefHeight="17.0" prefWidth="72.0" text="7" />
          </children>
       </AnchorPane>
-      <ScrollPane focusTraversable="false" layoutX="844.0" layoutY="90.0" prefHeight="880.0" prefWidth="506.0" AnchorPane.bottomAnchor="111.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="89.0">
+      <ScrollPane focusTraversable="false" layoutX="844.0" layoutY="90.0" prefHeight="880.0" prefWidth="506.0" styleClass="scroll-bar" stylesheets="@iMat.css" AnchorPane.bottomAnchor="111.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="89.0">
          <content>
             <FlowPane fx:id="myCartFlowPane" prefHeight="83.0" prefWidth="401.0" style="-fx-background-color: white;" vgap="15.0" />
          </content>
