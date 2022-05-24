@@ -345,46 +345,6 @@
             </AnchorPane>
             <StackPane layoutX="53.0" layoutY="169.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
                <children>
-                  <AnchorPane fx:id="CheckoutPage" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
-                     <children>
-                        <Label layoutX="45.0" layoutY="22.0" text="Din varukorg" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
-                           <font>
-                              <Font size="45.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="FirstBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="FirstNext" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#bringInformationFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="continueShopping1" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <AnchorPane layoutX="349.0" layoutY="70.0" prefHeight="324.0" prefWidth="450.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="70.0">
-                           <children>
-                              <ScrollPane layoutX="162.0" layoutY="72.0" prefHeight="747.0" prefWidth="952.0">
-                                 <content>
-                                    <FlowPane fx:id="checkoutCart" alignment="CENTER" columnHalignment="CENTER" prefHeight="64.0" prefWidth="261.0" prefWrapLength="200.0" translateX="235.0" />
-                                 </content>
-                              </ScrollPane>
-                           </children>
-                           <effect>
-                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                 <color>
-                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                        </AnchorPane>
-                     </children>
-                  </AnchorPane>
                   <AnchorPane fx:id="CustomerInfo" prefHeight="200.0" prefWidth="1336.0" style="-fx-background-color: white;">
                      <children>
                         <Label layoutX="45.0" layoutY="22.0" text="Dina uppgifter" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
@@ -787,6 +747,46 @@
                         </Label>
                      </children>
                   </AnchorPane>
+                  <AnchorPane fx:id="CheckoutPage" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="45.0" layoutY="22.0" text="Din varukorg" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
+                           <font>
+                              <Font size="45.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="FirstBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="FirstNext" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#bringInformationFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="continueShopping1" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <AnchorPane layoutX="586.0" layoutY="64.0" prefHeight="869.0" prefWidth="733.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="586.0" AnchorPane.rightAnchor="605.0" AnchorPane.topAnchor="64.0">
+                           <children>
+                              <ScrollPane layoutX="6.0" layoutY="10.0" prefHeight="847.0" prefWidth="722.0" styleClass="scroll-bar" stylesheets="@iMat.css">
+                                 <content>
+                                    <FlowPane fx:id="checkoutCart" alignment="CENTER" columnHalignment="CENTER" prefHeight="162.0" prefWidth="423.0" prefWrapLength="200.0" translateX="130.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                           <effect>
+                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                 <color>
+                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
                   <AnchorPane fx:id="ControlPage" prefHeight="200.0" prefWidth="1336.0" style="-fx-background-color: white;">
                      <children>
                         <Label layoutX="45.0" layoutY="22.0" text="Kontrollera" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
@@ -824,7 +824,7 @@
                               <ImageView fitHeight="35.0" fitWidth="39.0" layoutX="21.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
                               <ScrollPane layoutY="90.0" prefHeight="461.0" prefWidth="678.0">
                                  <content>
-                                    <FlowPane fx:id="cartControl" prefHeight="200.0" prefWidth="540.0" />
+                                    <FlowPane fx:id="cartContro" prefHeight="200.0" prefWidth="540.0" />
                                  </content>
                               </ScrollPane>
                            </children>
