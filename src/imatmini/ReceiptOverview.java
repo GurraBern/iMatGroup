@@ -45,7 +45,7 @@ public class ReceiptOverview extends AnchorPane {
         }
         this.item = item;
         productName.setText(item.getProduct().getName());
-        productAmount.setText((int) item.getAmount() + " st");
+        productAmount.setText(String.valueOf(item.getAmount()));
         productImage.setImage(model.getImage(item.getProduct(), kImageWidth, kImageWidth*kImageRatio));
     }
 

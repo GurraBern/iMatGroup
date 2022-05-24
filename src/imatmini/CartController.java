@@ -36,7 +36,6 @@ public class CartController extends AnchorPane {
     private Model model;
 
     @FXML public Label totalCost;
-    @FXML public Label itemsLabelCart;
     @FXML private Button toCheckout;
 
     public CartController(iMatMiniController mainController, Model model) {
@@ -62,5 +61,21 @@ public class CartController extends AnchorPane {
         mainController.bringCheckoutFront();
         mainController.checkoutPane.toFront();
         mainController.updateCartItems();
+       /* Stage primaryStage = (Stage) this.getScene().getWindow();
+        primaryStage.close();
+        primaryStage = new Stage();
+        //Parent root = FXMLLoader.load(getClass().getResource("Checkout.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Checkout.fxml"));
+
+        Parent root = loader.load();
+        loader.getController();
+
+        primaryStage.setTitle("Checkout");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();*/
+
     }
+
+
+
 }

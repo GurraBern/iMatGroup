@@ -75,7 +75,8 @@ public class Navbar extends AnchorPane {
         costLabel.setText("Kostnad: " + String.format("%.2f",totalCost));
         itemsLabel.setText(size);
         cartController.totalCost.setText(totalCost + "kr");
-        cartController.itemsLabelCart.setText(size);
+
+
     }
 
     @FXML public void closeCart(){
