@@ -10,28 +10,29 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="1630.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
+<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
    <children>
-      <SplitPane dividerPositions="0.29797979797979796" layoutX="-24.0" layoutY="-67.0" prefHeight="1122.0" prefWidth="1716.0" AnchorPane.leftAnchor="-24.0" AnchorPane.topAnchor="-67.0">
+      <AnchorPane opacity="0.25" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <SplitPane dividerPositions="0.3" layoutX="-24.0" layoutY="-67.0" prefHeight="856.0" prefWidth="1331.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="140.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <ImageView fx:id="profilepic" fitHeight="150.0" fitWidth="150.0" layoutX="194.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="profilepic" fitHeight="150.0" fitWidth="150.0" layoutX="194.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="146.5194" AnchorPane.rightAnchor="146.89142763671873">
                      <image>
                         <Image url="@../../../../../Downloads/img_364496.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="myname" alignment="CENTER" layoutX="118.0" layoutY="292.0" prefHeight="100.0" prefWidth="300.0" text="Name" textAlignment="CENTER">
+                  <Label fx:id="myname" alignment="CENTER" layoutX="118.0" layoutY="292.0" prefHeight="100.0" prefWidth="300.0" text="Name" textAlignment="CENTER" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
                      <font>
                         <Font name="American Typewriter" size="40.0" />
                      </font>
                   </Label>
-                  <Button fx:id="mypages" layoutX="59.0" layoutY="409.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="414.0" text="Mina uppgifter">
+                  <Button fx:id="mypages" layoutX="59.0" layoutY="409.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="354.0" text="Mina uppgifter" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
                      <font>
                         <Font size="46.0" />
                      </font>
                   </Button>
-                  <Button fx:id="orderhistory" layoutX="59.0" layoutY="518.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="414.0" text="Min köphistorik">
+                  <Button fx:id="orderhistory" layoutX="59.0" layoutY="518.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="354.0" text="Min köphistorik" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
                      <font>
                         <Font size="46.0" />
                      </font>
@@ -43,11 +44,11 @@
                   </Button>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1120.0" prefWidth="569.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="569.0">
                <children>
-                  <StackPane layoutX="-21.0" layoutY="-37.0" prefHeight="1209.0" prefWidth="1259.0">
+                  <StackPane layoutX="-21.0" layoutY="-37.0" prefHeight="840.0" prefWidth="1030.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <AnchorPane fx:id="myorderhistory" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                        <AnchorPane fx:id="myorderhistory" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: white;">
                            <children>
                               <Button alignment="BASELINE_LEFT" layoutX="68.0" layoutY="245.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="446.0" text="Visa köp">
                                  <font>
@@ -74,9 +75,9 @@
                               </Label>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="myinfo" prefHeight="1205.0" prefWidth="1207.0" style="-fx-background-color: white;">
+                        <AnchorPane fx:id="myinfo" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: white;">
                            <children>
-                              <Label layoutX="130.0" layoutY="81.0" prefHeight="136.0" prefWidth="468.0" text="Mina uppgifter">
+                              <Label layoutX="116.0" layoutY="-25.0" prefHeight="136.0" prefWidth="468.0" text="Mina uppgifter" AnchorPane.topAnchor="-25.0">
                                  <font>
                                     <Font size="50.0" />
                                  </font>
@@ -91,7 +92,7 @@
                                     <Font size="55.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="37.0" layoutY="700.0" prefHeight="136.0" prefWidth="468.0" text="Betalningsuppgifter">
+                              <Label layoutX="84.0" layoutY="649.0" prefHeight="136.0" prefWidth="468.0" text="Betalningsuppgifter">
                                  <font>
                                     <Font size="55.0" />
                                  </font>
@@ -126,27 +127,27 @@
                                     <Font size="30.0" />
                                  </font>
                               </TextField>
-                              <TextField fx:id="cardnumber" layoutX="66.0" layoutY="825.0" prefHeight="78.0" prefWidth="604.0" promptText="Kortnummer" style="-fx-border-color: black; -fx-border-width: 2;">
+                              <TextField fx:id="cardnumber" layoutX="223.0" layoutY="530.0" prefHeight="78.0" prefWidth="604.0" promptText="Kortnummer" style="-fx-border-color: black; -fx-border-width: 2;">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
                               </TextField>
-                              <TextField fx:id="validthru" layoutX="66.0" layoutY="924.0" prefHeight="78.0" prefWidth="290.0" promptText="Giltigt till" style="-fx-border-color: black; -fx-border-width: 2;">
+                              <TextField fx:id="validthru" layoutX="523.0" layoutY="512.0" prefHeight="78.0" prefWidth="290.0" promptText="Giltigt till" style="-fx-border-color: black; -fx-border-width: 2;">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
                               </TextField>
-                              <TextField fx:id="cvc" layoutX="385.0" layoutY="920.0" prefHeight="78.0" prefWidth="282.0" promptText="Säkerhetskod" style="-fx-border-color: black; -fx-border-width: 2;">
+                              <TextField fx:id="cvc" layoutX="678.0" layoutY="558.0" prefHeight="78.0" prefWidth="282.0" promptText="Säkerhetskod" style="-fx-border-color: black; -fx-border-width: 2;">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
                               </TextField>
-                              <ImageView fx:id="myinfoimage" fitHeight="48.0" fitWidth="45.0" layoutX="73.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="myinfoimage" fitHeight="48.0" fitWidth="45.0" layoutX="73.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="10.0">
                                  <image>
                                     <Image url="@../../../../../Downloads/img_364496.png" />
                                  </image>
                               </ImageView>
-                              <Button fx:id="savechanges" layoutX="937.0" layoutY="1045.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="256.0" style="-fx-background-color: green;" text="Spara ändringar">
+                              <Button fx:id="savechanges" layoutX="565.0" layoutY="570.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="256.0" style="-fx-background-color: green;" text="Spara ändringar">
                                  <font>
                                     <Font size="30.0" />
                                  </font>
