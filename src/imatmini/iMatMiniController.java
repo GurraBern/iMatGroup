@@ -7,6 +7,7 @@ package imatmini;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -46,20 +47,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML public Button closeMyPages;
     @FXML private Label purchasesLabel;
 
-
-    //Categories
-    @FXML private Label kött;
-    @FXML private Label fisk;
-    @FXML private Label frukt;
-    @FXML private Label grönsaker;
-    @FXML private Label mejeri;
-    @FXML private Label skafferi;
-    @FXML private Label bröd;
-    @FXML private Label kryddor;
-    @FXML private Label dryck;
-    @FXML private Label godis;
-
-
     //My Pages
     @FXML TextField firstname;
     @FXML TextField surname;
@@ -73,13 +60,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     @FXML Label myName;
 
-    //TODO
-    @FXML FlowPane mylistsFlowPane;
     @FXML private AnchorPane dynamicPane;
     @FXML public AnchorPane cartPane;
 
     @FXML public AnchorPane checkoutPane;
-    //@FXML private AnchorPane navbar;
 
     private Navbar navbarController;
     public CartController cartController;
@@ -134,6 +118,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private iMatMiniController mainController;
     @FXML public FlowPane checkoutCart;
     @FXML public FlowPane cartControl;
+    @FXML public FlowPane browseFlowpane;
 
 
     //@FXML private AnchorPane cartPane;
@@ -149,6 +134,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         setAccountLabels();
         model.getShoppingCart().addShoppingCartListener(this);
 
+        createCategories();
+
         //Setup Cart
         cartController = new CartController(this, model);
         cartPane.getChildren().add(cartController);
@@ -157,11 +144,35 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         dynamicPane.getChildren().add(navbarController);
 
         updateProductList(model.getProducts());
-
         updateBottomPanel();
         updateCartItems();
+    }
 
-     //   cardRadio.setSelected(true);
+    private void createCategories(){
+        Category kott = new Category(ProductCategory.MEAT, this);
+        Category fisk = new Category(ProductCategory.FISH, this);
+        Category berry = new Category(ProductCategory.BERRY, this);
+        Category bread = new Category(ProductCategory.BREAD, this);
+        Category cabbage = new Category(ProductCategory.CABBAGE, this);
+        Category citrus = new Category(ProductCategory.CITRUS_FRUIT, this);
+        Category exoticfruit = new Category(ProductCategory.EXOTIC_FRUIT, this);
+
+
+
+        List<Category> browseCategories = new ArrayList<>();
+        browseCategories.add(kott);
+        browseCategories.add(fisk);
+        browseCategories.add(berry);
+        browseCategories.add(bread);
+        browseCategories.add(cabbage);
+        browseCategories.add(citrus);
+        browseCategories.add(exoticfruit);
+
+        browseFlowpane.getChildren().clear();
+
+        for (Category category : browseCategories) {
+            browseFlowpane.getChildren().add(category);
+        }
     }
 
     public void open(){
@@ -180,6 +191,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
             cartControl.getChildren().add(new ReceiptOverview(cartItem));
         }
     }
+
 
     // Shope pane methods
 
@@ -228,6 +240,15 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         productsFlowPane.getChildren().clear();
 
         for (Product product : products) {
+            productsFlowPane.getChildren().add(new ProductPanel(product));
+        }
+    }
+
+    public void updateProductListCategory(ProductCategory category) {
+        productsFlowPane.getChildren().clear();
+        List<Product> categorizedProducts = model.getProductCategories(category);
+
+        for (Product product : categorizedProducts) {
             productsFlowPane.getChildren().add(new ProductPanel(product));
         }
     }
