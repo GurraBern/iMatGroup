@@ -52,7 +52,6 @@ public class Model {
     }
 
     private void init() {
-
         iMatDataHandler = IMatDataHandler.getInstance();
     }
 
@@ -90,6 +89,10 @@ public class Model {
 
     public List<Product> getFavorites(){
         return iMatDataHandler.favorites();
+    }
+
+    public List<Product> getProductCategories(ProductCategory category){
+        return iMatDataHandler.getProducts(category);
     }
 
     public void addToShoppingCart(Product p) {

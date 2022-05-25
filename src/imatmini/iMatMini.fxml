@@ -910,106 +910,6 @@
                         <String fx:value="scroll-bar" />
                      </styleClass>
                   </ScrollPane>
-                  <Label fx:id="kött" layoutX="34.0" layoutY="270.0" prefHeight="43.0" prefWidth="201.0" style="-fx-background-radius: 10;" stylesheets="@iMat.css" text=" Kött" AnchorPane.leftAnchor="34.0">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="minknapp" />
-                        <String fx:value="inderPog" />
-                     </styleClass>
-                  </Label>
-                  <Label fx:id="skafferi" layoutX="34.0" layoutY="520.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Skafferi" AnchorPane.leftAnchor="34.0">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="minknapp" />
-                        <String fx:value="inderPog" />
-                     </styleClass>
-                  </Label>
-                  <Label fx:id="mejeri" layoutX="34.0" layoutY="470.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Mejeri" AnchorPane.leftAnchor="34.0">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="minknapp" />
-                        <String fx:value="inderPog" />
-                     </styleClass>
-                  </Label>
-                  <Label fx:id="grönsaker" layoutX="34.0" layoutY="420.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Grönsaker" AnchorPane.leftAnchor="34.0">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="minknapp" />
-                        <String fx:value="inderPog" />
-                     </styleClass>
-                  </Label>
-                  <Label fx:id="frukt" layoutX="34.0" layoutY="370.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Frukt" AnchorPane.leftAnchor="34.0">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="minknapp" />
-                        <String fx:value="inderPog" />
-                     </styleClass>
-                  </Label>
-                  <Label fx:id="fisk" layoutX="34.0" layoutY="320.0" prefHeight="43.0" prefWidth="201.0" style="-fx-background-radius-fx-background-radius: 10;" stylesheets="@iMat.css" text=" Fisk" AnchorPane.leftAnchor="34.0">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="minknapp" />
-                        <String fx:value="inderPog" />
-                     </styleClass>
-                  </Label>
-                  <Label fx:id="godis" layoutX="34.0" layoutY="720.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Godis" AnchorPane.leftAnchor="34.0">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="minknapp" />
-                        <String fx:value="inderPog" />
-                     </styleClass>
-                  </Label>
-                  <Label fx:id="dryck" layoutX="34.0" layoutY="670.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Dryck" AnchorPane.leftAnchor="34.0">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="minknapp" />
-                        <String fx:value="inderPog" />
-                     </styleClass>
-                  </Label>
-                  <Label fx:id="kryddor" layoutX="34.0" layoutY="620.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Kryddor" AnchorPane.leftAnchor="34.0">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="minknapp" />
-                        <String fx:value="inderPog" />
-                     </styleClass>
-                  </Label>
-                  <Label fx:id="bröd" layoutX="34.0" layoutY="570.0" prefHeight="43.0" prefWidth="201.0" stylesheets="@iMat.css" text=" Bröd" AnchorPane.leftAnchor="34.0">
-                     <font>
-                        <Font size="35.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="minknapp" />
-                        <String fx:value="inderPog" />
-                     </styleClass>
-                  </Label>
-                  <Line endX="100.0" layoutX="134.0" layoutY="315.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
-                  <Line endX="100.0" layoutX="134.0" layoutY="765.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
-                  <Line endX="100.0" layoutX="134.0" layoutY="715.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
-                  <Line endX="100.0" layoutX="134.0" layoutY="665.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
-                  <Line endX="100.0" layoutX="134.0" layoutY="615.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
-                  <Line endX="100.0" layoutX="134.0" layoutY="565.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
-                  <Line endX="100.0" layoutX="134.0" layoutY="515.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
-                  <Line endX="100.0" layoutX="134.0" layoutY="465.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
-                  <Line endX="100.0" layoutX="134.0" layoutY="414.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
-                  <Line endX="100.0" layoutX="134.0" layoutY="365.0" startX="-100.0" stroke="#d0d0d0" strokeWidth="2.0" />
                   <AnchorPane layoutX="18.0" layoutY="154.0" prefHeight="98.0" prefWidth="285.0">
                      <children>
                         <Label fx:id="currentTab" layoutX="81.0" layoutY="17.0" prefHeight="64.0" prefWidth="203.0" styleClass="inderPog" stylesheets="@iMat.css" text="Hem">
@@ -1024,6 +924,8 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
+                  <FlowPane fx:id="browseFlowpane" layoutX="23.0" layoutY="270.0" prefHeight="527.0" prefWidth="338.0" />
+                  <FlowPane fx:id="browseSubFlowpane" layoutX="246.0" layoutY="202.0" prefHeight="60.0" prefWidth="1371.0" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="dynamicPane" maxHeight="150.0" prefHeight="180.0" prefWidth="1680.0">

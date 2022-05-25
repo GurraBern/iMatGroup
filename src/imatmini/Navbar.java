@@ -76,7 +76,7 @@ public class Navbar extends AnchorPane {
     public void updateNavbarInformation(String size, double totalCost){
         costLabel.setText("Kostnad: " + String.format("%.2f",totalCost));
         itemsLabel.setText(size);
-        cartController.totalCost.setText(String.format("%.2f",totalCost) + "kr");
+        cartController.totalCost.setText(totalCost + "kr");
 
 
     }

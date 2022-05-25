@@ -7,6 +7,7 @@ package imatmini;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -46,20 +47,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML public Button closeMyPages;
     @FXML private Label purchasesLabel;
 
-
-    //Categories
-    @FXML private Label kött;
-    @FXML private Label fisk;
-    @FXML private Label frukt;
-    @FXML private Label grönsaker;
-    @FXML private Label mejeri;
-    @FXML private Label skafferi;
-    @FXML private Label bröd;
-    @FXML private Label kryddor;
-    @FXML private Label dryck;
-    @FXML private Label godis;
-
-
     //My Pages
     @FXML TextField firstname;
     @FXML TextField surname;
@@ -73,13 +60,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     @FXML Label myName;
 
-    //TODO
-    @FXML FlowPane mylistsFlowPane;
     @FXML private AnchorPane dynamicPane;
     @FXML public AnchorPane cartPane;
 
     @FXML public AnchorPane checkoutPane;
-    //@FXML private AnchorPane navbar;
 
     private Navbar navbarController;
     public CartController cartController;
@@ -134,11 +118,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private iMatMiniController mainController;
     @FXML public FlowPane checkoutCart;
     @FXML public FlowPane cartControl;
+    @FXML public FlowPane browseFlowpane;
+    @FXML public FlowPane browseSubFlowpane;
 
-
-    //@FXML private AnchorPane cartPane;
-
-
+    @FXML public List<ProductCategory> selectedSub;
 
     // Other variables
     private final Model model = Model.getInstance();
@@ -149,6 +132,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         setAccountLabels();
         model.getShoppingCart().addShoppingCartListener(this);
 
+        createCategories();
+
         //Setup Cart
         cartController = new CartController(this, model);
         cartPane.getChildren().add(cartController);
@@ -157,11 +142,82 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         dynamicPane.getChildren().add(navbarController);
 
         updateProductList(model.getProducts());
-
         updateBottomPanel();
         updateCartItems();
+    }
 
-     //   cardRadio.setSelected(true);
+    public void resetSubCategories(){
+        browseSubFlowpane.getChildren().clear();
+    }
+
+    private void createCategories(){
+        List<ProductCategory> subVeggie = new ArrayList<>();
+        subVeggie.add(ProductCategory.VEGETABLE_FRUIT);
+        subVeggie.add(ProductCategory.ROOT_VEGETABLE);
+        subVeggie.add(ProductCategory.CABBAGE);
+
+        List<ProductCategory> fruitBerries = new ArrayList<>();
+        fruitBerries.add(ProductCategory.FRUIT);
+        fruitBerries.add(ProductCategory.BERRY);
+        fruitBerries.add(ProductCategory.CITRUS_FRUIT);
+        fruitBerries.add(ProductCategory.EXOTIC_FRUIT);
+        fruitBerries.add(ProductCategory.MELONS);
+
+        List<ProductCategory> breads = new ArrayList<>();
+        breads.add(ProductCategory.BREAD);
+
+        List<ProductCategory> drinks = new ArrayList<>();
+        drinks.add(ProductCategory.COLD_DRINKS);
+        drinks.add(ProductCategory.HOT_DRINKS);
+
+        List<ProductCategory> dairies = new ArrayList<>();
+        dairies.add(ProductCategory.DAIRIES);
+
+        List<ProductCategory> meats = new ArrayList<>();
+        meats.add(ProductCategory.MEAT);
+        meats.add(ProductCategory.FISH);
+
+        List<ProductCategory> skafferi = new ArrayList<>();
+        skafferi.add(ProductCategory.FLOUR_SUGAR_SALT);
+        skafferi.add(ProductCategory.PASTA);
+        skafferi.add(ProductCategory.POTATO_RICE);
+        skafferi.add(ProductCategory.POTATO_RICE);
+
+        List<ProductCategory> spices = new ArrayList<>();
+        spices.add(ProductCategory.HERB);
+
+        List<ProductCategory> candy = new ArrayList<>();
+        candy.add(ProductCategory.SWEET);
+
+        Category showAll = new Category("Visa Alla", this);
+        Category gronsaker = new Category("Grönsaker", subVeggie, this);
+        Category fruitandberries = new Category("Frukt och Bär", fruitBerries, this);
+        Category bread = new Category("Bröd", breads, this);
+        Category drink = new Category("Drycker", drinks, this);
+        Category dairy = new Category("Mejeri", dairies, this);
+        Category meat = new Category("Kött och Fisk", meats, this);
+        Category skafferiProdukter = new Category("Skafferi", skafferi, this);
+        Category kryddor = new Category("Kryddor", spices, this);
+        Category godis = new Category("Godis", candy, this);
+
+        List<Category> browseCategories = new ArrayList<>();
+        browseCategories.add(showAll);
+        browseCategories.add(gronsaker);
+        browseCategories.add(fruitandberries);
+        browseCategories.add(bread);
+        browseCategories.add(drink);
+        browseCategories.add(dairy);
+        browseCategories.add(meat);
+        browseCategories.add(skafferiProdukter);
+        browseCategories.add(kryddor);
+        browseCategories.add(godis);
+
+        browseFlowpane.getChildren().clear();
+        resetSubCategories();
+
+        for (Category category : browseCategories) {
+            browseFlowpane.getChildren().add(category);
+        }
     }
 
     public void open(){
@@ -181,6 +237,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         }
     }
 
+
     // Shope pane methods
 
     public void drawReceipt(Order order){
@@ -193,17 +250,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         for (ShoppingItem item : items) {
             receiptFlowPane.getChildren().add(new ReceiptOverview(item));
         }
-/*
-        List<ShoppingItem> newList = new ;
-
-
-
-        for (ShoppingItem shoppingItem : order.getItems()) {
-            if (shoppingItem.getProduct() == p) {
-                shoppingItem.setAmount(items.getAmount() + 1);
-
-            }
-        }*/
     }
 
 
@@ -228,6 +274,49 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         productsFlowPane.getChildren().clear();
 
         for (Product product : products) {
+            productsFlowPane.getChildren().add(new ProductPanel(product));
+        }
+    }
+
+    public void updateSubCategories(List<ProductCategory> categories) {
+        resetSubCategories();
+        browseSubFlowpane.getChildren().clear();
+
+        for (ProductCategory category : categories) {
+            browseSubFlowpane.getChildren().add(new SubCategory(category, this));
+        }
+    }
+
+    public void updateProductList() {
+
+        productsFlowPane.getChildren().clear();
+
+        for (Product product : model.getProducts()) {
+            productsFlowPane.getChildren().add(new ProductPanel(product));
+        }
+    }
+
+    public void updateProductListCategory(ProductCategory category) {
+        productsFlowPane.getChildren().clear();
+        List<Product> categorizedProducts = model.getProductCategories(category);
+
+        for (Product product : categorizedProducts) {
+            productsFlowPane.getChildren().add(new ProductPanel(product));
+        }
+    }
+
+    public void updateProductListCategory(ProductCategory category, List<ProductCategory> subCategories) {
+        productsFlowPane.getChildren().clear();
+        List<Product> categorizedProducts = model.getProductCategories(category);
+
+        if(subCategories != null) {
+            for (ProductCategory subCategory: subCategories) {
+                categorizedProducts.addAll(model.getProductCategories(subCategory));
+            }
+
+        }
+
+        for (Product product : categorizedProducts) {
             productsFlowPane.getChildren().add(new ProductPanel(product));
         }
     }
