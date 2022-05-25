@@ -23,7 +23,7 @@
          <children>
             <AnchorPane layoutX="170.0" layoutY="59.0" prefHeight="102.0" prefWidth="100.0" style="-fx-background-color: #332f68;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label layoutX="28.0" layoutY="-4.0" styleClass="pacifico" stylesheets="@iMat.css" text="iMat" textFill="WHITE">
+                  <Label layoutX="28.0" layoutY="-4.0" onMouseClicked="#goToHome" styleClass="pacifico" stylesheets="@iMat.css" text="iMat" textFill="WHITE">
                      <font>
                         <Font size="70.0" />
                      </font>

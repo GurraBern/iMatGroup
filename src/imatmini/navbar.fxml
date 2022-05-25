@@ -97,7 +97,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <Label layoutX="28.0" layoutY="2.0" prefHeight="102.0" prefWidth="235.0" styleClass="pacifico" stylesheets="@iMat.css" text="iMat" textFill="WHITE">
+            <Label fx:id="logo" layoutX="28.0" layoutY="2.0" prefHeight="102.0" prefWidth="235.0" styleClass="pacifico" stylesheets="@iMat.css" text="iMat" textFill="WHITE">
                <font>
                   <Font name="Plantagenet Cherokee" size="70.0" />
                </font>

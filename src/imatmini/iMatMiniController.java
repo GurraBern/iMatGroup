@@ -34,7 +34,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML public Label currentTab;
     @FXML public ImageView currentImage;
     @FXML public AnchorPane myPages;
-    //@FXML public StackPane mainHome;
+    @FXML public StackPane mainHome;
 
     @FXML public AnchorPane myorderhistory;
     @FXML public AnchorPane myinfo;
@@ -352,14 +352,22 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
     public void bringControlFront() {
-        checkoutTotalPrice.setText("Summa: " + model.getShoppingCart().getTotal() + "kr");
-        checkoutTotalPrice2.setText("Summa: " + model.getShoppingCart().getTotal() + "kr");
+        String totCost = String.format("%.2f",model.getShoppingCart().getTotal());
+        checkoutTotalPrice.setText("Summa: " + totCost + "kr");
+        checkoutTotalPrice2.setText("Summa: " + totCost + "kr");
         timeintervalLabel.setText(timeinterval);
 
 
         stylingReset();
         navControl.setUnderline(true);
         ControlPage.toFront();
+    }
+
+    @FXML private void goToHome(){
+        mainHome.toFront();
+        cartPane.toBack();
+        System.out.println("runs");
+
     }
 
     @FXML void continueShopping() {
