@@ -1026,9 +1026,9 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="dynamicPane" prefHeight="455.0" prefWidth="1878.0">
+            <AnchorPane fx:id="dynamicPane" maxHeight="150.0" prefHeight="180.0" prefWidth="1680.0">
                <StackPane.margin>
-                  <Insets bottom="625.0" />
+                  <Insets bottom="900.0" />
                </StackPane.margin>
             </AnchorPane>
          </children>
