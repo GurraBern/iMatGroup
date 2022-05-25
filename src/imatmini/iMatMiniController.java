@@ -119,11 +119,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML public FlowPane checkoutCart;
     @FXML public FlowPane cartControl;
     @FXML public FlowPane browseFlowpane;
+    @FXML public FlowPane browseSubFlowpane;
 
-
-    //@FXML private AnchorPane cartPane;
-
-
+    @FXML public List<ProductCategory> selectedSub;
 
     // Other variables
     private final Model model = Model.getInstance();
@@ -148,27 +146,74 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateCartItems();
     }
 
+    public void resetSubCategories(){
+        browseSubFlowpane.getChildren().clear();
+    }
+
     private void createCategories(){
-        Category kott = new Category(ProductCategory.MEAT, this);
-        Category fisk = new Category(ProductCategory.FISH, this);
-        Category berry = new Category(ProductCategory.BERRY, this);
-        Category bread = new Category(ProductCategory.BREAD, this);
-        Category cabbage = new Category(ProductCategory.CABBAGE, this);
-        Category citrus = new Category(ProductCategory.CITRUS_FRUIT, this);
-        Category exoticfruit = new Category(ProductCategory.EXOTIC_FRUIT, this);
+        List<ProductCategory> subVeggie = new ArrayList<>();
+        subVeggie.add(ProductCategory.VEGETABLE_FRUIT);
+        subVeggie.add(ProductCategory.ROOT_VEGETABLE);
+        subVeggie.add(ProductCategory.CABBAGE);
 
+        List<ProductCategory> fruitBerries = new ArrayList<>();
+        fruitBerries.add(ProductCategory.FRUIT);
+        fruitBerries.add(ProductCategory.BERRY);
+        fruitBerries.add(ProductCategory.CITRUS_FRUIT);
+        fruitBerries.add(ProductCategory.EXOTIC_FRUIT);
+        fruitBerries.add(ProductCategory.MELONS);
 
+        List<ProductCategory> breads = new ArrayList<>();
+        breads.add(ProductCategory.BREAD);
+
+        List<ProductCategory> drinks = new ArrayList<>();
+        drinks.add(ProductCategory.COLD_DRINKS);
+        drinks.add(ProductCategory.HOT_DRINKS);
+
+        List<ProductCategory> dairies = new ArrayList<>();
+        dairies.add(ProductCategory.DAIRIES);
+
+        List<ProductCategory> meats = new ArrayList<>();
+        meats.add(ProductCategory.MEAT);
+        meats.add(ProductCategory.FISH);
+
+        List<ProductCategory> skafferi = new ArrayList<>();
+        skafferi.add(ProductCategory.FLOUR_SUGAR_SALT);
+        skafferi.add(ProductCategory.PASTA);
+        skafferi.add(ProductCategory.POTATO_RICE);
+        skafferi.add(ProductCategory.POTATO_RICE);
+
+        List<ProductCategory> spices = new ArrayList<>();
+        spices.add(ProductCategory.HERB);
+
+        List<ProductCategory> candy = new ArrayList<>();
+        candy.add(ProductCategory.SWEET);
+
+        Category showAll = new Category("Visa Alla", this);
+        Category gronsaker = new Category("Grönsaker", subVeggie, this);
+        Category fruitandberries = new Category("Frukt och Bär", fruitBerries, this);
+        Category bread = new Category("Bröd", breads, this);
+        Category drink = new Category("Drycker", drinks, this);
+        Category dairy = new Category("Mejeri", dairies, this);
+        Category meat = new Category("Kött och Fisk", meats, this);
+        Category skafferiProdukter = new Category("Skafferi", skafferi, this);
+        Category kryddor = new Category("Kryddor", spices, this);
+        Category godis = new Category("Godis", candy, this);
 
         List<Category> browseCategories = new ArrayList<>();
-        browseCategories.add(kott);
-        browseCategories.add(fisk);
-        browseCategories.add(berry);
+        browseCategories.add(showAll);
+        browseCategories.add(gronsaker);
+        browseCategories.add(fruitandberries);
         browseCategories.add(bread);
-        browseCategories.add(cabbage);
-        browseCategories.add(citrus);
-        browseCategories.add(exoticfruit);
+        browseCategories.add(drink);
+        browseCategories.add(dairy);
+        browseCategories.add(meat);
+        browseCategories.add(skafferiProdukter);
+        browseCategories.add(kryddor);
+        browseCategories.add(godis);
 
         browseFlowpane.getChildren().clear();
+        resetSubCategories();
 
         for (Category category : browseCategories) {
             browseFlowpane.getChildren().add(category);
@@ -205,17 +250,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         for (ShoppingItem item : items) {
             receiptFlowPane.getChildren().add(new ReceiptOverview(item));
         }
-/*
-        List<ShoppingItem> newList = new ;
-
-
-
-        for (ShoppingItem shoppingItem : order.getItems()) {
-            if (shoppingItem.getProduct() == p) {
-                shoppingItem.setAmount(items.getAmount() + 1);
-
-            }
-        }*/
     }
 
 
@@ -244,9 +278,43 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         }
     }
 
+    public void updateSubCategories(List<ProductCategory> categories) {
+        resetSubCategories();
+        browseSubFlowpane.getChildren().clear();
+
+        for (ProductCategory category : categories) {
+            browseSubFlowpane.getChildren().add(new SubCategory(category, this));
+        }
+    }
+
+    public void updateProductList() {
+
+        productsFlowPane.getChildren().clear();
+
+        for (Product product : model.getProducts()) {
+            productsFlowPane.getChildren().add(new ProductPanel(product));
+        }
+    }
+
     public void updateProductListCategory(ProductCategory category) {
         productsFlowPane.getChildren().clear();
         List<Product> categorizedProducts = model.getProductCategories(category);
+
+        for (Product product : categorizedProducts) {
+            productsFlowPane.getChildren().add(new ProductPanel(product));
+        }
+    }
+
+    public void updateProductListCategory(ProductCategory category, List<ProductCategory> subCategories) {
+        productsFlowPane.getChildren().clear();
+        List<Product> categorizedProducts = model.getProductCategories(category);
+
+        if(subCategories != null) {
+            for (ProductCategory subCategory: subCategories) {
+                categorizedProducts.addAll(model.getProductCategories(subCategory));
+            }
+
+        }
 
         for (Product product : categorizedProducts) {
             productsFlowPane.getChildren().add(new ProductPanel(product));

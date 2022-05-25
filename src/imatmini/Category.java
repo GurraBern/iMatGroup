@@ -16,27 +16,38 @@ public class Category extends AnchorPane {
     public ProductCategory mainCategory;
     public List<ProductCategory> underlyingCategories;
     private iMatMiniController mainController;
+    private String categoryName;
 
     @FXML private Label categoryLabel;
 
 
-    public Category(ProductCategory mainCategory, iMatMiniController mainController){
+
+
+    public Category(String categoryName, iMatMiniController mainController){
         this.mainController = mainController;
-        this.mainCategory = mainCategory;
+        this.categoryName = categoryName;
         fxmlSetup();
 
     }
 
-    public Category(ProductCategory mainCategory, List<ProductCategory> underlyingCategories , iMatMiniController mainController){
+    public Category(String categoryName, List<ProductCategory> underlyingCategories , iMatMiniController mainController){
         this.mainController = mainController;
 
-        this.mainCategory = mainCategory;
         this.underlyingCategories = underlyingCategories;
+        this.categoryName = categoryName;
+
         fxmlSetup();
     }
 
     @FXML private void sortByCategory(){
-        mainController.updateProductListCategory(mainCategory);
+        mainController.resetSubCategories();
+        if(categoryName != "Visa Alla"){
+            mainController.updateProductListCategory(mainCategory, underlyingCategories);
+        } else {
+            mainController.updateProductList();
+        }
+        if(underlyingCategories != null)
+            mainController.updateSubCategories(underlyingCategories);
     }
 
     private void fxmlSetup(){
@@ -50,6 +61,7 @@ public class Category extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-        categoryLabel.setText(mainCategory.name());
+
+        categoryLabel.setText(categoryName);
     }
 }
