@@ -22,17 +22,17 @@
    <children>
       <AnchorPane layoutX="-1.0" layoutY="89.0" prefHeight="0.0" prefWidth="1689.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-498.0">
          <children>
-            <Label fx:id="homeNav" layoutX="500.0" layoutY="18.0" prefHeight="42.0" prefWidth="60.0" styleClass="inderPog" stylesheets="@iMat.css" text="Hem">
+            <Label layoutX="500.0" layoutY="18.0" prefHeight="42.0" prefWidth="60.0" styleClass="inderPog" stylesheets="@iMat.css" text="Hem">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label fx:id="favoritesNav" layoutX="700.0" layoutY="18.0" prefHeight="42.0" prefWidth="187.0" styleClass="inderPog" stylesheets="@iMat.css" text="Mina Favoriter">
+            <Label layoutX="700.0" layoutY="18.0" prefHeight="42.0" prefWidth="187.0" styleClass="inderPog" stylesheets="@iMat.css" text="Mina Favoriter">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label fx:id="myPages" layoutX="1500.0" layoutY="18.0" prefHeight="42.0" prefWidth="154.0" styleClass="inderPog" stylesheets="@iMat.css" text="Mina Sidor">
+            <Label layoutX="1500.0" layoutY="18.0" prefHeight="42.0" prefWidth="154.0" styleClass="inderPog" stylesheets="@iMat.css" text="Mina Sidor">
                <font>
                   <Font size="25.0" />
                </font>
@@ -42,7 +42,6 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <ImageView fitHeight="30.0" fitWidth="42.0" layoutX="279.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="950.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../bilder/shopping%20list.png" />
@@ -50,18 +49,24 @@
             <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="1450.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../bilder/pofil%202.png" />
-               </image></ImageView>
+               </image>
+            </ImageView>
             <ImageView fitHeight="42.0" fitWidth="33.0" layoutX="650.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../bilder/favoriter.jpeg" />
-               </image></ImageView>
-            <ImageView fitHeight="42.0" fitWidth="33.0" layoutX="450.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../bilder/home.png" />
                </image>
             </ImageView>
             <Line endX="3.9459228515625" endY="12.542633056640625" fill="#00000005" layoutX="570.0" layoutY="28.0" opacity="0.0" startX="3.9459228515625" startY="-18.132781982421875" strokeLineCap="ROUND" strokeWidth="100.0" />
             <Line endX="3.9459228515625" endY="12.542633056640625" layoutX="738.0" layoutY="28.0" opacity="0.0" startX="3.9459228515625" startY="-18.132781982421875" />
+            <ImageView fitHeight="42.0" fitWidth="33.0" layoutX="455.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../bilder/home.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="homeNav" layoutX="400.0" layoutY="11.0" onMouseClicked="#testFunction" opacity="0.5" prefHeight="60.0" prefWidth="200.0" AnchorPane.bottomAnchor="26.0" AnchorPane.topAnchor="13.0" />
+            <AnchorPane fx:id="favoritesNav" layoutX="630.0" layoutY="21.0" opacity="0.5" prefHeight="60.0" prefWidth="234.0" AnchorPane.bottomAnchor="24.0" AnchorPane.topAnchor="13.0" />
+            <AnchorPane layoutX="939.0" layoutY="10.0" opacity="0.5" prefHeight="60.0" prefWidth="200.0" AnchorPane.bottomAnchor="24.0" AnchorPane.topAnchor="13.0" />
+            <AnchorPane fx:id="myPages" layoutX="1432.0" layoutY="3.0" opacity="0.5" prefHeight="60.0" prefWidth="200.0" AnchorPane.bottomAnchor="24.0" AnchorPane.topAnchor="13.0" />
          </children>
          <opaqueInsets>
             <Insets />

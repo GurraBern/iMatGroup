@@ -95,6 +95,11 @@
             </Label>
          </children>
       </AnchorPane>
+      <Label fx:id="perUnit" layoutX="126.0" layoutY="276.0" text="kr">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
    <effect>
       <DropShadow offsetX="4.0" offsetY="4.0">

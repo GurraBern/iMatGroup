@@ -26,9 +26,9 @@ public class Navbar extends AnchorPane {
     @FXML private TextField searchField;
     @FXML private AnchorPane cartView;
     @FXML public Button searchButton;
-    @FXML public Label homeNav;
-    @FXML public Label favoritesNav;
-    @FXML public Label myPages;
+    //@FXML public AnchorPane homeNav;
+    @FXML public AnchorPane favoritesNav;
+    @FXML public AnchorPane myPages;
     @FXML public Label logo;
 
     @FXML public Label costLabel;
@@ -61,7 +61,7 @@ public class Navbar extends AnchorPane {
         this.cartController = cartController;
         searchButton.setOnMouseClicked(mouseEvent -> handleSearchAction());
         favoritesNav.setOnMouseClicked(mouseEvent -> switchToFavorites());
-        homeNav.setOnMouseClicked(mouseEvent -> switchToHome());
+        //homeNav.setOnMouseClicked(mouseEvent -> switchToHome());
         myPages.setOnMouseClicked(mouseEvent -> swapMyPages());
         logo.setOnMouseClicked(mouseEvent -> switchToHome());
         mainController.closeMyPages.setOnMouseClicked(mouseEvent -> swapBack());
@@ -73,6 +73,10 @@ public class Navbar extends AnchorPane {
         costLabel.setText("Köpet klart!");
     }
 
+    @FXML
+    private void testFunction() {
+        switchToHome();
+    }
     public void updateNavbarInformation(String size, double totalCost){
         costLabel.setText("Kostnad: " + String.format("%.2f",totalCost));
         itemsLabel.setText(size);

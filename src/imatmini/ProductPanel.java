@@ -37,6 +37,8 @@ public class ProductPanel extends AnchorPane {
     @FXML
     Label prizeLabel;
     @FXML
+    Label perUnit;
+    @FXML
     Label ecoLabel;
     @FXML
     Label amount;
@@ -75,7 +77,8 @@ public class ProductPanel extends AnchorPane {
         this.product = product;
         nameLabel.setText(product.getName());
 
-        prizeLabel.setText(String.format("%.2f", product.getPrice()) + product.getUnit());
+        prizeLabel.setText(String.format("%.2f", product.getPrice())); // + product.getUnit()
+        perUnit.setText(String.format(product.getUnit()));
 
         imageView.setImage(model.getImage(product, kImageWidth, kImageWidth * kImageRatio));
         if (!product.isEcological()) {
