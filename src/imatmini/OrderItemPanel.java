@@ -58,7 +58,8 @@ public class OrderItemPanel extends AnchorPane {
         }
         this.mainController = mainController;
 
-        orderItemCost.setText(calcTotalCost() + "kr");
+        orderItemCost.setText(String.format("%.2f",calcTotalCost()) + "kr");
+
 
         String newstring = new SimpleDateFormat("yyyy-mm-dd").format(order.getDate());
         dateLabel.setText(newstring);

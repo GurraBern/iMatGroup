@@ -6,6 +6,7 @@
 package imatmini;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -61,21 +62,16 @@ public class CartController extends AnchorPane {
         mainController.bringCheckoutFront();
         mainController.checkoutPane.toFront();
         mainController.updateCartItems();
-       /* Stage primaryStage = (Stage) this.getScene().getWindow();
-        primaryStage.close();
-        primaryStage = new Stage();
-        //Parent root = FXMLLoader.load(getClass().getResource("Checkout.fxml"));
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Checkout.fxml"));
-
-        Parent root = loader.load();
-        loader.getController();
-
-        primaryStage.setTitle("Checkout");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();*/
-
     }
 
+    @FXML private void clearCart(){
+        model.getShoppingCart().clear();
+    }
+
+    @FXML
+    public void mouseTrap(Event event){
+        event.consume();
+    }
 
 
 }
