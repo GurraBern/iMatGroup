@@ -636,7 +636,7 @@
       </AnchorPane>
       <AnchorPane id="AnchorPane" fx:id="myPages" prefHeight="1050.0" prefWidth="1680.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane opacity="0.5" prefHeight="1050.0" prefWidth="1680.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane onMouseClicked="#closeMyPages" opacity="0.5" prefHeight="1050.0" prefWidth="1680.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <SplitPane dividerPositions="0.3" prefHeight="880.0" prefWidth="1576.0" translateX="60.0" translateY="-10.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="100.0">
                <items>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="882.0" prefWidth="556.0">
