@@ -112,6 +112,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private String timeofDay;
     private String timeinterval;
 
+    private List<SubCategory> subCategoriesActive = new ArrayList<>();
+    private List<Category> browseCategories = new ArrayList<>();
+
 
 
     //private CheckoutCartController cartController;
@@ -147,7 +150,18 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
     public void resetSubCategories(){
-        browseSubFlowpane.getChildren().clear();
+        for (SubCategory subCategory :subCategoriesActive) {
+            subCategory.getStyleClass().clear();
+        }
+    }
+
+    public void resetCategories(){
+        //browseFlowpane.getChildren().clear();
+        for (Category item: browseCategories) {
+            item.clearStyle();
+            item.categoryLabel.getStyleClass().add("minknapp");
+            item.categoryLabel.getStyleClass().add("inderPog");
+        }
     }
 
     private void createCategories(){
@@ -200,7 +214,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         Category kryddor = new Category("Kryddor", spices, this);
         Category godis = new Category("Godis", candy, this);
 
-        List<Category> browseCategories = new ArrayList<>();
+        browseCategories = new ArrayList<>();
         browseCategories.add(showAll);
         browseCategories.add(gronsaker);
         browseCategories.add(fruitandberries);
@@ -281,10 +295,15 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void updateSubCategories(List<ProductCategory> categories) {
         resetSubCategories();
         browseSubFlowpane.getChildren().clear();
+        subCategoriesActive = new ArrayList<>();
 
         for (ProductCategory category : categories) {
-            browseSubFlowpane.getChildren().add(new SubCategory(category, this));
+
+            SubCategory addedCategory= new SubCategory(category, this);
+            subCategoriesActive.add(addedCategory);
+            browseSubFlowpane.getChildren().add(addedCategory);
         }
+
     }
 
     public void updateProductList() {
@@ -380,11 +399,13 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         model.getCustomer().setPostCode(postcode.getText());
         model.getCreditCard().setCardNumber(cardnumber.getText());
 
-        //TODO split
-        //card.setValidYear(card.getText());
-        //model.getCreditCard().setValidMonth(Integer.parseInt(validthru.getText()));
+        String validText = validthru.getText();
+        String[] validSplit;
+        validSplit = validText.split("/");
+
+        model.getCreditCard().setValidYear(Integer.parseInt(validSplit[0]));
+        model.getCreditCard().setValidMonth(Integer.parseInt(validSplit[1]));
         model.getCreditCard().setVerificationCode(Integer.parseInt(cvc.getText()));
-        //System.out.println(model.getCreditCard().getVerificationCode());
         setAccountLabels();
     }
 

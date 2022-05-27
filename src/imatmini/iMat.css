@@ -93,6 +93,12 @@
     -fx-text-fill: white;
 }
 
+.buttonPressed{
+    -fx-background-color: #332f68;
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+}
+
 .navbar{
     -fx-font-size: 23;
 }

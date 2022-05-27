@@ -40,7 +40,19 @@ public class SubCategory extends AnchorPane {
         subCategoryLabel.setText(category.name());
     }
 
+    public void clearStyle(){
+        subCategoryLabel.getStyleClass().clear();
+
+    }
+
+
     @FXML private void sortByCategory(){
         mainController.updateProductListCategory(category);
+        mainController.resetSubCategories();
+        clearStyle();
+
+        subCategoryLabel.getStyleClass().add("buttonPressed");
+        subCategoryLabel.getStyleClass().add("inderPog");
+        subCategoryLabel.setStyle("-fx-font-size: 35");
     }
 }

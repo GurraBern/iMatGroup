@@ -924,7 +924,7 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <FlowPane fx:id="browseFlowpane" layoutX="23.0" layoutY="270.0" prefHeight="527.0" prefWidth="338.0" />
+                  <FlowPane fx:id="browseFlowpane" layoutX="23.0" layoutY="270.0" prefHeight="527.0" prefWidth="296.0" />
                   <FlowPane fx:id="browseSubFlowpane" layoutX="246.0" layoutY="202.0" prefHeight="60.0" prefWidth="1371.0" />
                </children>
             </AnchorPane>
