@@ -4,27 +4,20 @@
  * and open the template in the editor.
  */
 package imatmini;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.*;
 
-import javax.swing.text.html.ImageView;
 
 
 public class iMatMiniController implements Initializable, ShoppingCartListener {
@@ -33,7 +26,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML public AnchorPane shopPane;
     @FXML private FlowPane productsFlowPane;
     @FXML public Label currentTab;
-    @FXML public ImageView currentImage;
+    @FXML public ImageView currentTabImage;
+    @FXML public ImageView homeIcon;
+    @FXML public ImageView favIcon;
     @FXML public AnchorPane myPages;
     @FXML public StackPane mainHome;
 
@@ -46,6 +41,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     @FXML public Button closeMyPages;
     @FXML private Label purchasesLabel;
+    @FXML public Label deliveryDate;
 
     //My Pages
     @FXML TextField firstname;
@@ -147,6 +143,11 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateProductList(model.getProducts());
         updateBottomPanel();
         updateCartItems();
+
+
+        String iconPath = "bilder/home.png";
+        Image icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+        currentTabImage.setImage(icon);
     }
 
     public void resetSubCategories(){
@@ -466,7 +467,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         checkoutTotalPrice.setText("Summa: " + totCost + "kr");
         checkoutTotalPrice2.setText("Summa: " + totCost + "kr");
         timeintervalLabel.setText(timeinterval);
-
+        deliveryDate.setText(timeofDay);
 
         stylingReset();
         navControl.setUnderline(true);
@@ -506,24 +507,41 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML private AnchorPane timeslot1;
     @FXML void chooseBefore(){
         timeinterval = "07:00-12:00";
-
-       /* for (Label label: timeslot1.getChildren()) {
-            label.styleProperty().;
-        }
-
-        */
-
     }
-
 
     @FXML void chooseAfter(){
         timeinterval = "13:00-17:00";
     }
 
-    @FXML void clickDate(){
-
+    @FXML private void clickDateFirst(){
+        timeofDay = "Måndag 30 juni";
     }
 
+    @FXML private void clickDateSecond(){
+        timeofDay = "Tisdag 31 juni";
+    }
 
+    @FXML private void clickDateThird(){
+        timeofDay = "Onsdag 01 juli";
+    }
 
+    @FXML private void clickDateFourth(){
+        timeofDay = "Torsdag 02 juli";
+    }
+
+    @FXML private void clickDateFith(){
+        timeofDay = "Fredag 03 juli";
+    }
+
+    @FXML private void clickDateSixth(){
+        timeofDay = "Lördag 04 juli";
+    }
+
+    @FXML private void clickDateSeventh(){
+        timeofDay = "Söndag 05 juli";
+    }
+
+    @FXML private void clickDateEight(){
+        timeofDay = "Måndag 06 juli";
+    }
 }

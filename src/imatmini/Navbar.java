@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -106,12 +107,22 @@ public class Navbar extends AnchorPane {
 
     void switchToHome(){
         mainController.currentTab.setText("Home");
-        //mainController.currentImage.getImage();
+
+
+        String iconPath = "bilder/home.png";
+        Image icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+        mainController.currentTabImage.setImage(icon);
+
+
         mainController.updateProductList(model.getProducts());
     }
 
     void switchToFavorites(){
         mainController.currentTab.setText("Favorites");
+        String iconPath = "bilder/favoriter.jpeg";
+        Image icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+        mainController.currentTabImage.setImage(icon);
+
         mainController.updateProductList(model.getFavorites());
     }
     @FXML void swapMyPages(){

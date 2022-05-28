@@ -212,7 +212,7 @@
                      <children>
                         <AnchorPane layoutX="284.0" layoutY="297.0" prefHeight="367.0" prefWidth="660.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 25;" stylesheets="@iMat.css" AnchorPane.bottomAnchor="339.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="297.0">
                            <children>
-                              <AnchorPane layoutX="31.0" layoutY="17.0" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
+                              <AnchorPane layoutX="31.0" layoutY="17.0" onMouseClicked="#clickDateFirst" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
                                  <children>
                                     <Label layoutX="16.0" layoutY="21.0" text="Måndag">
                                        <font>
@@ -233,7 +233,7 @@
                                     </DropShadow>
                                  </effect>
                               </AnchorPane>
-                              <AnchorPane layoutX="190.0" layoutY="17.0" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
+                              <AnchorPane layoutX="190.0" layoutY="17.0" onMouseClicked="#clickDateSecond" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
                                  <children>
                                     <Label layoutX="16.0" layoutY="21.0" text="Tisdag">
                                        <font>
@@ -254,7 +254,7 @@
                                     </DropShadow>
                                  </effect>
                               </AnchorPane>
-                              <AnchorPane layoutX="346.0" layoutY="17.0" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
+                              <AnchorPane layoutX="346.0" layoutY="17.0" onMouseClicked="#clickDateThird" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
                                  <children>
                                     <Label layoutX="16.0" layoutY="21.0" text="Onsdag">
                                        <font>
@@ -275,9 +275,9 @@
                                     </DropShadow>
                                  </effect>
                               </AnchorPane>
-                              <AnchorPane layoutX="31.0" layoutY="177.0" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
+                              <AnchorPane layoutX="31.0" layoutY="177.0" onMouseClicked="#clickDateFith" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
                                  <children>
-                                    <Label layoutX="16.0" layoutY="21.0" text="Torsdag">
+                                    <Label layoutX="16.0" layoutY="21.0" text="Fredag">
                                        <font>
                                           <Font size="25.0" />
                                        </font>
@@ -296,9 +296,9 @@
                                     </DropShadow>
                                  </effect>
                               </AnchorPane>
-                              <AnchorPane layoutX="190.0" layoutY="177.0" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
+                              <AnchorPane layoutX="190.0" layoutY="177.0" onMouseClicked="#clickDateSixth" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
                                  <children>
-                                    <Label layoutX="16.0" layoutY="21.0" text="Fredag">
+                                    <Label layoutX="16.0" layoutY="21.0" text="Lördag">
                                        <font>
                                           <Font size="25.0" />
                                        </font>
@@ -317,9 +317,9 @@
                                     </DropShadow>
                                  </effect>
                               </AnchorPane>
-                              <AnchorPane layoutX="346.0" layoutY="177.0" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
+                              <AnchorPane layoutX="346.0" layoutY="177.0" onMouseClicked="#clickDateSeventh" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
                                  <children>
-                                    <Label layoutX="16.0" layoutY="21.0" text="Tisdag">
+                                    <Label layoutX="16.0" layoutY="21.0" text="Söndag">
                                        <font>
                                           <Font size="25.0" />
                                        </font>
@@ -338,9 +338,9 @@
                                     </DropShadow>
                                  </effect>
                               </AnchorPane>
-                              <AnchorPane layoutX="507.0" layoutY="17.0" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
+                              <AnchorPane layoutX="507.0" layoutY="17.0" onMouseClicked="#clickDateFourth" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
                                  <children>
-                                    <Label layoutX="16.0" layoutY="21.0" text="Onsdag">
+                                    <Label layoutX="16.0" layoutY="21.0" text="Torsdag">
                                        <font>
                                           <Font size="25.0" />
                                        </font>
@@ -359,9 +359,9 @@
                                     </DropShadow>
                                  </effect>
                               </AnchorPane>
-                              <AnchorPane layoutX="507.0" layoutY="177.0" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
+                              <AnchorPane layoutX="507.0" layoutY="177.0" onMouseClicked="#clickDateEight" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
                                  <children>
-                                    <Label layoutX="16.0" layoutY="21.0" text="Tisdag">
+                                    <Label layoutX="16.0" layoutY="21.0" text="Måndag">
                                        <font>
                                           <Font size="25.0" />
                                        </font>
@@ -561,7 +561,7 @@
                                     <Font size="30.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="checkoutTotalPrice1111" layoutX="97.0" layoutY="158.0" prefHeight="60.0" prefWidth="225.0" text="Måndag 03/01">
+                              <Label fx:id="deliveryDate" layoutX="97.0" layoutY="158.0" prefHeight="60.0" prefWidth="225.0" text="Måndag 03/01">
                                  <font>
                                     <Font name="System Bold" size="30.0" />
                                  </font>
@@ -917,7 +917,7 @@
                               <Font size="50.0" />
                            </font>
                         </Label>
-                        <ImageView fx:id="" fitHeight="64.0" fitWidth="63.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="currentTabImage" fitHeight="64.0" fitWidth="63.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../bilder/home.png" />
                            </image>
