@@ -55,7 +55,7 @@
                <image>
                   <Image url="@../bilder/favoriter.jpeg" />
                </image></ImageView>
-            <ImageView fitHeight="42.0" fitWidth="33.0" layoutX="450.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="homeNavIcon" fitHeight="42.0" fitWidth="33.0" layoutX="450.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../bilder/home.png" />
                </image>
@@ -108,7 +108,11 @@
                   <Font name="Segoe UI Historic" size="29.0" />
                </font>
             </Label>
-            <Label fx:id="costLabel" layoutX="1481.0" layoutY="72.0" text="Kostnad: 3456.60" textFill="WHITE" AnchorPane.leftAnchor="1481.0" AnchorPane.rightAnchor="-401.0" />
+            <Label fx:id="costLabel" layoutX="1442.0" layoutY="62.0" prefHeight="42.0" prefWidth="650.0" text="Kostnad: 3456.60" textFill="WHITE" AnchorPane.leftAnchor="1442.0" AnchorPane.rightAnchor="-401.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
             <ImageView fitHeight="63.0" fitWidth="68.0" layoutX="1593.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../bilder/shopping-cart.png" />

@@ -154,6 +154,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         String iconPath = "bilder/home.png";
         Image icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
         currentTabImage.setImage(icon);
+
+        mainHome.toFront();
     }
 
     public void resetSubCategories(){
