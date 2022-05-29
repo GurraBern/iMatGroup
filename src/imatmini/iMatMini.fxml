@@ -19,619 +19,29 @@
 
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1050.0" prefWidth="1680.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
    <children>
-      <AnchorPane fx:id="checkoutPane" layoutY="-12.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1050.0" prefWidth="1680.0" AnchorPane.bottomAnchor="0.0">
+      <AnchorPane fx:id="boughtPane" onMouseClicked="#closeBought" prefHeight="1050.0" prefWidth="1680.0" style="-fx-background-color: rgba(0, 0, 0, 0.5);">
          <children>
-            <AnchorPane layoutX="170.0" layoutY="59.0" prefHeight="102.0" prefWidth="100.0" style="-fx-background-color: #332f68;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane onMouseClicked="#closeBought" prefHeight="425.0" prefWidth="928.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="339.0" AnchorPane.rightAnchor="370.0" AnchorPane.topAnchor="286.0">
+               <effect>
+                  <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                     <color>
+                        <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                     </color>
+                  </DropShadow>
+               </effect>
                <children>
-                  <Label layoutX="28.0" layoutY="-4.0" onMouseClicked="#goToHome" styleClass="pacifico" stylesheets="@iMat.css" text="iMat" textFill="WHITE">
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="150.0" prefHeight="53.0" prefWidth="883.0" text="Ditt köp är nu genomfört!" textAlignment="CENTER">
                      <font>
-                        <Font size="70.0" />
+                        <Font name="System Bold" size="36.0" />
                      </font>
                   </Label>
-                  <Label fx:id="navControl" layoutX="1506.0" layoutY="31.0" prefWidth="160.0" styleClass="inderBold" stylesheets="@iMat.css" text="Kontrollera" textFill="WHITE">
+                  <Button fx:id="CompleteOrder1" layoutX="296.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" onMouseClicked="#closeBought" prefHeight="100.0" prefWidth="357.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Ok" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="30.0" />
+                        <Font size="19.0" />
                      </font>
-                  </Label>
-                  <Label fx:id="navDelivery" layoutX="1337.0" layoutY="31.0" styleClass="inderBold" stylesheets="@iMat.css" text="Leverans" textFill="WHITE">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="navInfo" layoutX="1106.0" layoutY="33.0" styleClass="inderBold" stylesheets="@iMat.css" text="Dina uppgifter" textFill="WHITE">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="navCheckout" layoutX="933.0" layoutY="33.0" styleClass="inderBold" stylesheets="@iMat.css" text="Varukorg" textFill="WHITE" underline="true">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="1475.0" layoutY="26.0" prefHeight="47.0" prefWidth="31.0" styleClass="inderBold" stylesheets="@iMat.css" text="›" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="1305.0" layoutY="26.0" prefHeight="47.0" prefWidth="31.0" styleClass="inderBold" stylesheets="@iMat.css" text="›" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="30.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="1076.0" layoutY="28.0" prefHeight="47.0" prefWidth="31.0" styleClass="inderBold" stylesheets="@iMat.css" text="›" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="30.0" />
-                     </font>
-                  </Label>
+                  </Button>
                </children>
             </AnchorPane>
-            <StackPane layoutX="53.0" layoutY="169.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1680.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
-               <children>
-                  <AnchorPane fx:id="CustomerInfo" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1680.0" style="-fx-background-color: white;">
-                     <children>
-                        <Label layoutX="45.0" layoutY="22.0" text="Dina uppgifter" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
-                           <font>
-                              <Font size="45.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="SecondBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" onAction="#bringCheckoutFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="SecondNext" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#bringDeliveryFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="continueShopping2" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <AnchorPane layoutX="310.0" layoutY="286.0" prefHeight="292.0" prefWidth="660.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="339.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="286.0">
-                           <children>
-                              <TextField fx:id="cardNumberCheckout" layoutX="159.0" layoutY="67.0" prefHeight="66.0" prefWidth="315.0" promptText="1234 5678 9012 3456" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" AnchorPane.topAnchor="67.0">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </TextField>
-                              <TextField fx:id="cardValidCheckout" layoutX="158.0" layoutY="193.0" prefHeight="66.0" prefWidth="100.0" promptText="01/01" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" AnchorPane.topAnchor="193.0">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </TextField>
-                              <TextField fx:id="cardCVCCheckout" layoutX="307.0" layoutY="193.0" prefHeight="66.0" prefWidth="100.0" promptText="123" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" AnchorPane.topAnchor="193.0">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </TextField>
-                              <Label layoutX="158.0" layoutY="27.0" text="Kortnummer" AnchorPane.topAnchor="27.0">
-                                 <font>
-                                    <Font size="28.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="158.0" layoutY="153.0" text="Giltigt till" AnchorPane.topAnchor="153.0">
-                                 <font>
-                                    <Font size="28.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="307.0" layoutY="153.0" text="CVC" AnchorPane.topAnchor="153.0">
-                                 <font>
-                                    <Font size="28.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <effect>
-                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                 <color>
-                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                        </AnchorPane>
-                        <AnchorPane layoutX="1058.0" layoutY="286.0" prefHeight="376.0" prefWidth="660.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="339.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="286.0">
-                           <children>
-                              <TextField fx:id="addressCheckout" layoutX="183.0" layoutY="68.0" prefHeight="66.0" prefWidth="315.0" promptText="Gibraltargatan 5" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </TextField>
-                              <TextField fx:id="postcodeCheckout" layoutX="183.0" layoutY="194.0" prefHeight="66.0" prefWidth="150.0" promptText="43322" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </TextField>
-                              <Label layoutX="183.0" layoutY="28.0" text="Adress">
-                                 <font>
-                                    <Font size="28.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="183.0" layoutY="154.0" text="Postnummer">
-                                 <font>
-                                    <Font size="28.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <effect>
-                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                 <color>
-                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                        </AnchorPane>
-                        <Label alignment="CENTER" layoutX="241.0" layoutY="205.0" prefHeight="73.0" prefWidth="477.0" text="Dina kortuppgifter">
-                           <font>
-                              <Font size="50.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="1083.0" layoutY="214.0" text="Din adress">
-                           <font>
-                              <Font size="50.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane fx:id="DeliveryPage" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1680.0" style="-fx-background-color: white;">
-                     <children>
-                        <AnchorPane layoutX="284.0" layoutY="297.0" prefHeight="367.0" prefWidth="660.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 25;" stylesheets="@iMat.css" AnchorPane.bottomAnchor="339.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="297.0">
-                           <children>
-                              <AnchorPane layoutX="31.0" layoutY="17.0" onMouseClicked="#clickDateFirst" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
-                                 <children>
-                                    <Label layoutX="16.0" layoutY="21.0" text="Måndag">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="27.0" layoutY="58.0" text="30 jun">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </AnchorPane>
-                              <AnchorPane layoutX="190.0" layoutY="17.0" onMouseClicked="#clickDateSecond" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
-                                 <children>
-                                    <Label layoutX="16.0" layoutY="21.0" text="Tisdag">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="27.0" layoutY="58.0" text="31 jun">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </AnchorPane>
-                              <AnchorPane layoutX="346.0" layoutY="17.0" onMouseClicked="#clickDateThird" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
-                                 <children>
-                                    <Label layoutX="16.0" layoutY="21.0" text="Onsdag">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="27.0" layoutY="58.0" text="1 jul">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </AnchorPane>
-                              <AnchorPane layoutX="31.0" layoutY="177.0" onMouseClicked="#clickDateFith" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
-                                 <children>
-                                    <Label layoutX="16.0" layoutY="21.0" text="Fredag">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="27.0" layoutY="58.0" prefHeight="36.0" prefWidth="86.0" text="3 jul">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </AnchorPane>
-                              <AnchorPane layoutX="190.0" layoutY="177.0" onMouseClicked="#clickDateSixth" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
-                                 <children>
-                                    <Label layoutX="16.0" layoutY="21.0" text="Lördag">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="27.0" layoutY="58.0" prefHeight="36.0" prefWidth="79.0" text="4 jul">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </AnchorPane>
-                              <AnchorPane layoutX="346.0" layoutY="177.0" onMouseClicked="#clickDateSeventh" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
-                                 <children>
-                                    <Label layoutX="16.0" layoutY="21.0" text="Söndag">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="27.0" layoutY="58.0" prefHeight="36.0" prefWidth="85.0" text="5 jul">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </AnchorPane>
-                              <AnchorPane layoutX="507.0" layoutY="17.0" onMouseClicked="#clickDateFourth" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
-                                 <children>
-                                    <Label layoutX="16.0" layoutY="21.0" text="Torsdag">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="27.0" layoutY="58.0" prefHeight="36.0" prefWidth="79.0" text="2 jul">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </AnchorPane>
-                              <AnchorPane layoutX="507.0" layoutY="177.0" onMouseClicked="#clickDateEight" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
-                                 <children>
-                                    <Label layoutX="16.0" layoutY="21.0" text="Måndag">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="27.0" layoutY="58.0" text="6 jul">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </AnchorPane>
-                           </children>
-                           <effect>
-                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                 <color>
-                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                        </AnchorPane>
-                        <AnchorPane layoutX="1126.0" layoutY="297.0" prefHeight="312.0" prefWidth="660.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 25;" AnchorPane.bottomAnchor="339.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="297.0">
-                           <children>
-                              <AnchorPane fx:id="timeslot1" layoutX="47.0" layoutY="46.0" onMouseClicked="#chooseBefore" prefHeight="120.0" prefWidth="450.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="78.0" AnchorPane.topAnchor="25.0">
-                                 <children>
-                                    <Label alignment="CENTER" layoutX="6.0" layoutY="13.0" prefHeight="36.0" prefWidth="436.0" text="Förmiddag" textAlignment="CENTER">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                    <Label alignment="CENTER" layoutX="6.0" layoutY="58.0" prefHeight="36.0" prefWidth="439.0" text="07:00 - 12:00">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </AnchorPane>
-                              <AnchorPane fx:id="timeslot2" layoutX="47.0" layoutY="202.0" onMouseClicked="#chooseAfter" prefHeight="120.0" prefWidth="450.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="78.0">
-                                 <children>
-                                    <Label alignment="CENTER" layoutX="9.0" layoutY="23.0" prefHeight="36.0" prefWidth="433.0" text="Eftermiddag">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                    <Label alignment="CENTER" layoutX="12.0" layoutY="59.0" prefHeight="36.0" prefWidth="429.0" text="13:00 - 17:00">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <effect>
-                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                       <color>
-                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                       </color>
-                                    </DropShadow>
-                                 </effect>
-                              </AnchorPane>
-                           </children>
-                           <effect>
-                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                 <color>
-                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                        </AnchorPane>
-                        <Button fx:id="ThirdBack" layoutX="198.0" layoutY="578.0" mnemonicParsing="false" onAction="#bringInformationFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="continueShopping3" layoutX="1150.0" layoutY="46.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="ThirdNext" layoutX="1160.0" layoutY="576.0" mnemonicParsing="false" onAction="#bringControlFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <Label alignment="CENTER" layoutX="194.0" layoutY="223.0" prefHeight="56.0" prefWidth="603.0" text="Välj dag">
-                           <font>
-                              <Font size="55.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="945.0" layoutY="226.0" prefHeight="56.0" prefWidth="527.0" text="Välj tidsram">
-                           <font>
-                              <Font size="55.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane fx:id="ControlPage" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1680.0" style="-fx-background-color: white;">
-                     <children>
-                        <Label layoutX="45.0" layoutY="22.0" text="Kontrollera" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
-                           <font>
-                              <Font size="45.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="FourthBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" onAction="#bringDeliveryFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="CompleteOrder" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Slutför köp" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="continueShopping4" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <AnchorPane layoutX="208.0" layoutY="70.0" minWidth="-Infinity" prefHeight="566.0" prefWidth="660.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="100.0">
-                           <children>
-                              <Label alignment="CENTER" layoutX="83.0" layoutY="29.0" text="Din varukorg" AnchorPane.topAnchor="29.0">
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="checkoutTotalPrice" layoutX="194.0" layoutY="547.0" prefHeight="74.0" prefWidth="275.0" text="Summa:" AnchorPane.topAnchor="547.0">
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fitHeight="35.0" fitWidth="39.0" layoutX="21.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
-                              <ScrollPane layoutY="90.0" prefHeight="461.0" prefWidth="678.0" styleClass="scroll-bar" stylesheets="@iMat.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                                 <content>
-                                    <FlowPane fx:id="cartControl" prefHeight="200.0" prefWidth="540.0" />
-                                 </content>
-                              </ScrollPane>
-                           </children>
-                           <effect>
-                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                 <color>
-                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                        </AnchorPane>
-                        <AnchorPane layoutX="576.0" layoutY="77.0" minWidth="-Infinity" prefHeight="615.0" prefWidth="660.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="200.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="100.0">
-                           <children>
-                              <Label layoutX="29.0" layoutY="14.0" prefHeight="73.0" prefWidth="493.0" text="Din order" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="14.0">
-                                 <font>
-                                    <Font size="50.0" />
-                                 </font>
-                              </Label>
-                              <TextField layoutX="91.0" layoutY="343.0" prefHeight="43.0" prefWidth="155.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" AnchorPane.topAnchor="343.0">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="95.0" layoutY="310.0" prefHeight="35.0" prefWidth="165.0" text="Kupong" AnchorPane.topAnchor="310.0">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <Button layoutX="282.0" layoutY="341.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="110.0" style="-fx-background-color: white; -fx-border-color: #7CC961 #7CC961; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-radius: 5;" text="Lägg till" textFill="#7cc961">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Button>
-                              <Button layoutX="326.0" layoutY="198.0" mnemonicParsing="false" onAction="#bringDeliveryFront" prefHeight="55.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #ff0000; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-radius: 5;" text="Ändra" textFill="RED">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Button>
-                              <Label fx:id="checkoutTotalPrice2" layoutX="95.0" layoutY="519.0" prefHeight="52.0" prefWidth="363.0" text="Summa:">
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="checkoutTotalPrice11" layoutX="93.0" layoutY="468.0" prefHeight="60.0" prefWidth="207.0" text="Varukorg">
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="269.0" layoutX="251.0" layoutY="97.0" startX="-221.0" strokeWidth="0.5" />
-                              <Label fx:id="checkoutTotalPrice111" layoutX="33.0" layoutY="118.0" prefHeight="60.0" prefWidth="411.0" text="Uppskattad leveranstid">
-                                 <font>
-                                    <Font size="30.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="deliveryDate" layoutX="97.0" layoutY="158.0" prefHeight="60.0" prefWidth="225.0" text="Måndag 03/01">
-                                 <font>
-                                    <Font name="System Bold" size="30.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="timeintervalLabel" layoutX="97.0" layoutY="204.0" prefHeight="60.0" prefWidth="225.0" text="07:00-12:00">
-                                 <font>
-                                    <Font name="System Bold" size="30.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="269.0" layoutX="251.0" layoutY="282.0" startX="-221.0" strokeWidth="0.5" />
-                           </children>
-                           <effect>
-                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                 <color>
-                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                        </AnchorPane>
-                     </children>
-                     <effect>
-                        <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                           <color>
-                              <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </AnchorPane>
-                  <AnchorPane fx:id="CheckoutPage" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1680.0" style="-fx-background-color: white;">
-                     <children>
-                        <Label layoutX="45.0" layoutY="22.0" text="Din varukorg" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
-                           <font>
-                              <Font size="45.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="FirstBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="FirstNext" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#bringInformationFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="continueShopping1" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
-                           <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <AnchorPane layoutX="349.0" layoutY="70.0" prefHeight="324.0" prefWidth="450.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="70.0">
-                           <children>
-                              <ScrollPane layoutX="162.0" layoutY="72.0" prefHeight="649.0" prefWidth="751.0" styleClass="scroll-bar" stylesheets="@iMat.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-                                 <content>
-                                    <FlowPane fx:id="checkoutCart" alignment="CENTER" columnHalignment="CENTER" prefHeight="64.0" prefWidth="261.0" prefWrapLength="200.0" translateX="235.0" />
-                                 </content>
-                              </ScrollPane>
-                           </children>
-                           <effect>
-                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
-                                 <color>
-                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
-                                 </color>
-                              </DropShadow>
-                           </effect>
-                        </AnchorPane>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </StackPane>
          </children>
       </AnchorPane>
       <AnchorPane id="AnchorPane" fx:id="myPages" prefHeight="1050.0" prefWidth="1680.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -935,5 +345,620 @@
             </AnchorPane>
          </children>
       </StackPane>
+      <AnchorPane fx:id="checkoutPane" layoutY="-12.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1050.0" prefWidth="1680.0" AnchorPane.bottomAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="170.0" layoutY="59.0" prefHeight="102.0" prefWidth="100.0" style="-fx-background-color: #332f68;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="28.0" layoutY="-4.0" onMouseClicked="#goToHome" styleClass="pacifico" stylesheets="@iMat.css" text="iMat" textFill="WHITE">
+                     <font>
+                        <Font size="70.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="navControl" layoutX="1506.0" layoutY="31.0" prefWidth="160.0" styleClass="inderBold" stylesheets="@iMat.css" text="Kontrollera" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="navDelivery" layoutX="1337.0" layoutY="31.0" styleClass="inderBold" stylesheets="@iMat.css" text="Leverans" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="navInfo" layoutX="1106.0" layoutY="33.0" styleClass="inderBold" stylesheets="@iMat.css" text="Dina uppgifter" textFill="WHITE">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="navCheckout" layoutX="933.0" layoutY="33.0" styleClass="inderBold" stylesheets="@iMat.css" text="Varukorg" textFill="WHITE" underline="true">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1475.0" layoutY="26.0" prefHeight="47.0" prefWidth="31.0" styleClass="inderBold" stylesheets="@iMat.css" text="›" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1305.0" layoutY="26.0" prefHeight="47.0" prefWidth="31.0" styleClass="inderBold" stylesheets="@iMat.css" text="›" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1076.0" layoutY="28.0" prefHeight="47.0" prefWidth="31.0" styleClass="inderBold" stylesheets="@iMat.css" text="›" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <StackPane layoutX="53.0" layoutY="169.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1680.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
+               <children>
+                  <AnchorPane fx:id="CustomerInfo" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1680.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="45.0" layoutY="22.0" text="Dina uppgifter" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
+                           <font>
+                              <Font size="45.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="SecondBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" onAction="#bringCheckoutFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="SecondNext" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#bringDeliveryFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="continueShopping2" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <AnchorPane layoutX="310.0" layoutY="286.0" prefHeight="292.0" prefWidth="660.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="339.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="286.0">
+                           <children>
+                              <TextField fx:id="cardNumberCheckout" layoutX="159.0" layoutY="67.0" prefHeight="66.0" prefWidth="315.0" promptText="1234 5678 9012 3456" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" AnchorPane.topAnchor="67.0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </TextField>
+                              <TextField fx:id="cardValidCheckout" layoutX="158.0" layoutY="193.0" prefHeight="66.0" prefWidth="100.0" promptText="01/01" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" AnchorPane.topAnchor="193.0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </TextField>
+                              <TextField fx:id="cardCVCCheckout" layoutX="307.0" layoutY="193.0" prefHeight="66.0" prefWidth="100.0" promptText="123" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" AnchorPane.topAnchor="193.0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </TextField>
+                              <Label layoutX="158.0" layoutY="27.0" text="Kortnummer" AnchorPane.topAnchor="27.0">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="158.0" layoutY="153.0" text="Giltigt till" AnchorPane.topAnchor="153.0">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="307.0" layoutY="153.0" text="CVC" AnchorPane.topAnchor="153.0">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <effect>
+                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                 <color>
+                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </AnchorPane>
+                        <AnchorPane layoutX="1058.0" layoutY="286.0" prefHeight="376.0" prefWidth="660.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="339.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="286.0">
+                           <children>
+                              <TextField fx:id="addressCheckout" layoutX="183.0" layoutY="68.0" prefHeight="66.0" prefWidth="315.0" promptText="Gibraltargatan 5" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </TextField>
+                              <TextField fx:id="postcodeCheckout" layoutX="183.0" layoutY="194.0" prefHeight="66.0" prefWidth="150.0" promptText="43322" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </TextField>
+                              <Label layoutX="183.0" layoutY="28.0" text="Adress">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="183.0" layoutY="154.0" text="Postnummer">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <effect>
+                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                 <color>
+                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </AnchorPane>
+                        <Label alignment="CENTER" layoutX="241.0" layoutY="205.0" prefHeight="73.0" prefWidth="477.0" text="Dina kortuppgifter">
+                           <font>
+                              <Font size="50.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="1083.0" layoutY="214.0" text="Din adress">
+                           <font>
+                              <Font size="50.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="ControlPage" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1680.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="45.0" layoutY="22.0" text="Kontrollera" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
+                           <font>
+                              <Font size="45.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="FourthBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" onAction="#bringDeliveryFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="CompleteOrder" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Slutför köp" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="continueShopping4" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <AnchorPane layoutX="208.0" layoutY="70.0" minWidth="-Infinity" prefHeight="566.0" prefWidth="660.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="100.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="83.0" layoutY="29.0" text="Din varukorg" AnchorPane.topAnchor="29.0">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="checkoutTotalPrice" layoutX="194.0" layoutY="547.0" prefHeight="74.0" prefWidth="275.0" text="Summa:" AnchorPane.topAnchor="547.0">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="35.0" fitWidth="39.0" layoutX="21.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
+                              <ScrollPane layoutY="90.0" prefHeight="461.0" prefWidth="678.0" styleClass="scroll-bar" stylesheets="@iMat.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <content>
+                                    <FlowPane fx:id="cartControl" prefHeight="200.0" prefWidth="540.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                           <effect>
+                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                 <color>
+                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </AnchorPane>
+                        <AnchorPane layoutX="576.0" layoutY="77.0" minWidth="-Infinity" prefHeight="615.0" prefWidth="660.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="200.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="100.0">
+                           <children>
+                              <Label layoutX="29.0" layoutY="14.0" prefHeight="73.0" prefWidth="493.0" text="Din order" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="14.0">
+                                 <font>
+                                    <Font size="50.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="91.0" layoutY="343.0" prefHeight="43.0" prefWidth="155.0" style="-fx-border-color: black; -fx-border-radius: 5; -fx-background-color: #f8f8f8;" AnchorPane.topAnchor="343.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="95.0" layoutY="310.0" prefHeight="35.0" prefWidth="165.0" text="Kupong" AnchorPane.topAnchor="310.0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="282.0" layoutY="341.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="110.0" style="-fx-background-color: white; -fx-border-color: #7CC961 #7CC961; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-radius: 5;" text="Lägg till" textFill="#7cc961">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="326.0" layoutY="198.0" mnemonicParsing="false" onAction="#bringDeliveryFront" prefHeight="55.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #ff0000; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-radius: 5;" text="Ändra" textFill="RED">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="checkoutTotalPrice2" layoutX="95.0" layoutY="519.0" prefHeight="52.0" prefWidth="363.0" text="Summa:">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="checkoutTotalPrice11" layoutX="93.0" layoutY="468.0" prefHeight="60.0" prefWidth="207.0" text="Varukorg">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="269.0" layoutX="251.0" layoutY="97.0" startX="-221.0" strokeWidth="0.5" />
+                              <Label fx:id="checkoutTotalPrice111" layoutX="33.0" layoutY="118.0" prefHeight="60.0" prefWidth="411.0" text="Uppskattad leveranstid">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="deliveryDate" layoutX="97.0" layoutY="158.0" prefHeight="60.0" prefWidth="225.0" text="Måndag 03/01">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="timeintervalLabel" layoutX="97.0" layoutY="204.0" prefHeight="60.0" prefWidth="225.0" text="07:00-12:00">
+                                 <font>
+                                    <Font name="System Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="269.0" layoutX="251.0" layoutY="282.0" startX="-221.0" strokeWidth="0.5" />
+                           </children>
+                           <effect>
+                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                 <color>
+                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </AnchorPane>
+                     </children>
+                     <effect>
+                        <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                           <color>
+                              <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+                  <AnchorPane fx:id="CheckoutPage" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1680.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="45.0" layoutY="22.0" text="Din varukorg" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
+                           <font>
+                              <Font size="45.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="FirstBack" layoutX="61.0" layoutY="320.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="FirstNext" layoutX="797.0" layoutY="322.0" mnemonicParsing="false" onAction="#bringInformationFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="continueShopping1" layoutX="884.0" layoutY="49.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <AnchorPane layoutX="349.0" layoutY="70.0" prefHeight="324.0" prefWidth="450.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 20;" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="320.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="70.0">
+                           <children>
+                              <ScrollPane layoutX="162.0" layoutY="72.0" prefHeight="649.0" prefWidth="751.0" styleClass="scroll-bar" stylesheets="@iMat.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <content>
+                                    <FlowPane fx:id="checkoutCart" alignment="CENTER" columnHalignment="CENTER" prefHeight="64.0" prefWidth="261.0" prefWrapLength="200.0" translateX="235.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                           <effect>
+                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                 <color>
+                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="DeliveryPage" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1680.0" style="-fx-background-color: white;">
+                     <children>
+                        <AnchorPane layoutX="284.0" layoutY="297.0" prefHeight="367.0" prefWidth="660.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 25;" stylesheets="@iMat.css" AnchorPane.bottomAnchor="339.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="297.0">
+                           <children>
+                              <AnchorPane fx:id="date1" layoutX="31.0" layoutY="17.0" onMouseClicked="#clickDateFirst" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
+                                 <children>
+                                    <Label layoutX="16.0" layoutY="21.0" text="Måndag">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="27.0" layoutY="58.0" text="30 jun">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </AnchorPane>
+                              <AnchorPane fx:id="date2" layoutX="190.0" layoutY="17.0" onMouseClicked="#clickDateSecond" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
+                                 <children>
+                                    <Label layoutX="16.0" layoutY="21.0" text="Tisdag">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="27.0" layoutY="58.0" text="31 jun">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </AnchorPane>
+                              <AnchorPane fx:id="date3" layoutX="346.0" layoutY="17.0" onMouseClicked="#clickDateThird" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
+                                 <children>
+                                    <Label layoutX="16.0" layoutY="21.0" text="Onsdag">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="27.0" layoutY="58.0" text="1 jul">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </AnchorPane>
+                              <AnchorPane fx:id="date5" layoutX="31.0" layoutY="177.0" onMouseClicked="#clickDateFith" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
+                                 <children>
+                                    <Label layoutX="16.0" layoutY="21.0" text="Fredag">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="27.0" layoutY="58.0" prefHeight="36.0" prefWidth="86.0" text="3 jul">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </AnchorPane>
+                              <AnchorPane fx:id="date6" layoutX="190.0" layoutY="177.0" onMouseClicked="#clickDateSixth" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
+                                 <children>
+                                    <Label layoutX="16.0" layoutY="21.0" text="Lördag">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="27.0" layoutY="58.0" prefHeight="36.0" prefWidth="79.0" text="4 jul">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </AnchorPane>
+                              <AnchorPane fx:id="date7" layoutX="346.0" layoutY="177.0" onMouseClicked="#clickDateSeventh" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
+                                 <children>
+                                    <Label layoutX="16.0" layoutY="21.0" text="Söndag">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="27.0" layoutY="58.0" prefHeight="36.0" prefWidth="85.0" text="5 jul">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </AnchorPane>
+                              <AnchorPane fx:id="date4" layoutX="507.0" layoutY="17.0" onMouseClicked="#clickDateFourth" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="175.0">
+                                 <children>
+                                    <Label layoutX="16.0" layoutY="21.0" text="Torsdag">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="27.0" layoutY="58.0" prefHeight="36.0" prefWidth="79.0" text="2 jul">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </AnchorPane>
+                              <AnchorPane fx:id="date8" layoutX="507.0" layoutY="177.0" onMouseClicked="#clickDateEight" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="15.0">
+                                 <children>
+                                    <Label layoutX="16.0" layoutY="21.0" text="Måndag">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="27.0" layoutY="58.0" text="6 jul">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </AnchorPane>
+                           </children>
+                           <effect>
+                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                 <color>
+                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </AnchorPane>
+                        <AnchorPane layoutX="1126.0" layoutY="297.0" prefHeight="312.0" prefWidth="660.0" style="-fx-background-color: #f8f8f8; -fx-background-radius: 25;" AnchorPane.bottomAnchor="339.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="297.0">
+                           <children>
+                              <AnchorPane fx:id="timeslot1" layoutX="47.0" layoutY="46.0" onMouseClicked="#chooseBefore" prefHeight="120.0" prefWidth="450.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="78.0" AnchorPane.topAnchor="25.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="6.0" layoutY="13.0" prefHeight="36.0" prefWidth="436.0" text="Förmiddag" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="6.0" layoutY="58.0" prefHeight="36.0" prefWidth="439.0" text="07:00 - 12:00">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </AnchorPane>
+                              <AnchorPane fx:id="timeslot2" layoutX="47.0" layoutY="202.0" onMouseClicked="#chooseAfter" prefHeight="120.0" prefWidth="450.0" style="-fx-background-color: white; -fx-background-radius: 10;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="78.0" AnchorPane.rightAnchor="78.0">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="9.0" layoutY="23.0" prefHeight="36.0" prefWidth="433.0" text="Eftermiddag">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="12.0" layoutY="59.0" prefHeight="36.0" prefWidth="429.0" text="13:00 - 17:00">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <effect>
+                                    <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                       <color>
+                                          <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                       </color>
+                                    </DropShadow>
+                                 </effect>
+                              </AnchorPane>
+                           </children>
+                           <effect>
+                              <DropShadow height="19.0" offsetX="2.0" offsetY="2.0" radius="9.25" width="20.0">
+                                 <color>
+                                    <Color red="0.6705882549285889" green="0.6705882549285889" blue="0.6705882549285889" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </AnchorPane>
+                        <Button fx:id="ThirdBack" layoutX="198.0" layoutY="578.0" mnemonicParsing="false" onAction="#bringInformationFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: red; -fx-border-radius: 10; -fx-border-width: 2;" text="Tillbaka" textFill="RED" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="continueShopping3" layoutX="1150.0" layoutY="46.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: #FF7700; -fx-border-radius: 10; -fx-border-width: 2;" text="Fortsätt handla" textFill="#ff7700" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="ThirdNext" layoutX="1160.0" layoutY="576.0" mnemonicParsing="false" onAction="#bringControlFront" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #7CC961; -fx-background-radius: 10;" text="Nästa" textFill="WHITE" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="194.0" layoutY="223.0" prefHeight="56.0" prefWidth="603.0" text="Välj dag">
+                           <font>
+                              <Font size="55.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="945.0" layoutY="226.0" prefHeight="56.0" prefWidth="527.0" text="Välj tidsram">
+                           <font>
+                              <Font size="55.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

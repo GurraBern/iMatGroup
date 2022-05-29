@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -77,7 +78,7 @@ public class Navbar extends AnchorPane {
     public void updateNavbarInformation(String size, double totalCost){
         costLabel.setText("Kostnad: " + String.format("%.2f",totalCost));
         itemsLabel.setText(size);
-        cartController.totalCost.setText(totalCost + "kr");
+        cartController.totalCost.setText(String.format("%.2f",totalCost) + "kr");
 
 
     }
@@ -108,6 +109,8 @@ public class Navbar extends AnchorPane {
     void switchToHome(){
         mainController.currentTab.setText("Home");
 
+        favoritesNav.setStyle("-fx-text-fill: black");
+        homeNav.setStyle("-fx-text-fill: orange");
 
         String iconPath = "bilder/home.png";
         Image icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
@@ -123,6 +126,10 @@ public class Navbar extends AnchorPane {
         Image icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
         mainController.currentTabImage.setImage(icon);
 
+
+        favoritesNav.setStyle("-fx-text-fill: orange");
+        homeNav.setStyle("-fx-text-fill: black");
+
         mainController.updateProductList(model.getFavorites());
     }
     @FXML void swapMyPages(){
@@ -132,4 +139,10 @@ public class Navbar extends AnchorPane {
     @FXML void swapBack() {
         mainController.myPages.toBack();
     }
+
+
+    private void resetNavColor(){
+
+    }
+
 }

@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -108,7 +109,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private String timeofDay;
     private String timeinterval;
 
-    private List<SubCategory> subCategoriesActive = new ArrayList<>();
+    public List<SubCategory> subCategoriesActive = new ArrayList<>();
     private List<Category> browseCategories = new ArrayList<>();
 
 
@@ -119,6 +120,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML public FlowPane cartControl;
     @FXML public FlowPane browseFlowpane;
     @FXML public FlowPane browseSubFlowpane;
+
+
+
+    @FXML public AnchorPane boughtPane;
 
     @FXML public List<ProductCategory> selectedSub;
 
@@ -145,6 +150,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateCartItems();
 
 
+        navbarController.homeNav.setStyle("-fx-text-fill: orange");
         String iconPath = "bilder/home.png";
         Image icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
         currentTabImage.setImage(icon);
@@ -152,12 +158,13 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     public void resetSubCategories(){
         for (SubCategory subCategory :subCategoriesActive) {
-            subCategory.getStyleClass().clear();
+            subCategory.subCategoryLabel.getStyleClass().clear();
+            subCategory.subCategoryLabel.getStyleClass().add("minknapp");
+            subCategory.subCategoryLabel.getStyleClass().add("inderPog");
         }
     }
 
     public void resetCategories(){
-        //browseFlowpane.getChildren().clear();
         for (Category item: browseCategories) {
             item.clearStyle();
             item.categoryLabel.getStyleClass().add("minknapp");
@@ -460,6 +467,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private void handleBuyItemsAction(ActionEvent event) {
         model.placeOrder();
         //TODO add more text
+
+        cartPane.toBack();
+        mainHome.toFront();
+        boughtPane.toFront();
     }
 
     public void bringControlFront() {
@@ -503,45 +514,159 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         }
     }*/
 
+    @FXML AnchorPane date1;
+    @FXML AnchorPane date2;
+    @FXML AnchorPane date3;
+    @FXML AnchorPane date4;
+    @FXML AnchorPane date5;
+    @FXML AnchorPane date6;
+    @FXML AnchorPane date7;
+    @FXML AnchorPane date8;
+
+
+    private void resetDates(){
+        date1.getStyleClass().clear();
+        date1.getStyleClass().add("buttonPressed");
+        date1.getStyleClass().add("inderPog");
+
+
+
+        //subCategoryLabel.getStyleClass().add("buttonPressed");
+        //subCategoryLabel.getStyleClass().add("inderPog");
+        //subCategoryLabel.setStyle("-fx-font-size: 35");
+    }
 
     @FXML private AnchorPane timeslot1;
+    @FXML private AnchorPane timeslot2;
     @FXML void chooseBefore(){
         timeinterval = "07:00-12:00";
+
+        resetTimeslots();
+        timeslot1.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        timeslot1.getChildren().get(0).setStyle("-fx-text-fill: white");
+        timeslot1.getChildren().get(1).setStyle("-fx-text-fill: white");
     }
 
     @FXML void chooseAfter(){
         timeinterval = "13:00-17:00";
+
+        resetTimeslots();
+        timeslot2.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        timeslot2.getChildren().get(0).setStyle("-fx-text-fill: white");
+        timeslot2.getChildren().get(1).setStyle("-fx-text-fill: white");
+    }
+
+    private void resetTimeslots(){
+        timeslot1.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        timeslot1.getChildren().get(0).setStyle("-fx-text-fill: black");
+        timeslot1.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+
+        timeslot2.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        timeslot2.getChildren().get(0).setStyle("-fx-text-fill: black");
+        timeslot2.getChildren().get(1).setStyle("-fx-text-fill: black");
+    }
+
+    private void resetAllDatesCss(){
+        date1.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date1.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date1.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date2.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date2.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date2.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date3.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date3.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date3.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date4.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date4.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date4.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date5.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date5.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date5.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date6.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date6.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date6.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date7.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date7.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date7.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date8.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date8.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date8.getChildren().get(1).setStyle("-fx-text-fill: black");
     }
 
     @FXML private void clickDateFirst(){
         timeofDay = "Måndag 30 juni";
+        resetAllDatesCss();
+        date1.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date1.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date1.getChildren().get(1).setStyle("-fx-text-fill: white");
     }
 
     @FXML private void clickDateSecond(){
         timeofDay = "Tisdag 31 juni";
+        resetAllDatesCss();
+        date2.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date2.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date2.getChildren().get(1).setStyle("-fx-text-fill: white");
     }
 
     @FXML private void clickDateThird(){
         timeofDay = "Onsdag 01 juli";
+        resetAllDatesCss();
+        date3.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date3.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date3.getChildren().get(1).setStyle("-fx-text-fill: white");
     }
 
     @FXML private void clickDateFourth(){
         timeofDay = "Torsdag 02 juli";
+        resetAllDatesCss();
+        date4.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date4.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date4.getChildren().get(1).setStyle("-fx-text-fill: white");
     }
 
     @FXML private void clickDateFith(){
         timeofDay = "Fredag 03 juli";
+        resetAllDatesCss();
+        date5.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date5.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date5.getChildren().get(1).setStyle("-fx-text-fill: white");
     }
 
     @FXML private void clickDateSixth(){
         timeofDay = "Lördag 04 juli";
+        resetAllDatesCss();
+        date6.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date6.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date6.getChildren().get(1).setStyle("-fx-text-fill: white");
     }
 
     @FXML private void clickDateSeventh(){
         timeofDay = "Söndag 05 juli";
+        resetAllDatesCss();
+        date7.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date7.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date7.getChildren().get(1).setStyle("-fx-text-fill: white");
     }
 
     @FXML private void clickDateEight(){
         timeofDay = "Måndag 06 juli";
+        resetAllDatesCss();
+        date8.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date8.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date8.getChildren().get(1).setStyle("-fx-text-fill: white");
+    }
+
+
+    @FXML private void closeBought(){
+        boughtPane.toBack();
     }
 }
