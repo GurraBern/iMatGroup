@@ -49,7 +49,7 @@
                   <Font name="System Bold" size="32.0" />
                </font>
             </Label>
-            <Button layoutX="-6.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="72.0" prefWidth="70.0" style="-fx-background-radius: 100; -fx-background-color: #332f68;" textFill="WHITE">
+            <Button layoutX="-6.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleRemoveAction" prefHeight="72.0" prefWidth="70.0" style="-fx-background-radius: 100; -fx-background-color: #332f68;" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>

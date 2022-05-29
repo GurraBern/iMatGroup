@@ -4,27 +4,21 @@
  * and open the template in the editor.
  */
 package imatmini;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.*;
 
-import javax.swing.text.html.ImageView;
 
 
 public class iMatMiniController implements Initializable, ShoppingCartListener {
@@ -33,7 +27,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML public AnchorPane shopPane;
     @FXML private FlowPane productsFlowPane;
     @FXML public Label currentTab;
-    @FXML public ImageView currentImage;
+    @FXML public ImageView currentTabImage;
+    @FXML public ImageView homeIcon;
+    @FXML public ImageView favIcon;
     @FXML public AnchorPane myPages;
     @FXML public StackPane mainHome;
 
@@ -46,6 +42,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     @FXML public Button closeMyPages;
     @FXML private Label purchasesLabel;
+    @FXML public Label deliveryDate;
 
     //My Pages
     @FXML TextField firstname;
@@ -112,6 +109,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private String timeofDay;
     private String timeinterval;
 
+    public List<SubCategory> subCategoriesActive = new ArrayList<>();
+    private List<Category> browseCategories = new ArrayList<>();
+
 
 
     //private CheckoutCartController cartController;
@@ -120,6 +120,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML public FlowPane cartControl;
     @FXML public FlowPane browseFlowpane;
     @FXML public FlowPane browseSubFlowpane;
+
+
+
+    @FXML public AnchorPane boughtPane;
 
     @FXML public List<ProductCategory> selectedSub;
 
@@ -144,10 +148,28 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateProductList(model.getProducts());
         updateBottomPanel();
         updateCartItems();
+
+
+        navbarController.homeNav.setStyle("-fx-text-fill: orange");
+        String iconPath = "bilder/home.png";
+        Image icon = new Image(getClass().getClassLoader().getResourceAsStream(iconPath));
+        currentTabImage.setImage(icon);
     }
 
     public void resetSubCategories(){
-        browseSubFlowpane.getChildren().clear();
+        for (SubCategory subCategory :subCategoriesActive) {
+            subCategory.subCategoryLabel.getStyleClass().clear();
+            subCategory.subCategoryLabel.getStyleClass().add("minknapp");
+            subCategory.subCategoryLabel.getStyleClass().add("inderPog");
+        }
+    }
+
+    public void resetCategories(){
+        for (Category item: browseCategories) {
+            item.clearStyle();
+            item.categoryLabel.getStyleClass().add("minknapp");
+            item.categoryLabel.getStyleClass().add("inderPog");
+        }
     }
 
     private void createCategories(){
@@ -200,7 +222,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         Category kryddor = new Category("Kryddor", spices, this);
         Category godis = new Category("Godis", candy, this);
 
-        List<Category> browseCategories = new ArrayList<>();
+        browseCategories = new ArrayList<>();
         browseCategories.add(showAll);
         browseCategories.add(gronsaker);
         browseCategories.add(fruitandberries);
@@ -281,10 +303,15 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void updateSubCategories(List<ProductCategory> categories) {
         resetSubCategories();
         browseSubFlowpane.getChildren().clear();
+        subCategoriesActive = new ArrayList<>();
 
         for (ProductCategory category : categories) {
-            browseSubFlowpane.getChildren().add(new SubCategory(category, this));
+
+            SubCategory addedCategory= new SubCategory(category, this);
+            subCategoriesActive.add(addedCategory);
+            browseSubFlowpane.getChildren().add(addedCategory);
         }
+
     }
 
     public void updateProductList() {
@@ -380,11 +407,13 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         model.getCustomer().setPostCode(postcode.getText());
         model.getCreditCard().setCardNumber(cardnumber.getText());
 
-        //TODO split
-        //card.setValidYear(card.getText());
-        //model.getCreditCard().setValidMonth(Integer.parseInt(validthru.getText()));
+        String validText = validthru.getText();
+        String[] validSplit;
+        validSplit = validText.split("/");
+
+        model.getCreditCard().setValidYear(Integer.parseInt(validSplit[0]));
+        model.getCreditCard().setValidMonth(Integer.parseInt(validSplit[1]));
         model.getCreditCard().setVerificationCode(Integer.parseInt(cvc.getText()));
-        //System.out.println(model.getCreditCard().getVerificationCode());
         setAccountLabels();
     }
 
@@ -438,6 +467,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private void handleBuyItemsAction(ActionEvent event) {
         model.placeOrder();
         //TODO add more text
+
+        cartPane.toBack();
+        mainHome.toFront();
+        boughtPane.toFront();
     }
 
     public void bringControlFront() {
@@ -445,7 +478,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         checkoutTotalPrice.setText("Summa: " + totCost + "kr");
         checkoutTotalPrice2.setText("Summa: " + totCost + "kr");
         timeintervalLabel.setText(timeinterval);
-
+        deliveryDate.setText(timeofDay);
 
         stylingReset();
         navControl.setUnderline(true);
@@ -481,28 +514,159 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         }
     }*/
 
+    @FXML AnchorPane date1;
+    @FXML AnchorPane date2;
+    @FXML AnchorPane date3;
+    @FXML AnchorPane date4;
+    @FXML AnchorPane date5;
+    @FXML AnchorPane date6;
+    @FXML AnchorPane date7;
+    @FXML AnchorPane date8;
+
+
+    private void resetDates(){
+        date1.getStyleClass().clear();
+        date1.getStyleClass().add("buttonPressed");
+        date1.getStyleClass().add("inderPog");
+
+
+
+        //subCategoryLabel.getStyleClass().add("buttonPressed");
+        //subCategoryLabel.getStyleClass().add("inderPog");
+        //subCategoryLabel.setStyle("-fx-font-size: 35");
+    }
 
     @FXML private AnchorPane timeslot1;
+    @FXML private AnchorPane timeslot2;
     @FXML void chooseBefore(){
         timeinterval = "07:00-12:00";
 
-       /* for (Label label: timeslot1.getChildren()) {
-            label.styleProperty().;
-        }
-
-        */
-
+        resetTimeslots();
+        timeslot1.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        timeslot1.getChildren().get(0).setStyle("-fx-text-fill: white");
+        timeslot1.getChildren().get(1).setStyle("-fx-text-fill: white");
     }
-
 
     @FXML void chooseAfter(){
         timeinterval = "13:00-17:00";
+
+        resetTimeslots();
+        timeslot2.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        timeslot2.getChildren().get(0).setStyle("-fx-text-fill: white");
+        timeslot2.getChildren().get(1).setStyle("-fx-text-fill: white");
     }
 
-    @FXML void clickDate(){
+    private void resetTimeslots(){
+        timeslot1.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        timeslot1.getChildren().get(0).setStyle("-fx-text-fill: black");
+        timeslot1.getChildren().get(1).setStyle("-fx-text-fill: black");
 
+
+        timeslot2.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        timeslot2.getChildren().get(0).setStyle("-fx-text-fill: black");
+        timeslot2.getChildren().get(1).setStyle("-fx-text-fill: black");
+    }
+
+    private void resetAllDatesCss(){
+        date1.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date1.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date1.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date2.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date2.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date2.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date3.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date3.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date3.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date4.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date4.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date4.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date5.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date5.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date5.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date6.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date6.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date6.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date7.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date7.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date7.getChildren().get(1).setStyle("-fx-text-fill: black");
+
+        date8.setStyle("-fx-background-color:  white; -fx-background-radius: 10");
+        date8.getChildren().get(0).setStyle("-fx-text-fill: black");
+        date8.getChildren().get(1).setStyle("-fx-text-fill: black");
+    }
+
+    @FXML private void clickDateFirst(){
+        timeofDay = "Måndag 30 juni";
+        resetAllDatesCss();
+        date1.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date1.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date1.getChildren().get(1).setStyle("-fx-text-fill: white");
+    }
+
+    @FXML private void clickDateSecond(){
+        timeofDay = "Tisdag 31 juni";
+        resetAllDatesCss();
+        date2.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date2.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date2.getChildren().get(1).setStyle("-fx-text-fill: white");
+    }
+
+    @FXML private void clickDateThird(){
+        timeofDay = "Onsdag 01 juli";
+        resetAllDatesCss();
+        date3.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date3.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date3.getChildren().get(1).setStyle("-fx-text-fill: white");
+    }
+
+    @FXML private void clickDateFourth(){
+        timeofDay = "Torsdag 02 juli";
+        resetAllDatesCss();
+        date4.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date4.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date4.getChildren().get(1).setStyle("-fx-text-fill: white");
+    }
+
+    @FXML private void clickDateFith(){
+        timeofDay = "Fredag 03 juli";
+        resetAllDatesCss();
+        date5.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date5.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date5.getChildren().get(1).setStyle("-fx-text-fill: white");
+    }
+
+    @FXML private void clickDateSixth(){
+        timeofDay = "Lördag 04 juli";
+        resetAllDatesCss();
+        date6.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date6.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date6.getChildren().get(1).setStyle("-fx-text-fill: white");
+    }
+
+    @FXML private void clickDateSeventh(){
+        timeofDay = "Söndag 05 juli";
+        resetAllDatesCss();
+        date7.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date7.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date7.getChildren().get(1).setStyle("-fx-text-fill: white");
+    }
+
+    @FXML private void clickDateEight(){
+        timeofDay = "Måndag 06 juli";
+        resetAllDatesCss();
+        date8.setStyle("-fx-background-color:  #332f68; -fx-background-radius: 10");
+        date8.getChildren().get(0).setStyle("-fx-text-fill: white");
+        date8.getChildren().get(1).setStyle("-fx-text-fill: white");
     }
 
 
-
+    @FXML private void closeBought(){
+        boughtPane.toBack();
+    }
 }

@@ -16,7 +16,7 @@ public class SubCategory extends AnchorPane {
     public ProductCategory category;
     private iMatMiniController mainController;
 
-    @FXML private Label subCategoryLabel;
+    @FXML public Label subCategoryLabel;
 
 
     public SubCategory(ProductCategory category, iMatMiniController mainController){
@@ -40,7 +40,19 @@ public class SubCategory extends AnchorPane {
         subCategoryLabel.setText(category.name());
     }
 
+    public void clearStyle(){
+        subCategoryLabel.getStyleClass().clear();
+
+    }
+
+
     @FXML private void sortByCategory(){
+        mainController.resetSubCategories();
         mainController.updateProductListCategory(category);
+
+        subCategoryLabel.getStyleClass().add("buttonPressed");
+        subCategoryLabel.getStyleClass().add("inderPog");
+        subCategoryLabel.setStyle("-fx-font-size: 35");
+
     }
 }

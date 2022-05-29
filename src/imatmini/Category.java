@@ -18,7 +18,7 @@ public class Category extends AnchorPane {
     private iMatMiniController mainController;
     private String categoryName;
 
-    @FXML private Label categoryLabel;
+    @FXML public Label categoryLabel;
 
 
 
@@ -48,6 +48,20 @@ public class Category extends AnchorPane {
         }
         if(underlyingCategories != null)
             mainController.updateSubCategories(underlyingCategories);
+
+        mainController.resetCategories();
+
+        categoryLabel.getStyleClass().add("buttonPressed");
+        categoryLabel.getStyleClass().add("inderPog");
+        categoryLabel.setStyle("-fx-font-size: 35");
+
+        //Sätt färg
+
+    }
+
+    public void clearStyle(){
+        categoryLabel.getStyleClass().clear();
+
     }
 
     private void fxmlSetup(){

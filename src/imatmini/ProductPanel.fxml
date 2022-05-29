@@ -60,7 +60,7 @@
                   <Font size="36.0" />
                </font>
                <graphic>
-                  <Label alignment="CENTER" prefHeight="76.0" prefWidth="50.0" text="+" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="82.0" prefWidth="87.0" text="+" textFill="WHITE" textOverrun="CLIP">
                      <font>
                         <Font size="70.0" />
                      </font>

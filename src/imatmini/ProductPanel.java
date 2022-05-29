@@ -113,12 +113,21 @@ public class ProductPanel extends AnchorPane {
 
         addremoveButton.visibleProperty().setValue(true);
         addButton.visibleProperty().setValue(false);
+    }
 
-        //TODO lägg tillbaka knapp om varor är = 0 sätt opacity = 1 visa plus och minus knappar
-        //om det redan finns en produkt!
+    @FXML private void handleRemoveAction() {
+        model.removeItemFromShoppingCart(this, product);
+        setAmountOfProduct();
+    }
 
-        //addItemButton.setOpacity(0);
-        //addItemButton.setDisable(true);
+    public void setAddRemoveButton (){
+        addremoveButton.visibleProperty().setValue(true);
+        addButton.visibleProperty().setValue(false);
+    }
+
+    public void setAddButton (){
+        addremoveButton.visibleProperty().setValue(false);
+        addButton.visibleProperty().setValue(true);
     }
 
     @FXML
@@ -161,7 +170,7 @@ public class ProductPanel extends AnchorPane {
             }
         }
     }
-
+/*
     @FXML
     private void handleRemoveAction(ActionEvent event) {
         System.out.println("Remove " + product.getName());
@@ -169,7 +178,11 @@ public class ProductPanel extends AnchorPane {
 
         Product pr = model.getProduct(product.getProductId());
         model.removeFromShoppingCart(pr);
+
+
     }
+
+ */
 
 
 

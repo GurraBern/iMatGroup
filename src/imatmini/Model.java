@@ -111,6 +111,67 @@ public class Model {
         //shoppingCart.addProduct(p);
     }
 
+    public void removeItemFromShoppingCart(Product p) {
+        ShoppingCart shoppingCart = iMatDataHandler.getShoppingCart();
+
+        for (ShoppingItem items : shoppingCart.getItems()) {
+            if (items.getProduct() == p) {
+                items.setAmount(items.getAmount() - 1);
+                shoppingCart.fireShoppingCartChanged(items, true);
+
+                if(items.getAmount() <= 0){
+                    removeFromShoppingCart(p);
+                }
+
+                return;
+            }
+        }
+
+    }
+
+
+    public void removeItemFromShoppingCart(ProductPanel productPanel, Product p) {
+        ShoppingCart shoppingCart = iMatDataHandler.getShoppingCart();
+
+        for (ShoppingItem items : shoppingCart.getItems()) {
+            if (items.getProduct() == p) {
+                items.setAmount(items.getAmount() - 1);
+                shoppingCart.fireShoppingCartChanged(items, true);
+
+                if(items.getAmount() <= 0){
+                    removeFromShoppingCart(p);
+                }
+
+                if(items.getAmount() <= 0) {
+                    productPanel.setAddButton();
+                } else {
+                    productPanel.setAddRemoveButton();
+                }
+
+                return;
+            }
+        }
+
+    }
+
+
+    public void removeItemFromCartShoppingCart(Product p) {
+        ShoppingCart shoppingCart = iMatDataHandler.getShoppingCart();
+
+        for (ShoppingItem items : shoppingCart.getItems()) {
+            if (items.getProduct() == p) {
+                items.setAmount(items.getAmount() - 1);
+                shoppingCart.fireShoppingCartChanged(items, true);
+
+                if(items.getAmount() <= 0){
+                    removeFromShoppingCart(p);
+                }
+                return;
+            }
+        }
+
+    }
+
     //TODO cant remove if still zero, more work needed, basic funciton works
     public void removeFromShoppingCart(Product p) {
         int index = 0;

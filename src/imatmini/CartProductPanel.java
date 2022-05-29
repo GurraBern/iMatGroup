@@ -57,16 +57,23 @@ public class CartProductPanel extends AnchorPane {
              */
         }
 
+        @FXML private void handleRemoveAction() {
+            model.removeItemFromCartShoppingCart(product);
+            setAmountOfProduct();
+        }
+
         @FXML
         private void handleAddAction(ActionEvent event) {
             model.addToShoppingCart(product);
-            
-
-            //
             //Trigger change
         }
 
-
-
-
+        private void setAmountOfProduct() {
+            ShoppingCart shoppingCart = model.getShoppingCart();
+            for (ShoppingItem item : shoppingCart.getItems()) {
+                if (item.getProduct() == product) {
+                    productAmount.setText(String.valueOf((int) item.getAmount()));
+                }
+            }
+        }
 }
